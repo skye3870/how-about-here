@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".src.main.home.HomeFragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/home_logo_how_about_here"
+                android:layout_width="126dp"
+                android:layout_height="34dp"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/home_logo_how_about_here"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TableLayout
+                android:id="@+id/home_icon_table"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="@dimen/activity_vertical_margin"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                android:weightSum="4"
+                app:layout_constraintTop_toBottomOf="@+id/home_logo_how_about_here"
+                tools:layout_editor_absoluteX="16dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/home_icon_marginbottom"
+                    android:layout_weight="1"
+                    android:weightSum="4">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/home_black"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/home_icon_black"
+                            android:layout_width="@dimen/home_icon_width"
+                            android:layout_height="@dimen/home_icon_height"
+                            android:src="@drawable/home_icon_black"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/home_top_icon_premium" />
+
+                        <TextView
+                            android:id="@+id/home_text_black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="블랙"
+                            android:textColor="@color/black"
+                            app:layout_constraintEnd_toEndOf="@+id/home_icon_black"
+                            app:layout_constraintStart_toStartOf="@+id/home_icon_black"
+                            app:layout_constraintTop_toBottomOf="@+id/home_icon_black" />
+
+                        <ImageView
+                            android:id="@+id/home_top_icon_premium"
+                            android:layout_width="@dimen/home_top_icon_width"
+                            android:layout_height="@dimen/home_top_icon_height"
+                            android:src="@drawable/home_premium"
+                            app:layout_constraintBottom_toTopOf="@+id/home_icon_black"
+                            app:layout_constraintEnd_toEndOf="@+id/home_icon_black"
+                            app:layout_constraintStart_toStartOf="@+id/home_icon_black"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/home_motel"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/home_icon_motel"
+                            android:layout_width="@dimen/home_icon_width"
+                            android:layout_height="@dimen/home_icon_height"
+                            android:src="@drawable/home_icon_motel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/home_top_icon_lent_sale" />
+
+                        <TextView
+                            android:id="@+id/home_text_motel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="모텔"
+                            android:textColor="@color/black"
+                            app:layout_constraintEnd_toEndOf="@+id/home_icon_motel"
+                            app:layout_constraintStart_toStartOf="@+id/home_icon_motel"
+                            app:layout_constraintTop_toBottomOf="@+id/home_icon_motel" />
+
+                        <ImageView
+                            android:id="@+id/home_top_icon_lent_sale"
+                            android:layout_width="@dimen/home_top_icon_width"
+                            android:layout_height="@dimen/home_top_icon_height"
+                            android:src="@drawable/home_lent_sale"
+                            app:layout_constraintBottom_toTopOf="@+id/home_icon_motel"
+                            app:layout_constraintEnd_toEndOf="@+id/home_icon_motel"
+                            app:layout_constraintStart_toStartOf="@+id/home_icon_motel"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/home_hotel"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/home_icon_hotel"
+                            android:layout_width="@dimen/home_icon_width"
+                            android:layout_height="@dimen/home_icon_height"
+                            android:src="@drawable/home_icon_hotel"
+
+                            app:layout_constraintBottom_toTopOf="@+id/home_text_hotel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <TextView
+                            android:id="@+id/home_text_hotel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="호텔"
+                            android:textColor="@color/black"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@+id/home_icon_hotel"
+                            app:layout_constraintStart_toStartOf="@+id/home_icon_hotel" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/home_pension"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/home_icon_pension"
+                            android:layout_width="@dimen/home_icon_width"
+                            android:layout_height="@dimen/home_icon_height"
+                            android:src="@drawable/home_icon_pension"
+                            app:layout_constraintBottom_toTopOf="@+id/home_text_pension"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <TextView
+                            android:id="@+id/home_text_pension"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="펜션"
+                            android:textColor="@color/black"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@+id/home_icon_pension"
+                            app:layout_constraintStart_toStartOf="@+id/home_icon_pension" />
+
+                        <ImageView
+                            android:id="@+id/home_top_icon_private"
+                            android:layout_width="@dimen/home_top_icon_width"
+                            android:layout_height="@dimen/home_top_icon_height"
+                            android:src="@drawable/home_private"
+                            app:layout_constraintBottom_toTopOf="@+id/home_icon_pension"
+                            app:layout_constraintEnd_toEndOf="@+id/home_icon_pension"
+                            app:layout_constraintStart_toStartOf="@+id/home_icon_pension"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/home_icon_marginbottom"
+                    android:layout_weight="1"
+                    android:weightSum="4">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/home_resort"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/home_icon_resort"
+                            android:layout_width="@dimen/home_icon_width"
+                            android:layout_height="@dimen/home_icon_height"
+                            android:src="@drawable/home_icon_resort"
+                            app:layout_constraintBottom_toTopOf="@+id/home_text_resort"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <TextView
+                            android:id="@+id/home_text_resort"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="리조트"
+                            android:textColor="@color/black"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@+id/home_icon_resort"
+                            app:layout_constraintStart_toStartOf="@+id/home_icon_resort" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/home_camp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/home_icon_camp"
+                            android:layout_width="@dimen/home_icon_width"
+                            android:layout_height="@dimen/home_icon_height"
+                            android:src="@drawable/home_icon_camp"
+                            app:layout_constraintBottom_toTopOf="@+id/home_text_camp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <TextView
+                            android:id="@+id/home_text_camp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="캠핑ㆍ글램핑"
+                            android:textColor="@color/black"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@+id/home_icon_camp"
+                            app:layout_constraintStart_toStartOf="@+id/home_icon_camp" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/home_guest_house"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/home_icon_guest_house"
+                            android:layout_width="@dimen/home_icon_width"
+                            android:layout_height="@dimen/home_icon_height"
+                            android:src="@drawable/home_icon_guesthouse"
+
+                            app:layout_constraintBottom_toTopOf="@+id/home_text_guest_house"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <TextView
+                            android:id="@+id/home_text_guest_house"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="게하ㆍ한옥"
+                            android:textColor="@color/black"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@+id/home_icon_guest_house"
+                            app:layout_constraintStart_toStartOf="@+id/home_icon_guest_house" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/home_activity"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/home_icon_activity"
+                            android:layout_width="@dimen/home_icon_width"
+                            android:layout_height="@dimen/home_icon_height"
+                            android:src="@drawable/home_icon_activity"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/home_top_icon_mobile_ticket" />
+
+                        <TextView
+                            android:id="@+id/home_text_activity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="엑티비티"
+                            android:textColor="@color/black"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@+id/home_icon_activity"
+                            app:layout_constraintStart_toStartOf="@+id/home_icon_activity"
+                            app:layout_constraintTop_toBottomOf="@+id/home_icon_activity" />
+
+                        <ImageView
+                            android:id="@+id/home_top_icon_mobile_ticket"
+                            android:layout_width="@dimen/home_top_icon_width"
+                            android:layout_height="@dimen/home_top_icon_height"
+                            android:src="@drawable/home_mobil_ticket"
+                            app:layout_constraintBottom_toTopOf="@+id/home_icon_activity"
+                            app:layout_constraintEnd_toEndOf="@+id/home_icon_activity"
+                            app:layout_constraintStart_toStartOf="@+id/home_icon_activity"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/home_icon_marginbottom"
+                    android:layout_weight="1"
+                    android:weightSum="4">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/home_fav_motel"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/home_icon_game"
+                            android:layout_width="@dimen/home_icon_width"
+                            android:layout_height="@dimen/home_icon_height"
+                            android:src="@drawable/home_icon_game"
+                            app:layout_constraintBottom_toTopOf="@+id/home_text_game"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <TextView
+                            android:id="@+id/home_text_game"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="취향모텔"
+                            android:textColor="@color/black"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@+id/home_icon_game"
+                            app:layout_constraintStart_toStartOf="@+id/home_icon_game" />
+
+                        <ImageView
+                            android:id="@+id/home_top_icon_theme"
+                            android:layout_width="@dimen/home_top_icon_width"
+                            android:layout_height="@dimen/home_top_icon_height"
+                            android:src="@drawable/home_theme"
+                            app:layout_constraintBottom_toTopOf="@+id/home_icon_game"
+                            app:layout_constraintEnd_toEndOf="@+id/home_icon_game"
+                            app:layout_constraintStart_toStartOf="@+id/home_icon_game"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/home_kid"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/home_icon_kid"
+                            android:layout_width="@dimen/home_icon_width"
+                            android:layout_height="@dimen/home_icon_height"
+                            android:src="@drawable/home_icon_kid"
+                            app:layout_constraintBottom_toTopOf="@+id/home_text_kid"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <TextView
+                            android:id="@+id/home_text_kid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="아이랑"
+                            android:textColor="@color/black"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@+id/home_icon_kid"
+                            app:layout_constraintStart_toStartOf="@+id/home_icon_kid" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/home_pet"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/home_icon_pet"
+                            android:layout_width="@dimen/home_icon_width"
+                            android:layout_height="@dimen/home_icon_height"
+                            android:src="@drawable/home_icon_pet"
+                            app:layout_constraintBottom_toTopOf="@+id/home_text_pet"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <TextView
+                            android:id="@+id/home_text_pet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="반려견이랑"
+                            android:textColor="@color/black"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@+id/home_icon_pet"
+                            app:layout_constraintStart_toStartOf="@+id/home_icon_pet" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/home_mango"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/home_icon_mango"
+                            android:layout_width="@dimen/home_icon_width"
+                            android:layout_height="@dimen/home_icon_height"
+                            android:src="@drawable/home_icon_mango"
+                            app:layout_constraintBottom_toTopOf="@+id/home_text_mango"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <TextView
+                            android:id="@+id/home_text_mango"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="망고플레이트"
+                            android:textColor="@color/black"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@+id/home_icon_mango"
+                            app:layout_constraintStart_toStartOf="@+id/home_icon_mango" />
+
+                        <ImageView
+                            android:id="@+id/home_top_icon_tasty_sale"
+                            android:layout_width="@dimen/home_top_icon_width"
+                            android:layout_height="@dimen/home_top_icon_height"
+                            android:src="@drawable/home_tasty_sale"
+                            app:layout_constraintBottom_toTopOf="@+id/home_icon_mango"
+                            app:layout_constraintEnd_toEndOf="@+id/home_icon_mango"
+                            app:layout_constraintStart_toStartOf="@+id/home_icon_mango"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/home_icon_marginbottom"
+                    android:layout_weight="1"
+                    android:weightSum="4">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/home_sale"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/home_icon_sale"
+                            android:layout_width="@dimen/home_icon_width"
+                            android:layout_height="@dimen/home_icon_height"
+                            android:src="@drawable/home_icon_sale"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/home_top_icon_low_price" />
+
+                        <TextView
+                            android:id="@+id/home_text_sale"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="단독할인"
+                            android:textColor="@color/black"
+                            app:layout_constraintEnd_toEndOf="@+id/home_icon_sale"
+                            app:layout_constraintStart_toStartOf="@+id/home_icon_sale"
+                            app:layout_constraintTop_toBottomOf="@+id/home_icon_sale" />
+
+                        <ImageView
+                            android:id="@+id/home_top_icon_low_price"
+                            android:layout_width="@dimen/home_top_icon_width"
+                            android:layout_height="@dimen/home_top_icon_height"
+                            android:src="@drawable/home_low_price"
+                            app:layout_constraintBottom_toTopOf="@+id/home_icon_sale"
+                            app:layout_constraintEnd_toEndOf="@+id/home_icon_sale"
+                            app:layout_constraintStart_toStartOf="@+id/home_icon_sale"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/home_free_cancel"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/home_icon_safe"
+                            android:layout_width="@dimen/home_icon_width"
+                            android:layout_height="@dimen/home_icon_height"
+                            android:src="@drawable/home_icon_safe"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/home_top_icon_safe" />
+
+                        <TextView
+                            android:id="@+id/home_text_safe"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="무료취소룸"
+                            android:textColor="@color/black"
+                            app:layout_constraintEnd_toEndOf="@+id/home_icon_safe"
+                            app:layout_constraintStart_toStartOf="@+id/home_icon_safe"
+                            app:layout_constraintTop_toBottomOf="@+id/home_icon_safe" />
+
+                        <ImageView
+                            android:id="@+id/home_top_icon_safe"
+                            android:layout_width="@dimen/home_top_icon_width"
+                            android:layout_height="@dimen/home_top_icon_height"
+                            android:src="@drawable/home_safe"
+                            app:layout_constraintBottom_toTopOf="@+id/home_icon_safe"
+                            app:layout_constraintEnd_toEndOf="@+id/home_icon_safe"
+                            app:layout_constraintStart_toStartOf="@+id/home_icon_safe"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/home_jeju"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/home_icon_jeju"
+                            android:layout_width="@dimen/home_icon_width"
+                            android:layout_height="@dimen/home_icon_height"
+                            android:src="@drawable/home_icon_jeju"
+                            app:layout_constraintBottom_toTopOf="@+id/home_text_jeju"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <TextView
+                            android:id="@+id/home_text_jeju"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="제주여행"
+                            android:textColor="@color/black"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@+id/home_icon_jeju"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="@+id/home_icon_jeju" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/home_sale_motel"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/home_icon_sale_motel"
+                            android:layout_width="@dimen/home_icon_width"
+                            android:layout_height="@dimen/home_icon_height"
+                            android:src="@drawable/home_icon_salemotel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/home_top_icon_chance" />
+
+                        <TextView
+                            android:id="@+id/home_text_sale_motel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="할인모텔"
+                            android:textColor="@color/black"
+                            app:layout_constraintEnd_toEndOf="@+id/home_icon_sale_motel"
+                            app:layout_constraintStart_toStartOf="@+id/home_icon_sale_motel"
+                            app:layout_constraintTop_toBottomOf="@+id/home_icon_sale_motel" />
+
+                        <ImageView
+                            android:id="@+id/home_top_icon_chance"
+                            android:layout_width="@dimen/home_top_icon_width"
+                            android:layout_height="@dimen/home_top_icon_height"
+                            android:src="@drawable/home_chance"
+                            app:layout_constraintBottom_toTopOf="@+id/home_icon_sale_motel"
+                            app:layout_constraintEnd_toEndOf="@+id/home_icon_sale_motel"
+                            app:layout_constraintStart_toStartOf="@+id/home_icon_sale_motel"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </TableRow>
+
+
+            </TableLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/home_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                app:layout_constraintTop_toBottomOf="@+id/home_icon_table"
+                tools:layout_editor_absoluteX="16dp">
+
+                <ImageButton
+                    android:id="@+id/home_btn_coupon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:src="@drawable/home_btn_coupon"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/home_btn_event"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_weight="0.5" />
+
+                <ImageButton
+                    android:id="@+id/home_btn_event"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:src="@drawable/home_btn_event"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/home_btn_coupon"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_weight="0.5" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/home_imageview"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:src="@drawable/home_page1"
+                android:scaleType="centerCrop"
+                app:layout_constraintTop_toBottomOf="@+id/home_btn" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/activity_vertical_margin"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                android:scaleType="centerCrop"
+                android:src="@drawable/home_new_join_coupon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/home_imageview" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:text="최근 본 상품"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+            <!--<androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                app:layout_constraintEnd_toEndOf="@+id/textView"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/textView" >
+
+
+
+
+            </androidx.recyclerview.widget.RecyclerView>-->
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
