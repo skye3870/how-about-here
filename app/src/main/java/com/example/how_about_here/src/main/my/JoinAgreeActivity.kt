@@ -14,6 +14,10 @@ class JoinAgreeActivity : BaseActivity<ActivityJoinAgreeBinding>(ActivityJoinAgr
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        binding.agree.setOnClickListener(){
+            val intent = Intent(this, JoinAgreeActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 

@@ -4,23 +4,18 @@ import android.content.Intent
 import android.os.Bundle
 import com.example.how_about_here.R
 import com.example.how_about_here.config.BaseActivity
+import com.example.how_about_here.databinding.ActivityCouponPopupBinding.inflate
+import com.example.how_about_here.databinding.ActivityJoinAgreeBinding
+import com.example.how_about_here.databinding.ActivityJoinFormBinding
 import com.example.how_about_here.databinding.ActivityJoinLoginBinding
 import com.example.how_about_here.databinding.ActivityMainBinding
 
 
-class JoinLoginActivity : BaseActivity<ActivityJoinLoginBinding>(ActivityJoinLoginBinding::inflate) {
+class JoinFormActivity : BaseActivity<ActivityJoinFormBinding>(ActivityJoinFormBinding::inflate) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding.joinEmail.setOnClickListener(){
-            //이메일로 가입
-            val intent = Intent(this, JoinAgreeActivity::class.java)
-            startActivity(intent)
-        }
 
-        binding.myBtnLoginKakao.setOnClickListener(){
-            //카카오로그인 연동
-        }
 
     }
 
