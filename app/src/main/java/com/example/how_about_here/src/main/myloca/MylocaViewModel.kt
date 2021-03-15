@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 class MylocaViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is dashboard Fragment"
+        value = "This is myloca Fragment"
     }
     val text: LiveData<String> = _text
 }

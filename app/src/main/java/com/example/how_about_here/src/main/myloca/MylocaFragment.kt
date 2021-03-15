@@ -9,23 +9,14 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.how_about_here.R
+import com.example.how_about_here.config.BaseFragment
+import com.example.how_about_here.databinding.FragmentMyLocaBinding
 
-class MylocaFragment : Fragment() {
+class MylocaFragment :
+    BaseFragment<FragmentMyLocaBinding>(FragmentMyLocaBinding::bind, R.layout.fragment_my_loca) {
 
-    private lateinit var dashboardViewModel: MylocaViewModel
+        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+            super.onViewCreated(view, savedInstanceState)
+        }
 
-    override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? {
-        dashboardViewModel =
-                ViewModelProvider(this).get(MylocaViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
-        val textView: TextView = root.findViewById(R.id.text_dashboard)
-        dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
-        return root
-    }
 }

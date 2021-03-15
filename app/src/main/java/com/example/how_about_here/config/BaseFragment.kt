@@ -1,6 +1,7 @@
 package com.example.how_about_here.config
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,6 +17,7 @@ abstract class BaseFragment<B : ViewBinding>(
     private val bind: (View) -> B,
     @LayoutRes layoutResId: Int
 ) : Fragment(layoutResId) {
+
     private var _binding: B? = null
     lateinit var mLoadingDialog: LoadingDialog
 
@@ -49,4 +51,7 @@ abstract class BaseFragment<B : ViewBinding>(
             mLoadingDialog.dismiss()
         }
     }
+
+
+
 }
