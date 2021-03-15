@@ -28,7 +28,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.How_about_here.NoActionBar" />
         <activity android:name=".src.main.HomeCouponPopupActivity"/>
-        <activity android:name=".src.main.JoinLoginActivity"/>
+        <activity android:name=".src.main.my.JoinLoginActivity"/>
     </application>
 
 </manifest>
