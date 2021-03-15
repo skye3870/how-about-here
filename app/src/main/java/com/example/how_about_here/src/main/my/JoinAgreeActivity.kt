@@ -11,11 +11,12 @@ import com.example.how_about_here.databinding.ActivityMainBinding
 
 class JoinAgreeActivity : BaseActivity<ActivityJoinAgreeBinding>(ActivityJoinAgreeBinding::inflate) {
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding.agree.setOnClickListener(){
-            val intent = Intent(this, JoinAgreeActivity::class.java)
+            val intent = Intent(this, JoinFormActivity::class.java)
             startActivity(intent)
         }
 
