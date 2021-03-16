@@ -23,6 +23,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:host="oauth"
+                    android:scheme="kakao7ac7170e8621f04617fcd208ce7d9eb3" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".src.main.MainActivity"
             android:screenOrientation="portrait"
@@ -31,7 +40,10 @@
         <activity android:name=".src.main.my.JoinLoginActivity"/>
         <activity android:name=".src.main.my.JoinAgreeActivity"/>
         <activity android:name=".src.main.my.JoinFormActivity"/>
-<activity android:name=".src.main.my.JoinSuccessActivity"/>
+        <activity android:name=".src.main.my.JoinSuccessActivity"/>
+
+        <meta-data android:name="com.kakao.sdk.AppKey"
+            android:value="@string/kakao_app_key" />
     </application>
 
 </manifest>
