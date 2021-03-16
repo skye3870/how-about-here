@@ -16,6 +16,7 @@ class JoinLoginActivity : BaseActivity<ActivityJoinLoginBinding>(ActivityJoinLog
             //이메일로 가입
             val intent = Intent(this, JoinAgreeActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         binding.myBtnLoginKakao.setOnClickListener(){

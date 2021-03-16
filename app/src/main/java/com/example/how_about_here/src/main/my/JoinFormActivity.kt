@@ -19,6 +19,7 @@ class JoinFormActivity : BaseActivity<ActivityJoinFormBinding>(ActivityJoinFormB
         binding.agree.setOnClickListener(){
             val intent = Intent(this, JoinSuccessActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 
