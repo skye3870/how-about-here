@@ -2,14 +2,18 @@ package com.example.how_about_here.src.main.my
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import com.example.how_about_here.R
 import com.example.how_about_here.config.BaseActivity
 import com.example.how_about_here.databinding.ActivityJoinLoginBinding
 import com.example.how_about_here.databinding.ActivityMainBinding
+import com.example.how_about_here.src.main.MainActivity
 import com.kakao.sdk.auth.LoginClient
 import com.kakao.sdk.auth.model.OAuthToken
+import com.kakao.sdk.common.KakaoSdk
 import com.kakao.sdk.common.model.AuthErrorCause
+import com.kakao.sdk.user.UserApiClient
 
 
 class JoinLoginActivity : BaseActivity<ActivityJoinLoginBinding>(ActivityJoinLoginBinding::inflate) {
@@ -22,8 +26,8 @@ class JoinLoginActivity : BaseActivity<ActivityJoinLoginBinding>(ActivityJoinLog
             startActivity(intent)
             finish()
         }
-
-
+            //카카오 초기화
+            KakaoSdk.init(this, "7ac7170e8621f04617fcd208ce7d9eb3")
             //카카오로그인 연동
             val callback: (OAuthToken?, Throwable?) -> Unit = { token, error ->
                 if (error != null) {
@@ -60,8 +64,32 @@ class JoinLoginActivity : BaseActivity<ActivityJoinLoginBinding>(ActivityJoinLog
                 else if (token != null) {
                     //Toast.makeText(this, "로그인에 성공하였습니다.", Toast.LENGTH_SHORT).show()
 
-                    val intent = Intent(this, JoinSuccessActivity::class.java)
+                    val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
+/****************************************************************************************************************/
+                    //카카오 로그인 정보 받아오기
+                    UserApiClient.instance.me { user, error ->
+                        if (error != null) {
+                            Log.d("TAG", "사용자 정보 요청 실패", error)
+                        }
+                        else if (user != null) {
+                            Log.d("TAG", "사용자 정보 요청 성공" +
+                                    "\n회원번호: ${user.id}" +
+                                    "\n이메일: ${user.kakaoAccount?.email}" +
+                                    "\n닉네임: ${user.kakaoAccount?.profile?.nickname}" +
+                                    "\n프로필사진: ${user.kakaoAccount?.profile?.thumbnailImageUrl}")
+                            Toast.makeText(this, "${user.kakaoAccount?.profile?.nickname} " +
+                                    "님 로그인에 성공하였습니다.", Toast.LENGTH_SHORT).show()
+                           /* var bitmap=user.kakaoAccount?.profile?.thumbnailImageUrl
+                            if (bitmap !== null) {
+                                Glide.with(this)
+                                    .load(bitmap)
+                                    .into(binding.profile)
+                            } else {
+                                binding.profile.setImageResource(0)
+                            }*/
+                        }
+                    }
                 }
             }
 

@@ -20,6 +20,44 @@
         app:srcCompat="@drawable/kakao_login" />
 
     <ImageView
+        android:id="@+id/my_btn_login_email"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:layout_marginTop="348dp"
+        android:layout_marginRight="@dimen/activity_vertical_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:srcCompat="@drawable/email_login" />
+
+    <ImageView
+        android:id="@+id/my_btn_login_facebook"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:layout_marginTop="200dp"
+        android:layout_marginRight="@dimen/activity_vertical_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:srcCompat="@drawable/facebook_login" />
+
+    <ImageView
+        android:id="@+id/my_btn_login_naver"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:layout_marginTop="272dp"
+        android:layout_marginRight="@dimen/activity_vertical_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.812"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:srcCompat="@drawable/naver_login" />
+
+    <ImageView
         android:id="@+id/imageView4"
         android:layout_width="109dp"
         android:layout_height="16dp"
@@ -45,8 +83,7 @@
         android:id="@+id/join_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginEnd="4dp"
         android:text="이메일로 가입"
 
         android:textColor="@color/black"
@@ -54,14 +91,13 @@
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintEnd_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/join_company"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="4dp"
 
         android:text="기업회원 가입"
 
@@ -70,12 +106,13 @@
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:text="|"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
