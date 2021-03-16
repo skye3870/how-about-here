@@ -20,12 +20,7 @@ class JoinLoginActivity : BaseActivity<ActivityJoinLoginBinding>(ActivityJoinLog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding.joinEmail.setOnClickListener(){
-            //이메일로 가입
-            val intent = Intent(this, JoinAgreeActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
+
             //카카오 초기화
             KakaoSdk.init(this, "7ac7170e8621f04617fcd208ce7d9eb3")
             //카카오로그인 연동
@@ -101,7 +96,18 @@ class JoinLoginActivity : BaseActivity<ActivityJoinLoginBinding>(ActivityJoinLog
                 LoginClient.instance.loginWithKakaoAccount(this, callback = callback)
                 //}
             }
-
+            binding.joinEmail.setOnClickListener(){
+            //이메일로 가입
+            val intent = Intent(this, JoinAgreeActivity::class.java)
+            startActivity(intent)
+            finish()
+            }
+        binding.myBtnLoginEmail.setOnClickListener(){
+            //이메일로 로그인
+            val intent = Intent(this, LoginEmailActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
     }
 

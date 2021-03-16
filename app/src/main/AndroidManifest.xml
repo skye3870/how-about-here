@@ -41,7 +41,7 @@
         <activity android:name=".src.main.my.JoinAgreeActivity"/>
         <activity android:name=".src.main.my.JoinFormActivity"/>
         <activity android:name=".src.main.my.JoinSuccessActivity"/>
-
+        <activity android:name=".src.main.my.LoginEmailActivity"/>
         <meta-data android:name="com.kakao.sdk.AppKey"
             android:value="@string/kakao_app_key" />
     </application>

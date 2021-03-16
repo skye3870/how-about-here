@@ -21,7 +21,7 @@ class HomeFragment :
         super.onViewCreated(view, savedInstanceState)
 
         binding.homeHotel.setOnClickListener { view ->
-            Log.d("home_hotel", "Selected")
+
 
 
         }
