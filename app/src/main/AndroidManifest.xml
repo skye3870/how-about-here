@@ -31,7 +31,7 @@
         <activity android:name=".src.main.my.JoinLoginActivity"/>
         <activity android:name=".src.main.my.JoinAgreeActivity"/>
         <activity android:name=".src.main.my.JoinFormActivity"/>
-
+<activity android:name=".src.main.my.JoinSuccessActivity"/>
     </application>
 
 </manifest>
