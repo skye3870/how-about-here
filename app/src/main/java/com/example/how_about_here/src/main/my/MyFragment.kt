@@ -7,7 +7,7 @@ import com.example.how_about_here.R
 import com.example.how_about_here.config.BaseFragment
 import com.example.how_about_here.databinding.FragmentMyBinding
 
-import com.example.how_about_here.src.main.my.JoinLoginActivity
+import com.example.how_about_here.src.main.join.JoinLoginActivity
 
 class MyFragment :
         BaseFragment<FragmentMyBinding>(FragmentMyBinding::bind, R.layout.fragment_my) {

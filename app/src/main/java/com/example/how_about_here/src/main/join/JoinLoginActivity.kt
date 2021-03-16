@@ -1,14 +1,13 @@
-package com.example.how_about_here.src.main.my
+package com.example.how_about_here.src.main.join
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import com.example.how_about_here.R
 import com.example.how_about_here.config.BaseActivity
 import com.example.how_about_here.databinding.ActivityJoinLoginBinding
-import com.example.how_about_here.databinding.ActivityMainBinding
 import com.example.how_about_here.src.main.MainActivity
+import com.example.how_about_here.src.main.my.LoginEmailActivity
 import com.kakao.sdk.auth.LoginClient
 import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.KakaoSdk

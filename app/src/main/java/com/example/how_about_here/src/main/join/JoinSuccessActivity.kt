@@ -1,4 +1,4 @@
-package com.example.how_about_here.src.main.my
+package com.example.how_about_here.src.main.join
 
 import android.content.Intent
 import android.os.Bundle

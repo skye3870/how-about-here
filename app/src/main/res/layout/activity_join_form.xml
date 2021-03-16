@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/activity_vertical_margin"
-    tools:context=".src.main.my.JoinFormActivity">
+    tools:context=".src.main.join.JoinFormActivity">
 
     <TextView
         android:id="@+id/text_info_form"

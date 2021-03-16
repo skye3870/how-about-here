@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".src.main.my.JoinAgreeActivity">
+    tools:context=".src.main.join.JoinAgreeActivity">
 
     <TextView
         android:id="@+id/textView8"

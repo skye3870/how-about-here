@@ -29,7 +29,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
                         supportFragmentManager.beginTransaction()
                             .replace(R.id.main_frm, HomeFragment())
                             .commitAllowingStateLoss()
-                        //return@OnNavigationItemSelectedListener true
+                        return@OnNavigationItemSelectedListener true
                     }
                     R.id.menu_main_btm_nav_search -> {
                         supportFragmentManager.beginTransaction()
