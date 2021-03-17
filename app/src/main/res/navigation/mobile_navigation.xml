@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.how_about_here.src.notifications.SearchFragment"
+        android:name="com.example.how_about_here.src.main.search.SearchFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
 </navigation>

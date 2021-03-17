@@ -542,7 +542,6 @@
                             android:textColor="@color/black"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="@+id/home_icon_jeju"
-                            app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toStartOf="@+id/home_icon_jeju" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -659,7 +658,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-            <!--<androidx.recyclerview.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 app:layout_constraintEnd_toEndOf="@+id/textView"
@@ -669,7 +668,7 @@
 
 
 
-            </androidx.recyclerview.widget.RecyclerView>-->
+            </androidx.recyclerview.widget.RecyclerView>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
