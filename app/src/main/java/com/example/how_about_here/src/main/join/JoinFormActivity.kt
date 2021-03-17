@@ -39,16 +39,9 @@ class JoinFormActivity : BaseActivity<ActivityJoinFormBinding>(ActivityJoinFormB
                 val nickname = binding.editTextNickName.text.toString()
                 val postRequest = PostSignUpRequest(email = email, password = password,
                         confirmPassword = password, nickname = nickname, phoneNumber = "")
-                showLoadingDialog(this).toString()
-                var success = showLoadingDialog(this).toString()
+                showLoadingDialog(this)
                 JoinService(this).tryPostSignUp(postRequest)
 
-            //success이면
-                /*if(success==) {
-                    val intent = Intent(this, JoinSuccessActivity::class.java)
-                    startActivity(intent)
-                    finish()
-                }*/
             }
         }
 
@@ -180,6 +173,11 @@ class JoinFormActivity : BaseActivity<ActivityJoinFormBinding>(ActivityJoinFormB
         dismissLoadingDialog()
         //binding.homeBtnTryPostHttpMethod.text = response.message
         response.message?.let { showCustomToast(it) }
+        if(response.message?.contains("성공") == true){
+        val intent = Intent(this, JoinSuccessActivity::class.java)
+        startActivity(intent)
+        finish()
+        }
     }
 
     override fun onPostSignUpFailure(message: String) {
