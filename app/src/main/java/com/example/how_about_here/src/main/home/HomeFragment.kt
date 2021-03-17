@@ -8,6 +8,8 @@ import android.text.TextUtils.replace
 import android.util.Log
 import android.view.View
 import androidx.databinding.DataBindingUtil.setContentView
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import com.example.how_about_here.R
 import com.example.how_about_here.config.BaseFragment
 import com.example.how_about_here.databinding.FragmentHomeBinding
@@ -20,11 +22,7 @@ class HomeFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.homeHotel.setOnClickListener { view ->
-            /*supportFragmentManager.beginTransaction()
-                .replace(R.id.main_frm, HomeFragment())
-                .commitAllowingStateLoss()*/
-
+        binding.homeHotel.setOnClickListener {
 
         }
 

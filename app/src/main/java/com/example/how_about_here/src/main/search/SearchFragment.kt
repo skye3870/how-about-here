@@ -22,7 +22,9 @@ class SearchFragment :
         super.onViewCreated(view, savedInstanceState)
 
         binding.imageButtonAcc.setOnClickListener(){
-            //binding.searchFrm.
+            childFragmentManager.beginTransaction()
+                .replace(R.id.search_frm, SearchAccFragment())
+                .commitAllowingStateLoss()
         }
     }
 }
