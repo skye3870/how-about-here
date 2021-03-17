@@ -11,6 +11,7 @@ import androidx.core.widget.addTextChangedListener
 import com.example.how_about_here.R
 import com.example.how_about_here.config.BaseActivity
 import com.example.how_about_here.databinding.ActivityJoinFormBinding
+import com.example.how_about_here.src.main.join.models.PostSignUpRequest
 import com.example.how_about_here.src.main.join.models.SignUpResponse
 import com.example.how_about_here.src.main.join.models.UserResponse
 
@@ -21,10 +22,26 @@ class JoinFormActivity : BaseActivity<ActivityJoinFormBinding>(ActivityJoinFormB
         super.onCreate(savedInstanceState)
 
         binding.agree.setOnClickListener {
-            //이메일 중복검사
+            //회원정보 가져오기
+            /*showLoadingDialog(this)
+            JoinService(this).tryGetUsers()*/
+            //api add 회원가입
+            val email = binding.editTextEmail.text.toString()
+            val password = binding.editTextPassword.text.toString()
+            val nickname = binding.editTextNickName.text.toString()
+            val postRequest = PostSignUpRequest(email = email, password = password,
+                    confirmPassword = password, nickname = nickname, phoneNumber = "")
+            showLoadingDialog(this)
+            JoinService(this).tryPostSignUp(postRequest)
 
-            val intent = Intent(this, JoinSuccessActivity::class.java)
-            startActivity(intent)
+
+
+
+
+
+
+            /*val intent = Intent(this, JoinSuccessActivity::class.java)
+            startActivity(intent)*/
             //finish()
         }
 
@@ -111,7 +128,7 @@ class JoinFormActivity : BaseActivity<ActivityJoinFormBinding>(ActivityJoinFormB
     override fun onGetUserSuccess(response: UserResponse) {
         dismissLoadingDialog()
         for (User in response.result) {
-            Log.d("HomeFragment", User.toString())
+            Log.d("/users", User.toString())
         }
         //binding.homeButtonTryGetJwt.text = response.message
         showCustomToast("Get JWT 성공")
