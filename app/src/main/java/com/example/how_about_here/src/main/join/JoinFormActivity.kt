@@ -20,33 +20,39 @@ class JoinFormActivity : BaseActivity<ActivityJoinFormBinding>(ActivityJoinFormB
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        var password :String?=null
+        var password_check :String?=null
+        var password_bool : Boolean =false
+        var email_bool : Boolean =false
+
+        if(password_bool && email_bool) {
+            binding.agree.setCardBackgroundColor(Color.BLUE)}
 
         binding.agree.setOnClickListener {
             //회원정보 가져오기
             /*showLoadingDialog(this)
             JoinService(this).tryGetUsers()*/
             //api add 회원가입
-            val email = binding.editTextEmail.text.toString()
-            val password = binding.editTextPassword.text.toString()
-            val nickname = binding.editTextNickName.text.toString()
-            val postRequest = PostSignUpRequest(email = email, password = password,
-                    confirmPassword = password, nickname = nickname, phoneNumber = "")
-            showLoadingDialog(this)
-            JoinService(this).tryPostSignUp(postRequest)
+            if(password_bool && email_bool) {
+                val email = binding.editTextEmail.text.toString()
+                val password = binding.editTextPassword.text.toString()
+                val nickname = binding.editTextNickName.text.toString()
+                val postRequest = PostSignUpRequest(email = email, password = password,
+                        confirmPassword = password, nickname = nickname, phoneNumber = "")
+                showLoadingDialog(this).toString()
+                var success = showLoadingDialog(this).toString()
+                JoinService(this).tryPostSignUp(postRequest)
 
-
-
-
-
-
-
-            /*val intent = Intent(this, JoinSuccessActivity::class.java)
-            startActivity(intent)*/
-            //finish()
+            //success이면
+                /*if(success==) {
+                    val intent = Intent(this, JoinSuccessActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }*/
+            }
         }
 
-        /*var password :String?=null
-        var password_check :String?=null
+
 
 
         binding.editTextEmail.addTextChangedListener(object: TextWatcher {
@@ -62,10 +68,12 @@ class JoinFormActivity : BaseActivity<ActivityJoinFormBinding>(ActivityJoinFormB
                     binding.textViewEmailWarning.setTextColor(Color.GRAY)
                     binding.textViewEmailWarning.error = null
                     binding.textViewEmailWarning.text = "사용가능한 이메일 주소 입니다."
+                    email_bool=true
                 }else{
                     binding.textViewEmailWarning.setTextColor(Color.RED)
                     binding.textViewEmailWarning.text = "이메일 주소를 확인해 주세요."
                     binding.textViewEmailWarning.error = "Invalid email."
+                    email_bool=false
                 }
             }
 
@@ -87,15 +95,18 @@ class JoinFormActivity : BaseActivity<ActivityJoinFormBinding>(ActivityJoinFormB
                     binding.textViewPasswordWarning.setTextColor(Color.GRAY)
                     binding.textViewPasswordWarning.error = null
                     binding.textViewPasswordWarning.text = "사용가능한 비밀번호 입니다."
+                    password_bool=true
 
                 }else{
                     binding.textViewPasswordWarning.setTextColor(Color.RED)
                     binding.textViewPasswordWarning.text = "사용불가 : 최고 8자 이상 입력해 주세요."
                     binding.textViewPasswordWarning.error = "Invalid email."
+                    password_bool=false
                 }
             }
             override fun afterTextChanged(p0: Editable?) { }
         })
+
 
         binding.editTextPasswordCheck.addTextChangedListener(object: TextWatcher {
             //비밀번호 일치
@@ -117,14 +128,40 @@ class JoinFormActivity : BaseActivity<ActivityJoinFormBinding>(ActivityJoinFormB
                 }
             }
             override fun afterTextChanged(p0: Editable?) { }
-        })*/
+        })
+
+        binding.editTextNickName.addTextChangedListener(object: TextWatcher {
+            //닉네임
+            override fun beforeTextChanged(p0: CharSequence?,
+                                           p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?,
+                                       p1: Int, p2: Int, p3: Int) {
+                var password_leng=binding.editTextPassword.length()
+                password=binding.editTextPassword.text.toString()
+                // check inputted text that it is a valid email address or not
+                if (password_leng>=8){
+                    binding.textViewPasswordWarning.setTextColor(Color.GRAY)
+                    binding.textViewPasswordWarning.error = null
+                    binding.textViewPasswordWarning.text = "사용가능한 비밀번호 입니다."
+                    password_bool=true
+
+                }else{
+                    binding.textViewPasswordWarning.setTextColor(Color.RED)
+                    binding.textViewPasswordWarning.text = "사용불가 : 최고 8자 이상 입력해 주세요."
+                    binding.textViewPasswordWarning.error = "Invalid email."
+                    password_bool=false
+                }
+            }
+            override fun afterTextChanged(p0: Editable?) { }
+        })
     }
 
-
-
-    /*fun CharSequence?.isValidEmail():Boolean{
+    fun CharSequence?.isValidEmail():Boolean{
         return !isNullOrEmpty() && Patterns.EMAIL_ADDRESS.matcher(this).matches()
-    }*/
+    }
+
     override fun onGetUserSuccess(response: UserResponse) {
         dismissLoadingDialog()
         for (User in response.result) {
@@ -150,4 +187,7 @@ class JoinFormActivity : BaseActivity<ActivityJoinFormBinding>(ActivityJoinFormB
         showCustomToast("오류 : $message")
     }
 
+
+
 }
+

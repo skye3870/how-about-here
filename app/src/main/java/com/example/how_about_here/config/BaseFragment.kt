@@ -1,7 +1,6 @@
 package com.example.how_about_here.config
 
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +9,7 @@ import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
+import com.example.how_about_here.util.LoadingDialog
 
 
 // Fragment의 기본을 작성, 뷰 바인딩 활용

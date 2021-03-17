@@ -1,4 +1,4 @@
-package com.example.how_about_here.config
+package com.example.how_about_here.util
 import android.app.Dialog
 import android.content.Context
 import android.graphics.drawable.ColorDrawable
