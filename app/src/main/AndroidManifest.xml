@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.how_about_here">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -14,7 +15,7 @@
         android:theme="@style/Theme.How_about_here.NoActionBar"
         >
         <activity
-            android:name=".src.splash.SplashActivity"
+            android:name=".src.main.join.JoinFormActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.How_about_here.NoActionBar">
             <intent-filter>
@@ -39,7 +40,8 @@
         <activity android:name=".src.main.HomeCouponPopupActivity"/>
         <activity android:name=".src.main.join.JoinLoginActivity"/>
         <activity android:name=".src.main.join.JoinAgreeActivity"/>
-        <activity android:name=".src.main.join.JoinFormActivity"/>
+       <!-- <activity android:name=".src.main.join.JoinFormActivity"
+            tools:ignore="Instantiatable" />-->
         <activity android:name=".src.main.join.JoinSuccessActivity"/>
         <activity android:name=".src.main.my.LoginEmailActivity"/>
         <meta-data android:name="com.kakao.sdk.AppKey"
