@@ -40,7 +40,7 @@
         <activity android:name=".src.main.HomeCouponPopupActivity"/>
         <activity android:name=".src.main.join.JoinLoginActivity"/>
         <activity android:name=".src.main.join.JoinAgreeActivity"/>
-        <activity android:name=".src.main.join.JoinFormActivity"
+        <activity android:name=".src.main.joinForm.JoinFormActivity"
             tools:ignore="Instantiatable" />
         <!--<activity android:name=".src.splash.SplashActivity"/>-->
         <activity android:name=".src.main.join.JoinSuccessActivity"/>

@@ -23,9 +23,14 @@ class HomeFragment :
         super.onViewCreated(view, savedInstanceState)
 
         binding.homeHotel.setOnClickListener {
-
+            parentFragmentManager.beginTransaction()
+                    .replace(R.id.main_frm, HotelFragment())
+                    .commitAllowingStateLoss()
         }
 
+        binding.motelFragment.textViewMotel.setOnClickListener {
+            binding.scrollView.smoothScrollTo(0, 5000)
+        }
 
     }
 

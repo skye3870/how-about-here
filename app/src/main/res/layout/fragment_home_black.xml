@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/empty"
+        android:layout_width="match_parent"
+        android:background="#E6E9F3"
+        android:layout_height="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/empty"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:id="@+id/textView_motel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:text="@string/motel"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </TextView>
+
+
+            <TextView
+                android:id="@+id/textView_hotel_resort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:text="@string/hotel_resort"
+                app:layout_constraintBottom_toBottomOf="@+id/textView_motel"
+                app:layout_constraintStart_toEndOf="@+id/textView_motel"
+                app:layout_constraintTop_toTopOf="@+id/textView_motel" />
+            <TextView
+                android:id="@+id/textView_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:text="@string/black"
+                android:background="@color/colorPrimaryDark"
+                app:layout_constraintBottom_toBottomOf="@+id/textView_motel"
+                app:layout_constraintStart_toEndOf="@+id/textView_hotel_resort"
+                app:layout_constraintTop_toTopOf="@+id/textView_motel" />
+            <TextView
+                android:id="@+id/textView_pension_camp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:text="@string/pension_camp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView_motel"
+                app:layout_constraintStart_toEndOf="@+id/textView_black"
+                app:layout_constraintTop_toTopOf="@+id/textView_motel" />
+            <TextView
+                android:id="@+id/textView_guest_korean"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/guest_korean"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                app:layout_constraintBottom_toBottomOf="@+id/textView_motel"
+                app:layout_constraintStart_toEndOf="@+id/textView_pension_camp"
+                app:layout_constraintTop_toTopOf="@+id/textView_motel" />
+            <TextView
+                android:id="@+id/textView_event"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/event"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                app:layout_constraintBottom_toBottomOf="@+id/textView_motel"
+                app:layout_constraintStart_toEndOf="@+id/textView_guest_korean"
+                app:layout_constraintTop_toTopOf="@+id/textView_motel" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </HorizontalScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

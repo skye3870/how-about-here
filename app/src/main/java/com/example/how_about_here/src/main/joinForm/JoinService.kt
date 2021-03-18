@@ -1,9 +1,9 @@
-package com.example.how_about_here.src.main.join
+package com.example.how_about_here.src.main.joinForm
 
 import com.example.how_about_here.config.ApplicationClass
-import com.example.how_about_here.src.main.join.models.PostSignUpRequest
-import com.example.how_about_here.src.main.join.models.SignUpResponse
-import com.example.how_about_here.src.main.join.models.UserResponse
+import com.example.how_about_here.src.main.joinForm.models.PostSignUpRequest
+import com.example.how_about_here.src.main.joinForm.models.SignUpResponse
+import com.example.how_about_here.src.main.joinForm.models.UserResponse
 
 
 import retrofit2.Call

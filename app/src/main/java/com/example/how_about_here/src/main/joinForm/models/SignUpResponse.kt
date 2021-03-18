@@ -1,4 +1,4 @@
-package com.example.how_about_here.src.main.join.models
+package com.example.how_about_here.src.main.joinForm.models
 
 import com.example.how_about_here.config.BaseResponse
 import com.google.gson.annotations.SerializedName

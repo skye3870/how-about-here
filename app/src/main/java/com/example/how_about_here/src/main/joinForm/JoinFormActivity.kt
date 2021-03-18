@@ -1,4 +1,4 @@
-package com.example.how_about_here.src.main.join
+package com.example.how_about_here.src.main.joinForm
 
 import android.content.Intent
 import android.graphics.Color
@@ -7,13 +7,12 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.util.Patterns
-import androidx.core.widget.addTextChangedListener
-import com.example.how_about_here.R
 import com.example.how_about_here.config.BaseActivity
 import com.example.how_about_here.databinding.ActivityJoinFormBinding
-import com.example.how_about_here.src.main.join.models.PostSignUpRequest
-import com.example.how_about_here.src.main.join.models.SignUpResponse
-import com.example.how_about_here.src.main.join.models.UserResponse
+import com.example.how_about_here.src.main.join.JoinSuccessActivity
+import com.example.how_about_here.src.main.joinForm.models.PostSignUpRequest
+import com.example.how_about_here.src.main.joinForm.models.SignUpResponse
+import com.example.how_about_here.src.main.joinForm.models.UserResponse
 
 
 class JoinFormActivity : BaseActivity<ActivityJoinFormBinding>(ActivityJoinFormBinding::inflate),JoinFragmentView {

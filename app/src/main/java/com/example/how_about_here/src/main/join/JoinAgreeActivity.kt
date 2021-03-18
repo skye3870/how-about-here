@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import com.example.how_about_here.config.BaseActivity
 import com.example.how_about_here.databinding.ActivityJoinAgreeBinding
+import com.example.how_about_here.src.main.joinForm.JoinFormActivity
 
 
 class JoinAgreeActivity : BaseActivity<ActivityJoinAgreeBinding>(ActivityJoinAgreeBinding::inflate) {
@@ -15,9 +16,9 @@ class JoinAgreeActivity : BaseActivity<ActivityJoinAgreeBinding>(ActivityJoinAgr
         var checkbox2=0
         var checkbox3=0
         var checkbox4=0
-        var checkbox5=0
+        /*var checkbox5=0
         var checkbox6=0
-        var checkbox7=0
+        var checkbox7=0*/
 
         binding.agree.setOnClickListener {
             if(checkbox2==1&&checkbox3==1&&checkbox4==1) {

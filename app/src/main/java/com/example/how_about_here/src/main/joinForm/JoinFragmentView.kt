@@ -1,7 +1,7 @@
-package com.example.how_about_here.src.main.join
+package com.example.how_about_here.src.main.joinForm
 
-import com.example.how_about_here.src.main.join.models.SignUpResponse
-import com.example.how_about_here.src.main.join.models.UserResponse
+import com.example.how_about_here.src.main.joinForm.models.SignUpResponse
+import com.example.how_about_here.src.main.joinForm.models.UserResponse
 
 
 interface JoinFragmentView {

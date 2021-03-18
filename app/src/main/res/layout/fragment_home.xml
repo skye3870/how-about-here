@@ -9,6 +9,7 @@
 
 
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
@@ -501,7 +502,7 @@
                             android:id="@+id/home_text_safe"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="무료취소룸"
+                            android:text="@string/home_free_cancel"
                             android:textColor="@color/black"
                             app:layout_constraintEnd_toEndOf="@+id/home_icon_safe"
                             app:layout_constraintStart_toStartOf="@+id/home_icon_safe"
@@ -635,7 +636,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/home_btn" />
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/join_imageView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="@dimen/activity_vertical_margin"
@@ -645,34 +646,55 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/home_imageview" />
-
+<!---->
+        <include
+            android:id="@+id/current_fragment"
+            layout="@layout/fragment_home_current"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/join_imageView"
+            />
+            <include
+                android:id="@+id/motel_fragment"
+                layout="@layout/fragment_home_motel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/current_fragment"
+                />
+            <include
+                android:id="@+id/hotel_resort_fragment"
+                layout="@layout/fragment_home_hotel_resort"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/motel_fragment"
+                />
+            <include
+                android:id="@+id/black_fragment"
+                layout="@layout/fragment_home_black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hotel_resort_fragment"
+                />
             <TextView
-                android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/activity_vertical_margin"
-                android:text="최근 본 상품"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+                app:layout_constraintTop_toBottomOf="@id/black_fragment"
+                android:text="@string/term_of_service"/>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                app:layout_constraintEnd_toEndOf="@+id/textView"
-                app:layout_constraintStart_toStartOf="@+id/textView"
-                app:layout_constraintTop_toBottomOf="@+id/textView" >
-
-
-
-
-            </androidx.recyclerview.widget.RecyclerView>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
