@@ -37,10 +37,10 @@ class JoinFormActivity : BaseActivity<ActivityJoinFormBinding>(ActivityJoinFormB
                 val password = binding.editTextPassword.text.toString()
                 val nickname = binding.editTextNickName.text.toString()
                 val postRequest = PostSignUpRequest(email = email, password = password,
-                        confirmPassword = password, nickname = nickname, phoneNumber = "")
+                        confirmPassword = password, nickname = nickname, phoneNumber ="01011111111")
                 showLoadingDialog(this)
                 JoinService(this).tryPostSignUp(postRequest)
-
+            finish()
             }
         }
 

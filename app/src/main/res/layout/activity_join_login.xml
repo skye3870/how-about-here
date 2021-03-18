@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".src.main.join.JoinLoginActivity">
+    tools:context=".src.main.login.JoinLoginKakaoActivity">
 
 
     <ImageView
@@ -72,7 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="84dp"
-        android:text="계정이 없으신가요?"
+        android:text="@string/no_id"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -84,7 +84,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="4dp"
-        android:text="이메일로 가입"
+        android:text="@string/join_email"
 
         android:textColor="@color/black"
         android:textSize="20dp"
@@ -99,7 +99,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
 
-        android:text="기업회원 가입"
+        android:text="@string/join_company"
 
         android:textColor="@color/black"
         android:textSize="20dp"

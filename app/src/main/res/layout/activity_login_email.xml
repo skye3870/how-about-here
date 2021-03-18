@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/activity_vertical_margin"
-    tools:context=".src.main.my.LoginEmailActivity">
+    tools:context=".src.main.login.LoginEmailActivity">
 
     <TextView
         android:id="@+id/textView_email"
@@ -18,7 +18,14 @@
         app:layout_constraintHorizontal_bias="0.781"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+        android:id="@+id/textView_email_warning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
 
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_email" />
     <TextView
         android:id="@+id/textView_password"
         android:layout_width="match_parent"

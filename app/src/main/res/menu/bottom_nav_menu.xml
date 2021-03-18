@@ -8,14 +8,15 @@
         app:showAsAction="always"
         android:enabled="true"
         android:checkable="true"
-        android:title="홈"/>
+        android:title="@string/home"
+        />
 
     <item
         android:id="@+id/menu_main_btm_nav_search"
         android:icon="@drawable/main_btm_nav_item_search"
         app:showAsAction="always"
         android:enabled="true"
-        android:title="검색" />
+        android:title="@string/search" />
 
     <item
         android:id="@+id/menu_main_btm_nav_my_loca"
@@ -23,20 +24,20 @@
         app:showAsAction="always"
         android:enabled="true"
         android:checkable="true"
-        android:title="내주변"/>
+        android:title="@string/my_loca"/>
     <item
         android:id="@+id/menu_main_btm_nav_my"
         android:icon="@drawable/main_btm_nav_item_my"
         app:showAsAction="always"
         android:enabled="true"
         android:checkable="true"
-        android:title="내정보"/>
+        android:title="@string/my"/>
     <item
         android:id="@+id/menu_main_btm_nav_more"
         android:icon="@drawable/main_btm_nav_item_more"
         app:showAsAction="always"
         android:enabled="true"
         android:checkable="true"
-        android:title="더보기"/>
+        android:title="@string/more"/>
 
 </menu>

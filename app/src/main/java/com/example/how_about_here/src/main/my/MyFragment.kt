@@ -7,7 +7,8 @@ import com.example.how_about_here.R
 import com.example.how_about_here.config.BaseFragment
 import com.example.how_about_here.databinding.FragmentMyBinding
 
-import com.example.how_about_here.src.main.join.JoinLoginActivity
+
+import com.example.how_about_here.src.main.login.JoinLoginKakaoActivity
 
 class MyFragment :
         BaseFragment<FragmentMyBinding>(FragmentMyBinding::bind, R.layout.fragment_my) {
@@ -16,7 +17,7 @@ class MyFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.joinLogin.setOnClickListener() {
-            val intent = Intent(context, JoinLoginActivity::class.java)
+            val intent = Intent(context, JoinLoginKakaoActivity::class.java)
             startActivity(intent)
         }
 

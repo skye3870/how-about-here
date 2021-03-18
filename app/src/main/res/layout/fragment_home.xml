@@ -13,9 +13,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <ImageView
                 android:id="@+id/home_logo_how_about_here"
                 android:layout_width="126dp"
@@ -30,8 +32,8 @@
                 android:id="@+id/home_icon_table"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
                 android:layout_marginLeft="@dimen/activity_vertical_margin"
+                android:layout_marginTop="30dp"
                 android:layout_marginRight="@dimen/activity_vertical_margin"
                 android:weightSum="4"
                 app:layout_constraintTop_toBottomOf="@+id/home_logo_how_about_here"
@@ -627,12 +629,12 @@
             <ImageView
                 android:id="@+id/home_imageview"
                 android:layout_width="match_parent"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:scaleType="centerCrop"
+                android:src="@drawable/home_auto_slide1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:src="@drawable/home_page1"
-                android:scaleType="centerCrop"
                 app:layout_constraintTop_toBottomOf="@+id/home_btn" />
 
             <ImageView
@@ -646,16 +648,16 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/home_imageview" />
-<!---->
-        <include
-            android:id="@+id/current_fragment"
-            layout="@layout/fragment_home_current"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/join_imageView"
-            />
+            <!---->
+            <include
+                android:id="@+id/current_fragment"
+                layout="@layout/fragment_home_current"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/join_imageView" />
+
             <include
                 android:id="@+id/motel_fragment"
                 layout="@layout/fragment_home_motel"
@@ -663,8 +665,8 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/current_fragment"
-                />
+                app:layout_constraintTop_toBottomOf="@id/current_fragment" />
+
             <include
                 android:id="@+id/hotel_resort_fragment"
                 layout="@layout/fragment_home_hotel_resort"
@@ -672,8 +674,8 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/motel_fragment"
-                />
+                app:layout_constraintTop_toBottomOf="@id/motel_fragment" />
+
             <include
                 android:id="@+id/black_fragment"
                 layout="@layout/fragment_home_black"
@@ -681,17 +683,17 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/hotel_resort_fragment"
-                />
+                app:layout_constraintTop_toBottomOf="@id/hotel_resort_fragment" />
+
             <TextView
+                android:id="@+id/textView18"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/activity_vertical_margin"
+                android:text="@string/term_of_service"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/black_fragment"
-                android:text="@string/term_of_service"/>
-
+                app:layout_constraintTop_toBottomOf="@id/black_fragment" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

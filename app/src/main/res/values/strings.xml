@@ -14,5 +14,16 @@
     <string name="term_of_service">이용약관 개인정보처리방침 사업자 정보확인
         (주)여기어때컴퍼니는 통신판매중개자로서 통신판매의 당사자가 아니며,
         상품의 예약, 이용 및 환불 등과 관련한 의무와 책임은 각 판매자에게 있습니다.</string>
+    <string name="sale_for_first">선착순할인</string>
+    <string name="rent_room">무한대실</string>
+    <string name="payback_50">50%페이백</string>
+    <string name="home">홈</string>
+    <string name="search">검색</string>
+    <string name="my_loca">내주변</string>
+    <string name="my">내정보</string>
+    <string name="more">더보기</string>
+    <string name="no_id">계정이 없으신가요?</string>
+    <string name="join_email">이메일로 가입</string>
+    <string name="join_company">기업회원 가입</string>
 
 </resources>

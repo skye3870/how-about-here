@@ -1,15 +1,9 @@
 package com.example.how_about_here.src.main.home
 
 
-import android.content.Intent
+
 import android.os.Bundle
-import android.os.Handler
-import android.text.TextUtils.replace
-import android.util.Log
 import android.view.View
-import androidx.databinding.DataBindingUtil.setContentView
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import com.example.how_about_here.R
 import com.example.how_about_here.config.BaseFragment
 import com.example.how_about_here.databinding.FragmentHomeBinding
@@ -29,7 +23,10 @@ class HomeFragment :
         }
 
         binding.motelFragment.textViewMotel.setOnClickListener {
-            binding.scrollView.smoothScrollTo(0, 5000)
+          binding.scrollView.smoothScrollTo(0, 1000)
+        }
+        binding.motelFragment.textViewBlack.setOnClickListener {
+            binding.scrollView.smoothScrollTo(0, 2000)
         }
 
     }

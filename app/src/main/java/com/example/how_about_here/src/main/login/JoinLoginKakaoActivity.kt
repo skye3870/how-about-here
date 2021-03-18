@@ -1,4 +1,4 @@
-package com.example.how_about_here.src.main.join
+package com.example.how_about_here.src.main.login
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,7 +7,7 @@ import android.widget.Toast
 import com.example.how_about_here.config.BaseActivity
 import com.example.how_about_here.databinding.ActivityJoinLoginBinding
 import com.example.how_about_here.src.main.MainActivity
-import com.example.how_about_here.src.main.my.LoginEmailActivity
+import com.example.how_about_here.src.main.join.JoinAgreeActivity
 import com.kakao.sdk.auth.LoginClient
 import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.KakaoSdk
@@ -15,7 +15,7 @@ import com.kakao.sdk.common.model.AuthErrorCause
 import com.kakao.sdk.user.UserApiClient
 
 
-class JoinLoginActivity : BaseActivity<ActivityJoinLoginBinding>(ActivityJoinLoginBinding::inflate) {
+class JoinLoginKakaoActivity : BaseActivity<ActivityJoinLoginBinding>(ActivityJoinLoginBinding::inflate) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,6 +60,7 @@ class JoinLoginActivity : BaseActivity<ActivityJoinLoginBinding>(ActivityJoinLog
 
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
+
 /****************************************************************************************************************/
                     //카카오 로그인 정보 받아오기
                     UserApiClient.instance.me { user, error ->
@@ -67,6 +68,7 @@ class JoinLoginActivity : BaseActivity<ActivityJoinLoginBinding>(ActivityJoinLog
                             Log.d("TAG", "사용자 정보 요청 실패", error)
                         }
                         else if (user != null) {
+
                             Log.d("TAG", "사용자 정보 요청 성공" +
                                     "\n회원번호: ${user.id}" +
                                     "\n이메일: ${user.kakaoAccount?.email}" +

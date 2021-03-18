@@ -38,13 +38,13 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.How_about_here.NoActionBar" />
         <activity android:name=".src.main.HomeCouponPopupActivity"/>
-        <activity android:name=".src.main.join.JoinLoginActivity"/>
+        <activity android:name=".src.main.login.JoinLoginKakaoActivity"/>
         <activity android:name=".src.main.join.JoinAgreeActivity"/>
         <activity android:name=".src.main.joinForm.JoinFormActivity"
             tools:ignore="Instantiatable" />
         <!--<activity android:name=".src.splash.SplashActivity"/>-->
         <activity android:name=".src.main.join.JoinSuccessActivity"/>
-        <activity android:name=".src.main.my.LoginEmailActivity"/>
+        <activity android:name=".src.main.login.LoginEmailActivity"/>
         <meta-data android:name="com.kakao.sdk.AppKey"
             android:value="@string/kakao_app_key" />
     </application>
