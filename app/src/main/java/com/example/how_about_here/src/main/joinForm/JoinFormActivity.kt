@@ -11,7 +11,6 @@ import com.example.how_about_here.config.BaseActivity
 import com.example.how_about_here.databinding.ActivityJoinFormBinding
 import com.example.how_about_here.src.main.join.JoinSuccessActivity
 import com.example.how_about_here.src.main.joinForm.models.PostSignUpRequest
-import com.example.how_about_here.src.main.joinForm.models.SignUpResponse
 import com.example.how_about_here.src.main.joinForm.models.UserResponse
 
 
@@ -154,25 +153,13 @@ class JoinFormActivity : BaseActivity<ActivityJoinFormBinding>(ActivityJoinFormB
         return !isNullOrEmpty() && Patterns.EMAIL_ADDRESS.matcher(this).matches()
     }
 
-    override fun onGetUserSuccess(response: UserResponse) {
-        dismissLoadingDialog()
-        for (User in response.result) {
-            Log.d("/users", User.toString())
-        }
-        //binding.homeButtonTryGetJwt.text = response.message
-        showCustomToast("Get JWT 성공")
-    }
 
-    override fun onGetUserFailure(message: String) {
-        dismissLoadingDialog()
-        showCustomToast("오류 : $message")
-    }
 
-    override fun onPostSignUpSuccess(response: SignUpResponse) {
+    override fun onPostSignUpSuccess(response: UserResponse) {
         dismissLoadingDialog()
         //binding.homeBtnTryPostHttpMethod.text = response.message
         response.message?.let { showCustomToast(it) }
-        if(response.message?.contains("성공") == true){
+        if(response.message?.contains("완료")){
         val intent = Intent(this, JoinSuccessActivity::class.java)
         startActivity(intent)
         finish()

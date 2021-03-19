@@ -1,5 +1,6 @@
 package com.example.how_about_here.src.main.login
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
@@ -7,6 +8,7 @@ import android.text.TextWatcher
 import android.util.Patterns
 import com.example.how_about_here.databinding.ActivityLoginEmailBinding
 import com.example.how_about_here.config.BaseActivity
+import com.example.how_about_here.src.main.join.JoinSuccessActivity
 import com.example.how_about_here.src.main.joinForm.models.UserResponse
 import com.example.how_about_here.src.main.login.models.PostUserLoginRequest
 import com.example.how_about_here.src.main.login.models.UsersLoginResponse
@@ -75,21 +77,21 @@ class LoginEmailActivity : BaseActivity<ActivityLoginEmailBinding>(ActivityLogin
         })
     }
 
-    override fun onGetUserLoginFailure(message: String) {
-
-    }
-
-    override fun onGetUserSuccess(response: UserResponse) {
-
-    }
-
-    override fun onGetUserFailure(message: String) {
-
-    }
-
     override fun onGetUserLoginSuccess(response: UsersLoginResponse) {
+        dismissLoadingDialog()
+        //binding.homeBtnTryPostHttpMethod.text = response.message
+        response.message?.let { showCustomToast(it) }
+        if(response.message?.contains("성공")){
 
+            finish()
+        }
     }
+
+    override fun onGetUserLoginFailure(message: String) {
+        dismissLoadingDialog()
+        showCustomToast("오류 : $message")
+    }
+
     fun CharSequence?.isValidEmail():Boolean{
         return !isNullOrEmpty() && Patterns.EMAIL_ADDRESS.matcher(this).matches()
     }

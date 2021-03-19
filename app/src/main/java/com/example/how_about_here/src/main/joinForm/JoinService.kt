@@ -2,7 +2,6 @@ package com.example.how_about_here.src.main.joinForm
 
 import com.example.how_about_here.config.ApplicationClass
 import com.example.how_about_here.src.main.joinForm.models.PostSignUpRequest
-import com.example.how_about_here.src.main.joinForm.models.SignUpResponse
 import com.example.how_about_here.src.main.joinForm.models.UserResponse
 
 
@@ -12,7 +11,7 @@ import retrofit2.Response
 
 class JoinService(val view: JoinFragmentView) {
 
-    fun tryGetUsers(){
+    /*fun tryGetUsers(){
         val homeRetrofitInterface = ApplicationClass.sRetrofit.create(JoinRetrofitInterface::class.java)
         homeRetrofitInterface.getUsers().enqueue(object : Callback<UserResponse>{
             override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
@@ -23,16 +22,16 @@ class JoinService(val view: JoinFragmentView) {
                 view.onGetUserFailure(t.message ?: "통신 오류")
             }
         })
-    }
+    }*/
 
     fun tryPostSignUp(postSignUpRequest: PostSignUpRequest){
         val homeRetrofitInterface = ApplicationClass.sRetrofit.create(JoinRetrofitInterface::class.java)
-        homeRetrofitInterface.postSignUp(postSignUpRequest).enqueue(object : Callback<SignUpResponse>{
-            override fun onResponse(call: Call<SignUpResponse>, response: Response<SignUpResponse>) {
-                view.onPostSignUpSuccess(response.body() as SignUpResponse)
+        homeRetrofitInterface.postSignUp(postSignUpRequest).enqueue(object : Callback<UserResponse>{
+            override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
+                view.onPostSignUpSuccess(response.body() as UserResponse)
             }
 
-            override fun onFailure(call: Call<SignUpResponse>, t: Throwable) {
+            override fun onFailure(call: Call<UserResponse>, t: Throwable) {
                 view.onPostSignUpFailure(t.message ?: "통신 오류")
             }
         })
