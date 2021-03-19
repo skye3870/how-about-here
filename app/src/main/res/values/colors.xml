@@ -18,4 +18,8 @@
     <color name="whiteForBackground">#FFFFFF</color>
     <color name="blackForText">#4a4a4a</color>
     <color name="redForText">#d9534f</color>
+    <color name="how">#6E96FB</color>
+    <color name="empty">#E6E9F3</color>
+    <color name="home_card_back">#EEEEFA</color>
+
 </resources>

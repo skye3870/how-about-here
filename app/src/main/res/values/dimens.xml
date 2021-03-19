@@ -10,4 +10,9 @@
     <dimen name="top_menu_text">15dp</dimen>
     <dimen name="center_menu_text">20dp</dimen>
     <dimen name="my_join_top">25dp</dimen>
+    <dimen name="home_hash_5">5dp</dimen>
+    <dimen name="home_hash_3">3dp</dimen>
+    <dimen name="home_text_20">20dp</dimen>
+    <dimen name="home_text_18">18dp</dimen>
+    <dimen name="home_top_icon_width_30">30dp</dimen>
 </resources>

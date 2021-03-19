@@ -23,10 +23,13 @@ class HomeFragment :
         }
 
         binding.motelFragment.textViewMotel.setOnClickListener {
-          binding.scrollView.smoothScrollTo(0, 1000)
+            binding.scrollView.smoothScrollTo(0, 500)
+        }
+        binding.motelFragment.textViewHotelResort.setOnClickListener {
+            binding.scrollView.smoothScrollTo(0, 1000)
         }
         binding.motelFragment.textViewBlack.setOnClickListener {
-            binding.scrollView.smoothScrollTo(0, 2000)
+            binding.scrollView.smoothScrollTo(0, 1500)
         }
 
     }

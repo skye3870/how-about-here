@@ -4,7 +4,7 @@ import com.example.how_about_here.src.main.joinForm.models.UserResponse
 import com.example.how_about_here.src.main.login.models.UsersLoginResponse
 
 
-interface LoginFragmentView {
+interface LoginActivityView {
 
     fun onGetUserLoginSuccess(response: UsersLoginResponse)
     fun onGetUserLoginFailure(message:String)

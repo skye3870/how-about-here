@@ -1,39 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <TextView
         android:id="@+id/empty"
         android:layout_width="match_parent"
-        android:background="#E6E9F3"
         android:layout_height="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/empty"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <HorizontalScrollView
-        android:id="@+id/horizontalScrollView2"
+        android:id="@+id/horizontalScrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbars="none"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/empty">
+        app:layout_constraintTop_toBottomOf="@id/empty"
+        >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent">
 
             <TextView
                 android:id="@+id/textView_motel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/activity_vertical_margin"
+
                 android:text="@string/motel"
+                android:textSize="@dimen/home_text_18"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -46,8 +51,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/activity_vertical_margin"
-                android:background="@color/colorPrimaryDark"
                 android:text="@string/hotel_resort"
+                android:textSize="@dimen/home_text_18"
+                android:background="@color/colorPrimaryDark"
                 app:layout_constraintBottom_toBottomOf="@+id/textView_motel"
                 app:layout_constraintStart_toEndOf="@+id/textView_motel"
                 app:layout_constraintTop_toTopOf="@+id/textView_motel" />
@@ -58,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/activity_vertical_margin"
                 android:text="@string/black"
-
+                android:textSize="@dimen/home_text_18"
                 app:layout_constraintBottom_toBottomOf="@+id/textView_motel"
                 app:layout_constraintStart_toEndOf="@+id/textView_hotel_resort"
                 app:layout_constraintTop_toTopOf="@+id/textView_motel" />
@@ -69,6 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/activity_vertical_margin"
                 android:text="@string/pension_camp"
+                android:textSize="@dimen/home_text_18"
                 app:layout_constraintBottom_toBottomOf="@+id/textView_motel"
                 app:layout_constraintStart_toEndOf="@+id/textView_black"
                 app:layout_constraintTop_toTopOf="@+id/textView_motel" />
@@ -79,6 +86,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/activity_vertical_margin"
                 android:text="@string/guest_korean"
+                android:textSize="@dimen/home_text_18"
                 app:layout_constraintBottom_toBottomOf="@+id/textView_motel"
                 app:layout_constraintStart_toEndOf="@+id/textView_pension_camp"
                 app:layout_constraintTop_toTopOf="@+id/textView_motel" />
@@ -89,11 +97,11 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/activity_vertical_margin"
                 android:text="@string/event"
+                android:textSize="@dimen/home_text_18"
                 app:layout_constraintBottom_toBottomOf="@+id/textView_motel"
                 app:layout_constraintStart_toEndOf="@+id/textView_guest_korean"
                 app:layout_constraintTop_toTopOf="@+id/textView_motel" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </HorizontalScrollView>
 
     <ImageView
@@ -105,96 +113,197 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2" />
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout3"
-        android:layout_width="wrap_content"
+        android:id="@+id/constraintLayout1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:padding="@dimen/activity_vertical_margin"
-        app:layout_constraintEnd_toStartOf="@+id/constraintLayout2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_imageview">
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/home_motel_icon2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/sale_for_first"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/activity_vertical_margin"
-        app:layout_constraintEnd_toStartOf="@+id/constraintLayout4"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout3"
-        app:layout_constraintTop_toBottomOf="@+id/home_imageview">
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/home_motel_icon1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/rent_room"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/activity_vertical_margin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout2"
+        app:layout_constraintStart_toStartOf="parent"
+        android:padding="@dimen/activity_vertical_margin"
         app:layout_constraintTop_toBottomOf="@+id/home_imageview">
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/home_motel_icon3"
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/how"
+            android:text="오늘의 체크인"
+            android:textColor="@color/how"
+            android:textSize="@dimen/home_text_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/how"
+            android:text="특가호텔"
+            android:textColor="@color/black"
+            android:textSize="@dimen/home_text_20"
+            app:layout_constraintBottom_toBottomOf="@+id/textView24"
+            app:layout_constraintStart_toEndOf="@+id/textView24"
+            app:layout_constraintTop_toTopOf="@+id/textView24" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView24" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/home_card_back"
+        android:padding="@dimen/activity_vertical_margin"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout1">
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:fontFamily="@font/how"
+            android:text="취향대로"
+            android:textColor="@color/how"
+            android:textSize="@dimen/home_text_20"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/payback_50"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/how"
+            android:text="호텔어때?"
+            android:textColor="@color/black"
+            android:textSize="@dimen/home_text_20"
+            app:layout_constraintBottom_toBottomOf="@+id/textView22"
+            app:layout_constraintStart_toEndOf="@+id/textView22"
+            app:layout_constraintTop_toTopOf="@+id/textView22" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/textView22"
+            tools:layout_editor_absoluteX="16dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/home_hash_5"
+                android:weightSum="2">
+
+                <TextView
+
+                    android:layout_width="0dp"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/home_hash_3"
+                    android:layout_weight="1"
+                    android:background="@drawable/home_motel_hashcard"
+                    android:padding="@dimen/home_hash_5"
+                    android:text="#HOT한물놀이"
+                    android:textAlignment="center"
+                    android:textColor="@color/how"
+                    android:textSize="@dimen/home_text_18" />
+
+                <TextView
+                    android:layout_width="0dp"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/home_hash_3"
+                    android:layout_weight="1"
+                    android:background="@drawable/home_motel_hashcard"
+                    android:padding="@dimen/home_hash_5"
+                    android:text="#인생사진"
+                    android:textAlignment="center"
+                    android:textColor="@color/how"
+                    android:textSize="@dimen/home_text_18" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/home_hash_5">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/home_hash_3"
+                    android:layout_weight="1"
+                    android:background="@drawable/home_motel_hashcard"
+                    android:padding="@dimen/home_hash_5"
+                    android:text="#해돋이명소"
+                    android:textAlignment="center"
+                    android:textColor="@color/how"
+                    android:textSize="@dimen/home_text_18" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/home_hash_3"
+                    android:layout_weight="1"
+                    android:background="@drawable/home_motel_hashcard"
+                    android:padding="@dimen/home_hash_5"
+                    android:text="#바닷가"
+                    android:textAlignment="center"
+
+                    android:textColor="@color/how"
+                    android:textSize="@dimen/home_text_18" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/home_hash_5">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/home_hash_3"
+                    android:layout_weight="1"
+                    android:background="@drawable/home_motel_hashcard"
+                    android:padding="@dimen/home_hash_5"
+                    android:text="#NEW오픈"
+                    android:textAlignment="center"
+                    android:textColor="@color/how"
+                    android:textSize="@dimen/home_text_18" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/home_hash_3"
+                    android:layout_weight="1"
+                    android:background="@drawable/home_motel_hashcard"
+                    android:padding="@dimen/home_hash_5"
+                    android:text="#산행코스"
+                    android:textAlignment="center"
+                    android:textColor="@color/how"
+                    android:textSize="@dimen/home_text_18" />
+            </TableRow>
+        </TableLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

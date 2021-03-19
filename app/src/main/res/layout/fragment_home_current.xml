@@ -13,7 +13,8 @@
         android:layout_margin="@dimen/activity_vertical_margin"
         android:text="최근 본 상품"
         android:textSize="20dp"
-        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:fontFamily="@font/how"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,7 +22,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:scrollbars="none"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView"

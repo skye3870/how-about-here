@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.util.Patterns
 import com.example.how_about_here.databinding.ActivityLoginEmailBinding
 import com.example.how_about_here.config.BaseActivity
@@ -14,12 +15,13 @@ import com.example.how_about_here.src.main.login.models.PostUserLoginRequest
 import com.example.how_about_here.src.main.login.models.UsersLoginResponse
 
 
-class LoginEmailActivity : BaseActivity<ActivityLoginEmailBinding>(ActivityLoginEmailBinding::inflate),LoginFragmentView{
+class LoginEmailActivity : BaseActivity<ActivityLoginEmailBinding>(ActivityLoginEmailBinding::inflate),LoginActivityView{
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         var email_bool=false
+        super.onCreate(savedInstanceState)
+
         binding.login.setOnClickListener(){
 
             val email = binding.editTextEmail.text.toString()
@@ -89,7 +91,7 @@ class LoginEmailActivity : BaseActivity<ActivityLoginEmailBinding>(ActivityLogin
 
     override fun onGetUserLoginFailure(message: String) {
         dismissLoadingDialog()
-        showCustomToast("오류 : $message")
+        showCustomToast("로그인 실패 : $message")
     }
 
     fun CharSequence?.isValidEmail():Boolean{

@@ -103,12 +103,12 @@ class JoinLoginKakaoActivity : BaseActivity<ActivityJoinLoginBinding>(ActivityJo
             startActivity(intent)
             finish()
             }
-        binding.myBtnLoginEmail.setOnClickListener(){
-            //이메일로 로그인
-            val intent = Intent(this, LoginEmailActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
+            binding.myBtnLoginEmail.setOnClickListener(){
+                //이메일로 로그인
+                val intent = Intent(this, LoginEmailActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
 
     }
 
