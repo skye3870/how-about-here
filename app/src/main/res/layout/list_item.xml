@@ -9,7 +9,7 @@
 
 
     <ImageView
-        android:id="@+id/img"
+        android:id="@+id/img_hotel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/activity_vertical_margin"
@@ -24,10 +24,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="호텔이름"
-        app:layout_constraintEnd_toEndOf="@+id/img"
+        app:layout_constraintEnd_toEndOf="@+id/img_hotel"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/img"
-        app:layout_constraintTop_toBottomOf="@+id/img" />
+        app:layout_constraintStart_toStartOf="@+id/img_hotel"
+        app:layout_constraintTop_toBottomOf="@+id/img_hotel" />
 
 
 

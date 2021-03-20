@@ -112,6 +112,7 @@
         android:text="여기어때 고객행복센터"
         android:textColor="@color/blackForText"
         android:textSize="@dimen/center_menu_text"
+        android:fontFamily="@font/how"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />

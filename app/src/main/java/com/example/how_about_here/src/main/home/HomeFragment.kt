@@ -2,8 +2,10 @@ package com.example.how_about_here.src.main.home
 
 
 
+import android.content.Context
 import android.os.Bundle
 import android.view.View
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.how_about_here.R
 import com.example.how_about_here.config.BaseFragment
 import com.example.how_about_here.databinding.FragmentHomeBinding
@@ -15,6 +17,10 @@ class HomeFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.hotelResortFragment.rvHotel.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.hotelResortFragment.rvHotel.setHasFixedSize(true)
+        binding.hotelResortFragment.rvHotel.adapter = GoodsAdapter(goodsList)
+
 
         binding.homeHotel.setOnClickListener {
             parentFragmentManager.beginTransaction()
