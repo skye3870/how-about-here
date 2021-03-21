@@ -628,10 +628,10 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <ImageView
-                android:id="@+id/home_imageview"
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/home_image_slider"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="150dp"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:scaleType="centerCrop"
                 android:src="@drawable/home_auto_slide1"
@@ -650,7 +650,7 @@
                 android:src="@drawable/home_new_join_coupon"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/home_imageview" />
+                app:layout_constraintTop_toBottomOf="@+id/home_image_slider" />
             <!---->
             <include
                 android:id="@+id/current_fragment"

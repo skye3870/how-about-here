@@ -2,15 +2,12 @@ package com.example.how_about_here.src.main.hotel
 
 
 import android.os.Bundle
+import android.os.Handler
 import android.os.Looper
 import android.view.View
 import com.example.how_about_here.R
 import com.example.how_about_here.config.BaseFragment
 import com.example.how_about_here.databinding.FragmentHotelBinding
-import android.os.Handler
-import com.example.how_about_here.src.dashboard.MylocaFragment
-import com.example.how_about_here.src.main.MainActivity
-import com.example.how_about_here.src.main.home.HomeFragment
 
 class HotelFragment :
         BaseFragment<FragmentHotelBinding>(FragmentHotelBinding::bind, R.layout.fragment_hotel) {
@@ -22,13 +19,11 @@ class HotelFragment :
         setPage()
         true
     }
+    private val thread=Thread(PagerRunnable())
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-    binding.myLoca.setOnClickListener {
-        //실패
-
-    }
 
 
     var list = mutableListOf<Int>()
@@ -43,30 +38,17 @@ class HotelFragment :
 
         //binding.hotelViewpager.animation
 
-        val thread=Thread(PagerRunnable())
         thread.start()
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    override fun onStop() {
+        super.onStop()
+        thread.interrupt()
+    }
 
     //페이지 변경하기
-    fun setPage(){
+    private fun setPage(){
         if(currentPosition==5) currentPosition=0
-        binding.hotelViewpager.setCurrentItem(currentPosition,true)
+        binding.hotelViewpager.setCurrentItem(currentPosition, true)
         currentPosition+=1
     }
 
@@ -74,8 +56,15 @@ class HotelFragment :
     inner class PagerRunnable:Runnable{
         override fun run() {
             while(true){
-                Thread.sleep(2000)
-                handler.sendEmptyMessage(0)
+
+                try {
+                    // do something
+                    Thread.sleep(2000)
+                    handler.sendEmptyMessage(0)
+                } catch (ex: InterruptedException) {
+                    thread.interrupt()
+                }
+
             }
         }
     }

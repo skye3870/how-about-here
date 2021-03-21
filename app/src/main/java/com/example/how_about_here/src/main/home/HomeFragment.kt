@@ -2,6 +2,8 @@ package com.example.how_about_here.src.main.home
 
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.how_about_here.R
@@ -12,6 +14,14 @@ import com.example.how_about_here.src.main.hotel.HotelFragment
 
 class HomeFragment :
         BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind, R.layout.fragment_home) {
+    lateinit var adapter: homeViewpagerAdapter
+    var currentPosition=0
+    val handler= Handler(Looper.getMainLooper()){
+        setPage()
+        true
+    }
+    private val thread=Thread(PagerRunnable())
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -22,6 +32,22 @@ class HomeFragment :
         binding.hotelResortFragment.rvHotel.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.hotelResortFragment.rvHotel.setHasFixedSize(true)
         binding.hotelResortFragment.rvHotel.adapter = HomeHotelAdapter(HomeHotelArr)
+
+
+        var list = mutableListOf<Int>()
+
+        list.add(R.drawable.home_viewpage1)
+        list.add(R.drawable.home_viewpage2)
+        list.add(R.drawable.home_viewpage3)
+
+        adapter= homeViewpagerAdapter(context)
+        adapter.setContentList(list)
+        binding.homeImageSlider.adapter=adapter
+
+        //binding.hotelViewpager.animation
+
+        thread.start()
+
 
         binding.homeHotel.setOnClickListener {
             parentFragmentManager.beginTransaction()
@@ -39,7 +65,39 @@ class HomeFragment :
             binding.scrollView.smoothScrollTo(0, 1500)
         }
 
+
+
     }
+
+    override fun onStop() {
+        super.onStop()
+        thread.interrupt()
+    }
+
+    //페이지 변경하기
+    private fun setPage(){
+        if(currentPosition==5) currentPosition=0
+        binding.homeImageSlider.setCurrentItem(currentPosition, true)
+        currentPosition+=1
+    }
+
+    //2초 마다 페이지 넘기기
+    inner class PagerRunnable:Runnable{
+        override fun run() {
+            while(true){
+
+                try {
+                    // do something
+                    Thread.sleep(2000)
+                    handler.sendEmptyMessage(0)
+                } catch (ex: InterruptedException) {
+                    thread.interrupt()
+                }
+
+            }
+        }
+    }
+
 
 
     /*****************************************************************************************************/
