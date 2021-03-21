@@ -15,4 +15,5 @@
     <dimen name="home_text_20">20dp</dimen>
     <dimen name="home_text_18">18dp</dimen>
     <dimen name="home_top_icon_width_30">30dp</dimen>
+    <dimen name="home_hash_8">8dp</dimen>
 </resources>

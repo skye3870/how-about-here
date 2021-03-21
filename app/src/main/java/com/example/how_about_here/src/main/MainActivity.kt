@@ -6,7 +6,7 @@ import com.example.how_about_here.config.BaseActivity
 import com.example.how_about_here.databinding.ActivityMainBinding
 import com.example.how_about_here.src.dashboard.MylocaFragment
 import com.example.how_about_here.src.main.home.HomeFragment
-import com.example.how_about_here.src.main.home.HotelFragment
+import com.example.how_about_here.src.main.hotel.HotelFragment
 import com.example.how_about_here.src.main.home.MoreFragment
 import com.example.how_about_here.src.main.home.MyFragment
 import com.example.how_about_here.src.main.search.SearchFragment
@@ -20,7 +20,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
         supportFragmentManager.beginTransaction()
                 .replace(R.id.main_frm, HomeFragment())
                 .commitAllowingStateLoss()
-
+onStart()
         binding.mainBtmNav.setOnNavigationItemSelectedListener(//bottom_nav
 
             BottomNavigationView.OnNavigationItemSelectedListener { item ->
@@ -59,6 +59,13 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
                 false
             })
     }
+
+    override fun onStart() {
+        super.onStart()
+
+
+
+    }
     fun showFragmentHotel(){
         val hotelFragment = HotelFragment()
         val manager = supportFragmentManager
@@ -66,6 +73,14 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
         transaction.replace(R.id.main_frm, hotelFragment)
         transaction.addToBackStack(null)
         transaction.commit()
+    }
+
+    fun onFragmentChange(int:Int){
+        if(int==0){
+            supportFragmentManager.beginTransaction().replace(R.id.main_frm, MylocaFragment())
+        }else if(int==1){
+            supportFragmentManager.beginTransaction().replace(R.id.main_frm, MylocaFragment())
+        }
     }
 
 

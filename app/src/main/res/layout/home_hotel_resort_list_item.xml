@@ -1,101 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@drawable/home_motel_hashcard"
-    android:descendantFocusability="blocksDescendants">
+    app:cardCornerRadius="10dp"
+    android:layout_marginStart="@dimen/activity_vertical_margin"
+    >
 
-
-    <ImageView
-        android:id="@+id/img_hotel"
-        android:layout_width="190dp"
-        android:layout_height="127dp"
-        android:scaleType="centerCrop"
-
-        android:src="@drawable/ic_launcher_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/special"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="[**특가]"
-        android:textSize="@dimen/home_text_18"
-        app:layout_constraintEnd_toEndOf="@+id/img_hotel"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/img_hotel"
-        app:layout_constraintTop_toBottomOf="@+id/img_hotel" />
+        android:layout_height="287dp"
+        >
 
-    <TextView
-        android:id="@+id/price"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="10,000"
-        android:textSize="@dimen/home_text_18"
-        app:layout_constraintEnd_toEndOf="@+id/img_hotel"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/img_hotel"
-        app:layout_constraintTop_toBottomOf="@+id/img_star" />
+        <ImageView
+            android:id="@+id/img_hotel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
 
-    <TextView
-        android:id="@+id/textView31"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="name"
-        android:textSize="@dimen/home_text_18"
-        app:layout_constraintBottom_toBottomOf="@+id/special"
-        app:layout_constraintStart_toEndOf="@+id/special"
-        app:layout_constraintTop_toBottomOf="@+id/img_hotel" />
+            android:src="@drawable/home_hotel_card1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/star_rate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="별점"
-        app:layout_constraintBottom_toBottomOf="@+id/img_star"
-        app:layout_constraintStart_toEndOf="@+id/img_star"
-        app:layout_constraintTop_toTopOf="@+id/img_star"
-        app:layout_constraintVertical_bias="1.0" />
+        <TextView
+            android:id="@+id/tezt_special"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="[**특가]"
+            android:textSize="@dimen/home_text_18"
+            app:layout_constraintEnd_toEndOf="@+id/img_hotel"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/img_hotel"
+            app:layout_constraintTop_toBottomOf="@+id/img_hotel" />
 
-    <TextView
-        android:id="@+id/star_review_count"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="(0)"
-        app:layout_constraintStart_toEndOf="@+id/star_rate"
-        app:layout_constraintTop_toTopOf="@+id/star_rate" />
+        <TextView
+            android:id="@+id/text_price_origin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="10,000"
+            app:layout_constraintEnd_toEndOf="@+id/img_hotel"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tezt_special"
+            app:layout_constraintTop_toBottomOf="@+id/img_star" />
 
-    <TextView
-        android:id="@+id/textView28"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="ㆍ"
-        app:layout_constraintStart_toEndOf="@+id/star_review_count"
-        app:layout_constraintTop_toTopOf="@+id/star_review_count" />
+        <TextView
+            android:id="@+id/text_price2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="10,000"
+            android:textSize="@dimen/home_text_18"
+            app:layout_constraintEnd_toEndOf="@+id/img_hotel"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tezt_special"
+            app:layout_constraintTop_toBottomOf="@+id/text_price_origin" />
 
-    <TextView
-        android:id="@+id/where"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="위치"
-        app:layout_constraintStart_toEndOf="@+id/textView28"
-        app:layout_constraintTop_toTopOf="@+id/textView28" />
+        <TextView
+            android:id="@+id/text_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="name"
+            android:textSize="@dimen/home_text_18"
+            app:layout_constraintBottom_toBottomOf="@+id/tezt_special"
+            app:layout_constraintStart_toEndOf="@+id/tezt_special"
+            app:layout_constraintTop_toBottomOf="@+id/img_hotel" />
 
-    <ImageView
-        android:id="@+id/img_star"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/special"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
+        <TextView
+            android:id="@+id/text_star_rate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="별점"
+            app:layout_constraintBottom_toBottomOf="@+id/img_star"
+            app:layout_constraintStart_toEndOf="@+id/img_star"
+            app:layout_constraintTop_toTopOf="@+id/img_star"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/text_star_review_count"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="(0)"
+            app:layout_constraintStart_toEndOf="@+id/text_star_rate"
+            app:layout_constraintTop_toTopOf="@+id/text_star_rate" />
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ㆍ"
+            app:layout_constraintStart_toEndOf="@+id/text_star_review_count"
+            app:layout_constraintTop_toTopOf="@+id/text_star_review_count" />
+
+        <TextView
+            android:id="@+id/text_where"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="위치"
+            app:layout_constraintStart_toEndOf="@+id/textView28"
+            app:layout_constraintTop_toTopOf="@+id/textView28" />
+
+        <ImageView
+            android:id="@+id/img_star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/tezt_special"
+            app:layout_constraintTop_toBottomOf="@+id/tezt_special"
+            app:srcCompat="@android:drawable/btn_star_big_on" />
 
 
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

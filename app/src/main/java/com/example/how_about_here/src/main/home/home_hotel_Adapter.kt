@@ -1,12 +1,12 @@
 package com.example.how_about_here.src.main.home
 
-import android.content.Intent
-import android.util.Log
+import android.annotation.SuppressLint
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.core.content.ContextCompat
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.example.how_about_here.R
 
@@ -14,27 +14,37 @@ import com.example.how_about_here.R
 
 //val name: String, val cate: String, val price: Int, val content: String
 
-class GoodsAdapter(val goodsList: ArrayList<Goods>) :RecyclerView.Adapter<GoodsAdapter.CustomViewHolder>(){
+class HomeHotelAdapter(private val HomeHotelArr: ArrayList<HomeHotel>) :RecyclerView.Adapter<HomeHotelAdapter.CustomViewHolder>(){
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.home_hotel_resort_list_item, parent, false)//뷰를 붙여줌
 
+
         return CustomViewHolder(view)
-               // .apply {
+               .apply {
+
+
             /*itemView.setOnClickListener {
 
                 val curPos :Int =adapterPosition
                 val goods:Goods=goodsList.get(curPos)
                 Toast.makeText(parent.context,"${goods.name}",Toast.LENGTH_SHORT).show()
 
-            }
+            }*/
 
-        }*/
+        }
     }
+
+
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {//계속실행
         //holder.image.setImageResource.(goodsList.get(position).image)
-        holder.img.setImageResource(goodsList.get(position).img as Int)
+
+        holder.img.setImageResource(HomeHotelArr.get(position).img as Int)
+
+
+
         //Log.d("aaaaaaaaaaaa",goodsList.get(position).img.toString())
         /*holder.name.text=goodsList.get(position).name
         holder.cate.text=goodsList.get(position).cate
@@ -72,7 +82,7 @@ class GoodsAdapter(val goodsList: ArrayList<Goods>) :RecyclerView.Adapter<GoodsA
     }
 
     override fun getItemCount(): Int {
-        return goodsList.size
+        return HomeBlackArr.size
     }
 
 

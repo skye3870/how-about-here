@@ -121,7 +121,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:padding="@dimen/activity_vertical_margin"
+
         app:layout_constraintTop_toBottomOf="@+id/home_imageview">
 
         <TextView
@@ -132,6 +132,8 @@
             android:text="오늘의 체크인"
             android:textColor="@color/how"
             android:textSize="@dimen/home_text_20"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginStart="@dimen/activity_vertical_margin"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -218,7 +220,7 @@
                     android:layout_marginRight="@dimen/home_hash_3"
                     android:layout_weight="1"
                     android:background="@drawable/home_motel_hashcard"
-                    android:padding="@dimen/home_hash_5"
+                    android:padding="@dimen/home_hash_8"
                     android:text="#HOT한물놀이"
                     android:textAlignment="center"
                     android:textColor="@color/how"
@@ -231,7 +233,7 @@
                     android:layout_marginLeft="@dimen/home_hash_3"
                     android:layout_weight="1"
                     android:background="@drawable/home_motel_hashcard"
-                    android:padding="@dimen/home_hash_5"
+                    android:padding="@dimen/home_hash_8"
                     android:text="#인생사진"
                     android:textAlignment="center"
                     android:textColor="@color/how"
@@ -252,7 +254,7 @@
                     android:layout_marginRight="@dimen/home_hash_3"
                     android:layout_weight="1"
                     android:background="@drawable/home_motel_hashcard"
-                    android:padding="@dimen/home_hash_5"
+                    android:padding="@dimen/home_hash_8"
                     android:text="#해돋이명소"
                     android:textAlignment="center"
                     android:textColor="@color/how"
@@ -264,7 +266,7 @@
                     android:layout_marginLeft="@dimen/home_hash_3"
                     android:layout_weight="1"
                     android:background="@drawable/home_motel_hashcard"
-                    android:padding="@dimen/home_hash_5"
+                    android:padding="@dimen/home_hash_8"
                     android:text="#바닷가"
                     android:textAlignment="center"
 
@@ -284,7 +286,7 @@
                     android:layout_marginRight="@dimen/home_hash_3"
                     android:layout_weight="1"
                     android:background="@drawable/home_motel_hashcard"
-                    android:padding="@dimen/home_hash_5"
+                    android:padding="@dimen/home_hash_8"
                     android:text="#NEW오픈"
                     android:textAlignment="center"
                     android:textColor="@color/how"
@@ -296,7 +298,7 @@
                     android:layout_marginLeft="@dimen/home_hash_3"
                     android:layout_weight="1"
                     android:background="@drawable/home_motel_hashcard"
-                    android:padding="@dimen/home_hash_5"
+                    android:padding="@dimen/home_hash_8"
                     android:text="#산행코스"
                     android:textAlignment="center"
                     android:textColor="@color/how"

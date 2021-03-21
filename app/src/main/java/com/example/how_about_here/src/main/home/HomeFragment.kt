@@ -1,15 +1,13 @@
 package com.example.how_about_here.src.main.home
 
 
-
-import android.content.Context
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.how_about_here.R
 import com.example.how_about_here.config.BaseFragment
 import com.example.how_about_here.databinding.FragmentHomeBinding
-
+import com.example.how_about_here.src.main.hotel.HotelFragment
 
 
 class HomeFragment :
@@ -17,10 +15,13 @@ class HomeFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.blackFragment.rvBlack.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.blackFragment.rvBlack.setHasFixedSize(true)
+        binding.blackFragment.rvBlack.adapter = HomeBlackAdapter(HomeBlackArr)
+
         binding.hotelResortFragment.rvHotel.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.hotelResortFragment.rvHotel.setHasFixedSize(true)
-        binding.hotelResortFragment.rvHotel.adapter = GoodsAdapter(goodsList)
-
+        binding.hotelResortFragment.rvHotel.adapter = HomeHotelAdapter(HomeHotelArr)
 
         binding.homeHotel.setOnClickListener {
             parentFragmentManager.beginTransaction()
@@ -39,28 +40,6 @@ class HomeFragment :
         }
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     /*****************************************************************************************************/

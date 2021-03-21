@@ -5,7 +5,7 @@ import android.os.Bundle
 import com.example.how_about_here.config.BaseActivity
 import com.example.how_about_here.databinding.ActivityCouponPopupBinding
 import com.example.how_about_here.databinding.ActivityCouponPopupBinding.inflate
-import com.example.how_about_here.src.main.home.HotelFragment
+import com.example.how_about_here.src.main.hotel.HotelFragment
 
 class HomeCouponPopupActivity : BaseActivity<ActivityCouponPopupBinding>(ActivityCouponPopupBinding::inflate) {
 

@@ -109,7 +109,7 @@
         android:id="@+id/constraintLayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/activity_vertical_margin"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView">
@@ -120,6 +120,8 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/how"
             android:text="Black"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginStart="@dimen/activity_vertical_margin"
             android:textColor="@color/how"
             android:textSize="50dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -131,7 +133,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
 
-            android:text="단하루의\n휴가가주어진다면"
+            android:text="@string/eksgkfndmlgbrkrkwndjwlsekaus"
             android:textColor="@color/black"
             android:textSize="@dimen/home_text_18"
             app:layout_constraintBottom_toBottomOf="@+id/textView24"
@@ -139,10 +141,12 @@
             app:layout_constraintTop_toTopOf="@+id/textView24" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+
             app:layout_constraintTop_toBottomOf="@+id/textView24" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

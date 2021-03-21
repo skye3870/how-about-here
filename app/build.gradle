@@ -83,4 +83,8 @@ dependencies {
     //implementation fileTree(include: ['*.jar'], dir: 'libs')
     //implementation files('libs/libDaumMapAndroid.jar')
     implementation "com.kakao.sdk:v2-user:2.3.0" // 카카오 로그인
+
+    //view pager
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
+    implementation 'com.makeramen:roundedimageview:2.3.0'
 }
