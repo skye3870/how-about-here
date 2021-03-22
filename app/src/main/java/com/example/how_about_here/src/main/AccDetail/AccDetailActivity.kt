@@ -1,4 +1,4 @@
-package com.example.how_about_here.src.main
+package com.example.how_about_here.src.main.AccDetail
 
 import android.R
 import android.os.Bundle
@@ -13,9 +13,10 @@ class AccDetailActivity: BaseActivity<ActivityAccDetailBinding>(ActivityAccDetai
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val id = intent.getStringExtra("id")
+        /*val id = intent.getStringExtra("id")
+        binding.hotelId.text = id*/
 
-        binding.hotelId.text = id
+
 
     }
 }

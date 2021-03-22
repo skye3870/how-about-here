@@ -15,7 +15,7 @@ class SearchAccFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+검색하면 프레그 먼트 이동
 
     }
 }

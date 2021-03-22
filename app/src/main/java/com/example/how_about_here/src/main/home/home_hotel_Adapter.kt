@@ -1,18 +1,14 @@
 package com.example.how_about_here.src.main.home
 
-import android.annotation.SuppressLint
 import android.content.Intent
-import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.annotation.RequiresApi
-import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.how_about_here.R
-import com.example.how_about_here.src.main.AccDetailActivity
+import com.example.how_about_here.src.main.AccDetail.AccDetailActivity
 
 
 //val name: String, val cate: String, val price: Int, val content: String
