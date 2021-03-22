@@ -1,15 +1,18 @@
 package com.example.how_about_here.src.main.home
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.annotation.RequiresApi
+import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.how_about_here.R
-
+import com.example.how_about_here.src.main.AccDetailActivity
 
 
 //val name: String, val cate: String, val price: Int, val content: String
@@ -78,13 +81,13 @@ class HomeHotelAdapter(private val HomeHotelArr: ArrayList<HomeHotel>) :Recycler
 
         holder.itemView.setOnClickListener {
             val intent = Intent(holder.itemView.context, AccDetailActivity::class.java)
-            intent.putExtra("id", goodsList.get(position).id.toString())
+            intent.putExtra("id", HomeHotelArr.get(position).id.toString())
             /*intent.putExtra("img", goodsList.get(position).img.toString())
             intent.putExtra("name", goodsList.get(position).name)
             intent.putExtra("cate", goodsList.get(position).cate)
             intent.putExtra("price", goodsList.get(position).price.toString())
             intent.putExtra("switch", goodsList.get(position).switch)*/
-            ContextCompat.startActivity(holder.itemView.context, intent, null)
+            startActivity(holder.itemView.context, intent, null)
         }
 
     }
