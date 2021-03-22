@@ -42,6 +42,13 @@ class HomeHotelAdapter(private val HomeHotelArr: ArrayList<HomeHotel>) :Recycler
         //holder.image.setImageResource.(goodsList.get(position).image)
 
         holder.img.setImageResource(HomeHotelArr.get(position).img as Int)
+        holder.special.text=HomeHotelArr.get(position).special
+        holder.name.text=HomeHotelArr.get(position).name
+        holder.star.text=HomeHotelArr.get(position).star.toString()
+        holder.review.text=HomeHotelArr.get(position).review.toString()
+        holder.where.text=HomeHotelArr.get(position).where
+        holder.price.text=HomeHotelArr.get(position).price.toString()
+        holder.price_origin.text=HomeHotelArr.get(position).price_orgin.toString()
 
 
 
@@ -69,15 +76,16 @@ class HomeHotelAdapter(private val HomeHotelArr: ArrayList<HomeHotel>) :Recycler
 
 
 
-        /*holder.itemView.setOnClickListener {
-            val intent = Intent(holder.itemView.context, DetailActivity::class.java)
-            intent.putExtra("img", goodsList.get(position).img.toString())
+        holder.itemView.setOnClickListener {
+            val intent = Intent(holder.itemView.context, AccDetailActivity::class.java)
+            intent.putExtra("id", goodsList.get(position).id.toString())
+            /*intent.putExtra("img", goodsList.get(position).img.toString())
             intent.putExtra("name", goodsList.get(position).name)
             intent.putExtra("cate", goodsList.get(position).cate)
             intent.putExtra("price", goodsList.get(position).price.toString())
-            intent.putExtra("switch", goodsList.get(position).switch)
+            intent.putExtra("switch", goodsList.get(position).switch)*/
             ContextCompat.startActivity(holder.itemView.context, intent, null)
-        }*/
+        }
 
     }
 
@@ -91,9 +99,14 @@ class HomeHotelAdapter(private val HomeHotelArr: ArrayList<HomeHotel>) :Recycler
 
         //val switch = itemView.findViewById<Switch>(R.id.switch_button)
         val img = itemView.findViewById<ImageView>(R.id.img_hotel)
-        //val name = itemView.findViewById<TextView>(R.id.name)
+        val special =itemView.findViewById<TextView>(R.id.text_special)
+        val name = itemView.findViewById<TextView>(R.id.text_name)
         //val cate = itemView.findViewById<TextView>(R.id.cate)
-        //val price = itemView.findViewById<TextView>(R.id.price)
+        val star = itemView.findViewById<TextView>(R.id.text_star_rate)
+        val review = itemView.findViewById<TextView>(R.id.text_star_review_count)
+        val where = itemView.findViewById<TextView>(R.id.text_where)
+        val price = itemView.findViewById<TextView>(R.id.text_price)
+        val price_origin = itemView.findViewById<TextView>(R.id.text_price_origin)
 
 
     }

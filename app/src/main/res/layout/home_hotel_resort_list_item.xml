@@ -26,7 +26,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tezt_special"
+            android:id="@+id/text_special"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -45,18 +45,18 @@
             android:text="10,000"
             app:layout_constraintEnd_toEndOf="@+id/img_hotel"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/tezt_special"
+            app:layout_constraintStart_toStartOf="@+id/text_special"
             app:layout_constraintTop_toBottomOf="@+id/img_star" />
 
         <TextView
-            android:id="@+id/text_price2"
+            android:id="@+id/text_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="10,000"
             android:textSize="@dimen/home_text_18"
             app:layout_constraintEnd_toEndOf="@+id/img_hotel"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/tezt_special"
+            app:layout_constraintStart_toStartOf="@+id/text_special"
             app:layout_constraintTop_toBottomOf="@+id/text_price_origin" />
 
         <TextView
@@ -65,8 +65,8 @@
             android:layout_height="wrap_content"
             android:text="name"
             android:textSize="@dimen/home_text_18"
-            app:layout_constraintBottom_toBottomOf="@+id/tezt_special"
-            app:layout_constraintStart_toEndOf="@+id/tezt_special"
+            app:layout_constraintBottom_toBottomOf="@+id/text_special"
+            app:layout_constraintStart_toEndOf="@+id/text_special"
             app:layout_constraintTop_toBottomOf="@+id/img_hotel" />
 
         <TextView
@@ -107,8 +107,8 @@
             android:id="@+id/img_star"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@+id/tezt_special"
-            app:layout_constraintTop_toBottomOf="@+id/tezt_special"
+            app:layout_constraintStart_toStartOf="@+id/text_special"
+            app:layout_constraintTop_toBottomOf="@+id/text_special"
             app:srcCompat="@android:drawable/btn_star_big_on" />
 
 
