@@ -17,7 +17,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:queryBackground="@android:color/transparent"
-        app:queryHint="지역 또는 숙소명 입력" />
+        app:queryHint="지역 또는 숙소명 입력"
+        />
 
     <TextView
         android:id="@+id/top_fav_content"

@@ -3,6 +3,7 @@ package com.example.how_about_here.src.main.search
 import android.os.Bundle
 
 import android.view.View
+import android.widget.SearchView
 
 import com.example.how_about_here.R
 import com.example.how_about_here.config.BaseFragment
@@ -15,7 +16,25 @@ class SearchAccFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-검색하면 프레그 먼트 이동
+
+
+        //binding.search.
+
+
+
+
+
+
+
+
+        /*binding.search.setOnQueryTextFocusChangeListener() {
+            val search_text = binding.search.query.toString()*/
+
+
 
     }
+
 }
+
+
+

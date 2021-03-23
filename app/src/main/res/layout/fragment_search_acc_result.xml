@@ -82,7 +82,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="5dp"
-                    android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                    
                     android:text="3.21 일 - 3.22 월"
                     android:textColor="@color/black"
                     android:textSize="13dp"
@@ -95,7 +95,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:layout_marginStart="8dp"
-                    android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                   
                     android:text="인원"
                     android:textColor="@color/black"
                     android:textSize="13dp"
@@ -166,7 +166,7 @@
                     app:chipBackgroundColor="@color/white"
                     app:chipCornerRadius="5dp"
                     app:chipEndPadding="5dp"
-                    app:chipIcon="@drawable/ic_hotel_seoul_all_filter"
+                    
                     app:chipIconSize="15dp"
                     app:chipIconVisible="true"
                     app:chipStartPadding="5dp"
@@ -253,7 +253,7 @@
                             android:layout_height="35dp"
                             android:layout_marginStart="11dp"
                             android:layout_marginRight="10dp"
-                            app:chipIcon="@drawable/ic_baseline_add_24"
+                            
                             app:chipIconTint="#BCBCBC"
                             app:chipIconSize="15dp"
                             android:textSize="20dp"
@@ -300,7 +300,7 @@
                     app:chipBackgroundColor="@color/white"
                     app:chipCornerRadius="5dp"
                     app:chipEndPadding="5dp"
-                    app:chipIcon="@drawable/ic_hotel_seoul_all_taste"
+                    
                     app:chipIconSize="15dp"
                     app:chipIconVisible="true"
                     app:chipStartPadding="5dp"
@@ -369,7 +369,7 @@
                     android:layout_width="13dp"
                     android:layout_height="13dp"
                     android:layout_marginEnd="3dp"
-                    android:src="@drawable/ic_hotel_seoul_all_sort"
+                    android:src="@drawable/star_icon"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/textView"
                     app:layout_constraintTop_toTopOf="parent" />

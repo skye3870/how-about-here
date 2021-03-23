@@ -42,6 +42,7 @@
         <activity android:name=".src.main.join.JoinAgreeActivity"/>
         <activity android:name=".src.main.joinForm.JoinFormActivity"
             tools:ignore="Instantiatable" />
+
         <activity android:name=".src.main.AccDetail.AccDetailActivity"/>
         <!--<activity android:name=".src.splash.SplashActivity"/>-->
         <activity android:name=".src.main.join.JoinSuccessActivity"/>
