@@ -8,7 +8,8 @@ import com.example.how_about_here.src.dashboard.MylocaFragment
 import com.example.how_about_here.src.main.home.HomeFragment
 import com.example.how_about_here.src.main.hotel.HotelFragment
 import com.example.how_about_here.src.main.home.MoreFragment
-import com.example.how_about_here.src.main.home.MyFragment
+
+import com.example.how_about_here.src.main.my.MyFragment
 import com.example.how_about_here.src.main.search.SearchFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 

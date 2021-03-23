@@ -6,7 +6,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
-
+    <TextView
+        android:id="@+id/text_info_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="준특실(배그)"
+        android:background="@drawable/top_bar"
+        android:padding="@dimen/activity_vertical_margin"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
     <FrameLayout
         android:id="@+id/search_frameLayout"
         android:layout_width="match_parent"
@@ -52,11 +64,11 @@
 
     </FrameLayout>
 
-    <androidx.core.widget.NestedScrollView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:overScrollMode="never"
-        android:fillViewport="true"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -390,27 +402,22 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/re_search_acc"
                 android:layout_width="match_parent"
+
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/hotel_seoul_md_pick_layout"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                app:layout_constraintTop_toBottomOf="@+id/hotel_seoul_md_pick_layout" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/hotel_seoul_all_recycler_view_items"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="parent"/>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.core.widget.NestedScrollView>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,9 +7,12 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.util.Patterns
+import androidx.fragment.app.Fragment
 import com.example.how_about_here.config.ApplicationClass
 import com.example.how_about_here.databinding.ActivityLoginEmailBinding
 import com.example.how_about_here.config.BaseActivity
+import com.example.how_about_here.databinding.FragmentMyBinding
+import com.example.how_about_here.src.main.MainActivity
 import com.example.how_about_here.src.main.join.JoinSuccessActivity
 import com.example.how_about_here.src.main.joinForm.models.UserResponse
 import com.example.how_about_here.src.main.login.models.PostUserLoginRequest
@@ -17,15 +20,16 @@ import com.example.how_about_here.src.main.login.models.UsersLoginResponse
 
 
 class LoginEmailActivity : BaseActivity<ActivityLoginEmailBinding>(ActivityLoginEmailBinding::inflate),LoginActivityView{
-
+    var email=""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         var email_bool=false
+
         super.onCreate(savedInstanceState)
 
         binding.login.setOnClickListener(){
 
-            val email = binding.editTextEmail.text.toString()
+            email = binding.editTextEmail.text.toString()
             val password = binding.editTextPassword.text.toString()
             val getRequest = PostUserLoginRequest(email = email, password = password)
 
@@ -34,23 +38,6 @@ class LoginEmailActivity : BaseActivity<ActivityLoginEmailBinding>(ActivityLogin
             LoginService(this).tryUserLogin(getRequest)
             //finish()
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -84,14 +71,20 @@ class LoginEmailActivity : BaseActivity<ActivityLoginEmailBinding>(ActivityLogin
         dismissLoadingDialog()
         //jwt
         val jwt=response.result.jwt
+
         val editor =ApplicationClass.sSharedPreferences.edit()
-        editor.putString(ApplicationClass.X_ACCESS_TOKEN,jwt)
+        editor.putString("email",email)
+        editor.putString("jwt",jwt)
+        editor.apply()
         editor.commit()
+        ApplicationClass.X_ACCESS_TOKEN=jwt
+
         //binding.homeBtnTryPostHttpMethod.text = response.message
         response.message?.let { showCustomToast(it) }
         if(response.message?.contains("성공")){
 
-            finish()
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
     }
 

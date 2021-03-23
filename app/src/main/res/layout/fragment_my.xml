@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".src.main.home.MyFragment">
+    tools:context=".src.main.my.MyFragment">
 
     <LinearLayout
         android:id="@+id/join_login"

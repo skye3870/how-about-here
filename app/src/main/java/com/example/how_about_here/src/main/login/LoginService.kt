@@ -26,7 +26,7 @@ class LoginService(val view: LoginActivityView) {
 
             override fun onFailure(call: Call<UsersLoginResponse>, t: Throwable) {
                 view.onGetUserLoginFailure(t.message?:"통신오류")
-                Log.d("2222222222222222","${t.message}")
+                Log.d("통신오류","${t.message}")
             }
 
 
