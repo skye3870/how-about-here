@@ -10,7 +10,7 @@ data class HomeHotel(val img: Int?,val special :String? ,val name: String?, val 
 
     val HomeHotelArr =arrayListOf(
 
-            HomeHotel(R.drawable.home_hotel_card1, "[반짝특가]","호텔리베라",9.1, 1774, "청담역 도보 5분",251000,69900,1),
+            HomeHotel(R.drawable.home_hotel_card1, "[반짝특가]","글랜드 강남 코엑스센터",9.0, 17, "삼성영 도보 1분",251000,69900,1),
             HomeHotel(R.drawable.home_hotel_card2, "[하루특가]","호텔피제이명동",9.4, 995, "을지로4가역 도보 5분",225000,63200,2),
             HomeHotel(R.drawable.home_hotel_card3, "","블룸비스타 호텔",9.3, 377, "들꽃 수목원 15분",200000,89900,3)
 

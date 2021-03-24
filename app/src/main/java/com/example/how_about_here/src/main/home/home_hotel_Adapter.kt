@@ -44,7 +44,7 @@ class HomeHotelAdapter(private val HomeHotelArr: ArrayList<HomeHotel>) :Recycler
         holder.special.text=HomeHotelArr.get(position).special
         holder.name.text=HomeHotelArr.get(position).name
         holder.star.text=HomeHotelArr.get(position).star.toString()
-        holder.review.text=HomeHotelArr.get(position).review.toString()
+        holder.review.text="("+HomeHotelArr.get(position).review.toString()+")"
         holder.where.text=HomeHotelArr.get(position).where
         holder.price.text=HomeHotelArr.get(position).price.toString()
         holder.price_origin.text=HomeHotelArr.get(position).price_orgin.toString()

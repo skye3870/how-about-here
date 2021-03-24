@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="250dp"
     android:layout_height="wrap_content"
     app:cardCornerRadius="10dp"
     android:layout_marginStart="@dimen/activity_vertical_margin"
@@ -16,7 +16,7 @@
 
         <ImageView
             android:id="@+id/img_hotel"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scaleType="centerCrop"
 
@@ -27,22 +27,21 @@
 
         <TextView
             android:id="@+id/text_special"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="@dimen/activity_vertical_margin"
             android:text="[**특가]"
             android:textSize="@dimen/home_text_18"
-            app:layout_constraintEnd_toEndOf="@+id/img_hotel"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/img_hotel"
             app:layout_constraintTop_toBottomOf="@+id/img_hotel" />
 
         <TextView
             android:id="@+id/text_price_origin"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="36dp"
             android:text="10,000"
+
             app:layout_constraintEnd_toEndOf="@+id/img_hotel"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/text_special"
@@ -50,10 +49,11 @@
 
         <TextView
             android:id="@+id/text_price"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="10,000"
             android:textSize="@dimen/home_text_18"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="@+id/img_hotel"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/text_special"
@@ -61,9 +61,11 @@
 
         <TextView
             android:id="@+id/text_name"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="name"
+            android:ems="7"
+            android:maxLines="1"
             android:textSize="@dimen/home_text_18"
             app:layout_constraintBottom_toBottomOf="@+id/text_special"
             app:layout_constraintStart_toEndOf="@+id/text_special"
@@ -71,7 +73,7 @@
 
         <TextView
             android:id="@+id/text_star_rate"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="별점"
             app:layout_constraintBottom_toBottomOf="@+id/img_star"
@@ -81,15 +83,16 @@
 
         <TextView
             android:id="@+id/text_star_review_count"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:text="(0)"
             app:layout_constraintStart_toEndOf="@+id/text_star_rate"
             app:layout_constraintTop_toTopOf="@+id/text_star_rate" />
 
         <TextView
             android:id="@+id/textView28"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ㆍ"
             app:layout_constraintStart_toEndOf="@+id/text_star_review_count"
@@ -97,7 +100,7 @@
 
         <TextView
             android:id="@+id/text_where"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="위치"
             app:layout_constraintStart_toEndOf="@+id/textView28"

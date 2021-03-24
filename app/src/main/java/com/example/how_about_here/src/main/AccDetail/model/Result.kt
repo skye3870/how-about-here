@@ -9,6 +9,8 @@ data class Result(
     val facility: List<Facility>,
     @SerializedName("Image")
     val image: List<Image>,
+    @SerializedName("Information")
+    val information: List<Information>,
     val location: List<Location>,
     val name: Name,
     @SerializedName("NearInfo")

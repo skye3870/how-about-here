@@ -9,8 +9,10 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="128dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -56,6 +58,16 @@
                 android:textSize="@dimen/home_text_20"
                 app:layout_constraintStart_toEndOf="@+id/acc_special"
                 app:layout_constraintTop_toTopOf="@+id/acc_special" />
+
+            <TextView
+                android:id="@+id/id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/acc_name"
+                app:layout_constraintStart_toEndOf="@+id/acc_name"
+                app:layout_constraintTop_toTopOf="@+id/acc_name" />
 
             <ImageView
                 android:id="@+id/map_icon"
@@ -118,8 +130,8 @@
                 layout="@layout/activity_acc_detail_event"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/star_icon" />
 
@@ -132,22 +144,22 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/event_activity" />
+
             <TextView
 
                 android:id="@+id/textView27"
                 android:layout_width="match_parent"
                 android:layout_height="10dp"
                 android:background="#EAEAEA"
-                app:layout_constraintTop_toBottomOf="@+id/room_activity"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                 />
+                app:layout_constraintTop_toBottomOf="@+id/room_activity" />
 
             <TextView
                 android:id="@+id/room_info"
-                android:layout_margin="@dimen/activity_vertical_margin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
                 android:text="당 호텔은 코로나 19 확산 방지를 위하여 고성능 열화상 카메라를 통한 발열 체크 중이며, 발열 증상이 확인되면 관할 보건소 및 담당자에세 통보, 선별 진료를 받을 수 있도록 조치하고 있습니다."
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
