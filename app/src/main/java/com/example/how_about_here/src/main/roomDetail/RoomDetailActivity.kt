@@ -1,28 +1,32 @@
-package com.example.how_about_here.src.main.AccDetail
+package com.example.how_about_here.src.main.roomDetail
 
 import android.os.Bundle
+import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.how_about_here.config.BaseActivity
 import com.example.how_about_here.databinding.ActivityAccDetailBinding
+import com.example.how_about_here.databinding.ActivityRoomDetailBinding
+import com.example.how_about_here.src.main.AccDetail.AccDetailActivitytView
 import com.example.how_about_here.src.main.AccDetail.model.*
+import com.example.how_about_here.src.main.roomDetail.model.RoomDetailResponse
 
 
-
-class AccDetailActivity: BaseActivity<ActivityAccDetailBinding>(ActivityAccDetailBinding::inflate),AccDetailActivitytView {
+class RoomDetailActivity: BaseActivity<ActivityRoomDetailBinding>(ActivityRoomDetailBinding::inflate),
+    RoomDetailActivitytView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val id = intent.getStringExtra("id").toString().toInt()
+        val id = intent.getStringExtra("idx").toString().toInt()
         //showLoadingDialog(this)
-        AccDetailService(this).tryGetAccDetail(id)
+        /*RoomDetailService(this).tryGetRoomDetail(id)*/
     }
 
-    override fun onSuccess(response: AccDetailResponse) {
+    override fun onSuccess(response: RoomDetailResponse) {
 
         if(response.message.contains("완료")) {
 
-            val result = response.result
+           /* val result = response.result
 
             //메인 사진
             Glide.with(this).load(result.image[0].image).into(binding.accImg)
@@ -36,7 +40,7 @@ class AccDetailActivity: BaseActivity<ActivityAccDetailBinding>(ActivityAccDetai
             //Log.d("dddddddddddddd",result.image[0].image)
 
             binding.roomInfo.text = result.information[0].acmdIntro
-            //binding.roomExtraInfo.rvInfo.text = result.information[0].acmdInfo
+            binding.roomExtraInfo.rvInfo.text = result.information[0].acmdInfo
 
 
             //룸 리스트
@@ -53,12 +57,12 @@ class AccDetailActivity: BaseActivity<ActivityAccDetailBinding>(ActivityAccDetai
             binding.roomFacility.rvFacility.adapter = FacilityList?.let { AccFacilityAdapter(it) }
             //공지사항
 
-           /* //기본정보
+            //기본정보
             binding.roomInfo.text = result.information[0].acmdIntro
             binding.roomExtraInfo.rvInfo.text = result.information[0].acmdInfo
             //환불규정
-            binding.roomExtraInfo.rvCancel.text =result.refundInfo.refundInfo*/
-
+            binding.roomExtraInfo.rvCancel.text =result.refundInfo.refundInfo
+*/
 
         }
 

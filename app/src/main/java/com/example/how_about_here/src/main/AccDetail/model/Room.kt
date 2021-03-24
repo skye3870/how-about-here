@@ -6,6 +6,7 @@ import com.google.gson.annotations.SerializedName
 data class Room(
     val extraInfo: String,
     val price: Int,
-    val roomInfo: String,
+    @SerializedName("RoomInformation")
+    val roomInformation: List<String>,
     val roomName: String
 )

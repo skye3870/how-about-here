@@ -16,13 +16,20 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
+        android:id="@+id/room_img"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:cardCornerRadius="10dp"
         android:layout_marginTop="@dimen/activity_vertical_margin"
+        app:cardCornerRadius="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView29" />
+        app:layout_constraintTop_toBottomOf="@+id/textView29" >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/room_name"
@@ -31,16 +38,16 @@
         android:layout_marginStart="@dimen/activity_vertical_margin"
         android:text="슈페리어 더블"
         android:textSize="@dimen/home_text_20"
-        app:layout_constraintStart_toEndOf="@+id/cardView2"
-        app:layout_constraintTop_toTopOf="@+id/cardView2" />
+        app:layout_constraintStart_toEndOf="@+id/room_img"
+        app:layout_constraintTop_toTopOf="@+id/room_img" />
 
     <TextView
-        android:id="@+id/room_name2"
+        android:id="@+id/room_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="10000원"
         android:textSize="@dimen/home_text_20"
-        app:layout_constraintBottom_toBottomOf="@+id/cardView2"
+        app:layout_constraintBottom_toBottomOf="@+id/room_img"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
@@ -50,10 +57,10 @@
         android:layout_marginStart="@dimen/activity_vertical_margin"
         android:text="2인기준, 최대2인"
 
-        app:layout_constraintStart_toEndOf="@+id/cardView2"
+        app:layout_constraintStart_toEndOf="@+id/room_img"
         app:layout_constraintTop_toBottomOf="@+id/room_name" />
 
-    <TextView
+    <!--<TextView
         android:id="@+id/extra_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -65,7 +72,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+        app:layout_constraintTop_toBottomOf="@+id/room_img" />-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/extra_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:background="@drawable/home_motel_card"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/room_img" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

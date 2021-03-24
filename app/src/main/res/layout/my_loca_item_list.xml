@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#020723"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/img_myloca"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/star_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/img_myloca"
+        android:text="5성급"
+        android:textColor="@color/white"
+        android:fontFamily="@font/how"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="@dimen/activity_vertical_margin"/>
+
+    <TextView
+        android:id="@+id/hotel_seoul_all_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="용인탑호텔"
+        android:textColor="@color/white"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/star_rating"
+        app:layout_constraintTop_toBottomOf="@id/star_rating" />
+
+
+    <TextView
+        android:id="@+id/hotel_seoul_all_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text="2.5km"
+        android:textColor="@color/blackForText"
+        app:layout_constraintStart_toStartOf="@+id/hotel_seoul_all_name"
+        app:layout_constraintTop_toBottomOf="@+id/hotel_seoul_all_name" />
+
+
+    <ImageView
+        android:id="@+id/hotel_seoul_all_rating_star_img"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_toEndOf="@id/hotel_seoul_all_location"
+        android:src="@drawable/star_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/hotel_seoul_all_refund_red_txt"
+        app:layout_constraintStart_toEndOf="@+id/hotel_seoul_all_refund_red_txt"
+        app:layout_constraintTop_toTopOf="@+id/hotel_seoul_all_refund_red_txt" />
+
+    <TextView
+        android:id="@+id/hotel_seoul_all_rating_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@id/hotel_seoul_all_rating_star_img"
+        android:text="9.5"
+        android:textColor="@color/browser_actions_bg_grey"
+        app:layout_constraintStart_toEndOf="@+id/hotel_seoul_all_rating_star_img"
+        app:layout_constraintTop_toTopOf="@+id/hotel_seoul_all_refund_red_txt" />
+
+    <TextView
+        android:id="@+id/hotel_seoul_all_review_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@id/hotel_seoul_all_rating_txt"
+        android:text="(777)"
+        android:textColor="@color/browser_actions_bg_grey"
+        app:layout_constraintStart_toEndOf="@+id/hotel_seoul_all_rating_txt"
+        app:layout_constraintTop_toTopOf="@+id/hotel_seoul_all_rating_txt" />
+
+    <TextView
+        android:id="@+id/hotel_seoul_all_refund_red_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:background="#598A5252"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:text="체크인 하루 전 100% 환불 가능"
+        android:textColor="@color/redForText"
+        app:layout_constraintStart_toEndOf="@+id/hotel_seoul_all_location"
+        app:layout_constraintTop_toTopOf="@+id/hotel_seoul_all_location" />
+
+    <TextView
+        android:id="@+id/hotel_seoul_all_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10000원"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hotel_seoul_all_refund_red_txt"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="5dp"/>
+
+
+    <TextView
+        android:id="@+id/divider"
+        android:layout_width="370dp"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:background="@color/browser_actions_bg_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hotel_seoul_all_price" />
+
+
+    <TextView
+        android:id="@+id/hotel_seoul_all_event_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:text="최대 6시간이용"
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/star_rating"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

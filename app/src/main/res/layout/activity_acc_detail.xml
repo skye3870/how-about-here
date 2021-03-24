@@ -27,7 +27,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/detail_img" />
+                 />
 
             <TextView
                 android:id="@+id/acc_star"
@@ -59,15 +59,7 @@
                 app:layout_constraintStart_toEndOf="@+id/acc_special"
                 app:layout_constraintTop_toTopOf="@+id/acc_special" />
 
-            <TextView
-                android:id="@+id/id"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="@+id/acc_name"
-                app:layout_constraintStart_toEndOf="@+id/acc_name"
-                app:layout_constraintTop_toTopOf="@+id/acc_name" />
+
 
             <ImageView
                 android:id="@+id/map_icon"

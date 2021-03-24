@@ -1,7 +1,6 @@
 package com.example.how_about_here.src.main.AccDetail
 
 import com.example.how_about_here.src.main.AccDetail.model.AccDetailResponse
-import com.example.how_about_here.src.main.joinForm.models.UserResponse
 
 
 interface AccDetailActivitytView {

@@ -16,8 +16,6 @@ data class Result(
     @SerializedName("NearInfo")
     val nearInfo: NearInfo,
     val rating: Rating,
-    @SerializedName("RefundInfo")
-    val refundInfo: RefundInfo,
     val reviewCount: ReviewCount,
-    val room: List<Room>
+    val room: List<Room>//질문함
 )
