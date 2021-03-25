@@ -39,7 +39,7 @@ class JoinFormActivity : BaseActivity<ActivityJoinFormBinding>(ActivityJoinFormB
                         confirmPassword = password, nickname = nickname, phoneNumber ="01011111111")
                 showLoadingDialog(this)
                 JoinService(this).tryPostSignUp(postRequest)
-            finish()
+
             }
         }
 
@@ -162,12 +162,14 @@ class JoinFormActivity : BaseActivity<ActivityJoinFormBinding>(ActivityJoinFormB
         if(response.message?.contains("완료")){
         val intent = Intent(this, JoinSuccessActivity::class.java)
         startActivity(intent)
+
         finish()
         }
     }
 
     override fun onPostSignUpFailure(message: String) {
         dismissLoadingDialog()
+
         showCustomToast("오류 : $message")
     }
 

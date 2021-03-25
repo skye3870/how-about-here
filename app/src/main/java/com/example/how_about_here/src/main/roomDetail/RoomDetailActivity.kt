@@ -1,14 +1,13 @@
 package com.example.how_about_here.src.main.roomDetail
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.bumptech.glide.Glide
+import com.example.how_about_here.config.ApplicationClass
 import com.example.how_about_here.config.BaseActivity
-import com.example.how_about_here.databinding.ActivityAccDetailBinding
 import com.example.how_about_here.databinding.ActivityRoomDetailBinding
-import com.example.how_about_here.src.main.AccDetail.AccDetailActivitytView
 import com.example.how_about_here.src.main.AccDetail.model.*
+import com.example.how_about_here.src.main.roomDetail.model.GetRoomDetailRequest
 import com.example.how_about_here.src.main.roomDetail.model.RoomDetailResponse
 
 
@@ -17,9 +16,13 @@ class RoomDetailActivity: BaseActivity<ActivityRoomDetailBinding>(ActivityRoomDe
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val id = intent.getStringExtra("idx").toString().toInt()
+        val id = 1
+        val idx = intent.getStringExtra("idx").toString().toInt()
         //showLoadingDialog(this)
-        /*RoomDetailService(this).tryGetRoomDetail(id)*/
+        Log.d("ddddddddddddddddddddddd",id.toString())
+        Log.d("ddddddddddddddddddddddd",idx.toString())
+        val getRequest = GetRoomDetailRequest(id=id,idx=idx)
+        RoomDetailService(this).tryGetRoomDetail(getRequest)
     }
 
     override fun onSuccess(response: RoomDetailResponse) {

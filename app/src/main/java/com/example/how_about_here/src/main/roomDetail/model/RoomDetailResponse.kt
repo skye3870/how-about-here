@@ -7,5 +7,5 @@ data class RoomDetailResponse(
     val code: Int,
     val isSuccess: Boolean,
     val message: String,
-    val result: Result
+    val result: List<Result>
 )

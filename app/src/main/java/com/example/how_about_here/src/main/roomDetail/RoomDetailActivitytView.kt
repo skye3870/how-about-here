@@ -1,6 +1,5 @@
 package com.example.how_about_here.src.main.roomDetail
 
-import com.example.how_about_here.src.main.AccDetail.model.AccDetailResponse
 import com.example.how_about_here.src.main.roomDetail.model.RoomDetailResponse
 
 

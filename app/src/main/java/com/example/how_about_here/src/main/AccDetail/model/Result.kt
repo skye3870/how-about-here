@@ -17,5 +17,5 @@ data class Result(
     val nearInfo: NearInfo,
     val rating: Rating,
     val reviewCount: ReviewCount,
-    val room: List<Room>//질문함
+    val room: List<Room>
 )

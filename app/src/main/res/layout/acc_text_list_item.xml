@@ -7,7 +7,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
-        android:id="@+id/room_info"
+        android:id="@+id/text_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/home_hash_5"

@@ -1,5 +1,6 @@
 package com.example.how_about_here.src.main.joinForm
 
+import android.util.Log
 import com.example.how_about_here.config.ApplicationClass
 import com.example.how_about_here.src.main.joinForm.models.PostSignUpRequest
 import com.example.how_about_here.src.main.joinForm.models.UserResponse
@@ -27,12 +28,15 @@ class JoinService(val view: JoinFragmentView) {
     fun tryPostSignUp(postSignUpRequest: PostSignUpRequest){
         val homeRetrofitInterface = ApplicationClass.sRetrofit.create(JoinRetrofitInterface::class.java)
         homeRetrofitInterface.postSignUp(postSignUpRequest).enqueue(object : Callback<UserResponse>{
+
             override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
                 view.onPostSignUpSuccess(response.body() as UserResponse)
+
             }
 
             override fun onFailure(call: Call<UserResponse>, t: Throwable) {
                 view.onPostSignUpFailure(t.message ?: "통신 오류")
+
             }
         })
     }

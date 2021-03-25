@@ -7,62 +7,55 @@
     android:layout_height="match_parent"
     android:background="@color/white">
     <TextView
-        android:id="@+id/text_info_form"
+        android:id="@+id/top_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="준특실(배그)"
+        android:text="서울"
         android:background="@drawable/top_bar"
         android:padding="@dimen/activity_vertical_margin"
-        android:textAlignment="center"
+        android:textSize="@dimen/home_text_20"
+        android:layout_marginLeft="?attr/actionBarSize"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <FrameLayout
-        android:id="@+id/search_frameLayout"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/hotel_seoul_all_back_btn"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="5dp"
 
-            app:srcCompat="@drawable/main_btm_nav_item_search" />
+    <ImageView
+        android:id="@+id/hotel_seoul_all_back_btn"
+        android:layout_width="46dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center_vertical"
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="40dp"
-            android:text="서울"
-            android:textColor="#000000"
-            android:textSize="25dp"
-            android:textStyle="bold" />
+        app:layout_constraintBottom_toBottomOf="@+id/top_bar"
+        app:layout_constraintEnd_toStartOf="@+id/top_bar"
+        app:layout_constraintTop_toTopOf="@+id/top_bar"
+        app:srcCompat="@drawable/main_btm_nav_item_search" />
 
-        <ImageView
-            android:layout_width="18dp"
-            android:layout_height="18dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="95dp"
-            app:srcCompat="@android:drawable/ic_delete" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right|center_vertical"
-            android:layout_marginEnd="10dp"
-            android:text="지도 보기"
-            android:textStyle="bold" />
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_gravity="center_vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/top_bar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_delete"
+        tools:layout_editor_absoluteX="114dp" />
 
-    </FrameLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:text="지도 보기"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/top_bar"
+        app:layout_constraintEnd_toEndOf="@+id/top_bar"
+        app:layout_constraintTop_toTopOf="@+id/top_bar" />
+
+
 
     <ScrollView
         android:layout_width="match_parent"
@@ -72,7 +65,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_frameLayout">
+        app:layout_constraintTop_toBottomOf="@+id/top_bar">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -350,13 +343,15 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/hotel_seoul_md_pick_layout"
-                android:background="#36D3D3D3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#36D3D3D3"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/hotel_seoul_all_taste_layout">
 
@@ -381,7 +376,7 @@
                     android:layout_width="13dp"
                     android:layout_height="13dp"
                     android:layout_marginEnd="3dp"
-                    android:src="@drawable/star_icon"
+
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/textView"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -401,7 +396,6 @@
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/re_search_acc"

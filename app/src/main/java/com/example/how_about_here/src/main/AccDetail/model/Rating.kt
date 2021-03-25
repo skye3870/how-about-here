@@ -5,5 +5,5 @@ import com.google.gson.annotations.SerializedName
 
 data class Rating(
     @SerializedName("avg(R.rating)")
-    val avgRRating: Int
+    val avgRRating: Double
 )

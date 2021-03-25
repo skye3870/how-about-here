@@ -10,7 +10,7 @@
         android:id="@+id/img_myloca"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-
+        android:src="@drawable/detail_img"
         android:scaleType="centerCrop"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,7 +28,7 @@
         android:layout_margin="@dimen/activity_vertical_margin"/>
 
     <TextView
-        android:id="@+id/hotel_seoul_all_name"
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -47,8 +47,8 @@
         android:layout_centerVertical="true"
         android:text="2.5km"
         android:textColor="@color/blackForText"
-        app:layout_constraintStart_toStartOf="@+id/hotel_seoul_all_name"
-        app:layout_constraintTop_toBottomOf="@+id/hotel_seoul_all_name" />
+        app:layout_constraintStart_toStartOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
 
 
     <ImageView
@@ -59,9 +59,9 @@
         android:layout_marginStart="@dimen/activity_vertical_margin"
         android:layout_toEndOf="@id/hotel_seoul_all_location"
         android:src="@drawable/star_icon"
-        app:layout_constraintBottom_toBottomOf="@+id/hotel_seoul_all_refund_red_txt"
-        app:layout_constraintStart_toEndOf="@+id/hotel_seoul_all_refund_red_txt"
-        app:layout_constraintTop_toTopOf="@+id/hotel_seoul_all_refund_red_txt" />
+        app:layout_constraintBottom_toBottomOf="@+id/text_refund"
+        app:layout_constraintStart_toEndOf="@+id/text_refund"
+        app:layout_constraintTop_toTopOf="@+id/text_refund" />
 
     <TextView
         android:id="@+id/hotel_seoul_all_rating_txt"
@@ -72,10 +72,10 @@
         android:text="9.5"
         android:textColor="@color/browser_actions_bg_grey"
         app:layout_constraintStart_toEndOf="@+id/hotel_seoul_all_rating_star_img"
-        app:layout_constraintTop_toTopOf="@+id/hotel_seoul_all_refund_red_txt" />
+        app:layout_constraintTop_toTopOf="@+id/text_refund" />
 
     <TextView
-        android:id="@+id/hotel_seoul_all_review_num"
+        android:id="@+id/review_num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
@@ -86,7 +86,7 @@
         app:layout_constraintTop_toTopOf="@+id/hotel_seoul_all_rating_txt" />
 
     <TextView
-        android:id="@+id/hotel_seoul_all_refund_red_txt"
+        android:id="@+id/text_refund"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/activity_vertical_margin"
@@ -99,7 +99,7 @@
         app:layout_constraintTop_toTopOf="@+id/hotel_seoul_all_location" />
 
     <TextView
-        android:id="@+id/hotel_seoul_all_price"
+        android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="10000원"
@@ -107,24 +107,24 @@
         android:textStyle="bold"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/hotel_seoul_all_refund_red_txt"
+        app:layout_constraintTop_toBottomOf="@id/text_refund"
         android:layout_marginEnd="20dp"
         android:layout_marginTop="5dp"/>
 
 
     <TextView
         android:id="@+id/divider"
-        android:layout_width="370dp"
+        android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_margin="@dimen/activity_vertical_margin"
         android:background="@color/browser_actions_bg_grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hotel_seoul_all_price" />
+        app:layout_constraintTop_toBottomOf="@+id/price" />
 
 
     <TextView
-        android:id="@+id/hotel_seoul_all_event_txt"
+        android:id="@+id/text_event"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/activity_vertical_margin"

@@ -51,7 +51,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/room_info"
+        android:id="@+id/text_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/activity_vertical_margin"
@@ -60,7 +60,7 @@
         app:layout_constraintStart_toEndOf="@+id/room_img"
         app:layout_constraintTop_toBottomOf="@+id/room_name" />
 
-    <!--<TextView
+    <TextView
         android:id="@+id/extra_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -72,8 +72,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/room_img" />-->
-    <androidx.recyclerview.widget.RecyclerView
+        app:layout_constraintTop_toBottomOf="@+id/room_img" />
+    <!--<androidx.recyclerview.widget.RecyclerView
         android:id="@+id/extra_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -84,7 +84,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/room_img" />
+        app:layout_constraintTop_toBottomOf="@+id/room_img" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

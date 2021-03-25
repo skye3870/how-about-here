@@ -24,22 +24,26 @@ class RoomDetailService(val view: RoomDetailActivitytView) {
         })
     }*/
 
-    fun tryGetRoomDetail(getRoomDetailRequest: GetRoomDetailRequest){
-        val roomDetailRetrofitInterface = ApplicationClass.sRetrofit.create(RoomDetailRetrofitInterface::class.java)
-        roomDetailRetrofitInterface.getRoomDetail(getRoomDetailRequest).enqueue(object : Callback<RoomDetailResponse>{
-            override fun onResponse(
-                call: Call<RoomDetailResponse>,
-                response: Response<RoomDetailResponse>
-            ) {
-                view.onSuccess(response.body() as RoomDetailResponse)
-            }
-
-            override fun onFailure(call: Call<RoomDetailResponse>, t: Throwable) {
-                view.onFailure(t.message ?: "통신 오류")
-            }
+    fun tryGetRoomDetail(getRoomDetailRequest: GetRoomDetailRequest) {
+        val roomDetailRetrofitInterface =
+            ApplicationClass.sRetrofit.create(RoomDetailRetrofitInterface::class.java)
+        roomDetailRetrofitInterface.getRoomDetail(getRoomDetailRequest)
+            .enqueue(object : Callback<RoomDetailResponse> {
 
 
-        })
+                override fun onResponse(
+                    call: Call<RoomDetailResponse>,
+                    response: Response<RoomDetailResponse>
+                ) {
+                    view.onSuccess(response.body() as RoomDetailResponse)
+                }
+
+                override fun onFailure(call: Call<RoomDetailResponse>, t: Throwable) {
+                    view.onFailure(t.message ?: "통신 오류")
+                }
+
+
+            })
     }
 
 }

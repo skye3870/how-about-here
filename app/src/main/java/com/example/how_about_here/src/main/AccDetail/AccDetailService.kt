@@ -1,5 +1,6 @@
 package com.example.how_about_here.src.main.AccDetail
 
+import android.util.Log
 import com.example.how_about_here.config.ApplicationClass
 import com.example.how_about_here.src.main.AccDetail.model.AccDetailResponse
 
@@ -29,9 +30,11 @@ class AccDetailService(val view: AccDetailActivitytView) {
 
             override fun onResponse(call: Call<AccDetailResponse>, response: Response<AccDetailResponse>) {
                 view.onSuccess(response.body() as AccDetailResponse)
+
             }
 
             override fun onFailure(call: Call<AccDetailResponse>, t: Throwable) {
+                Log.d("1111111111111111111","2222")
                 view.onFailure(t.message ?: "통신 오류")
             }
         })

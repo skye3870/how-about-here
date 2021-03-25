@@ -7,6 +7,7 @@ data class Room(
     val extraInfo: String,
     val price: Int,
     @SerializedName("RoomInformation")
-    val roomInformation: List<String>,
-    val roomName: String
+    val roomInformation: String,
+    val roomName: String,
+    val roomIdx : Int
 )
