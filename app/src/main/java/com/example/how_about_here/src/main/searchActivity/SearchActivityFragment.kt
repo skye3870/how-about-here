@@ -1,4 +1,4 @@
-package com.example.how_about_here.src.main.search
+package com.example.how_about_here.src.main.searchActivity
 
 import android.os.Bundle
 

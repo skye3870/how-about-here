@@ -1,19 +1,17 @@
-package com.example.how_about_here.src.main.search
+package com.example.how_about_here.src.main.searchAcc
+
 
 import android.content.Intent
 import android.os.Bundle
-
 import android.view.View
 import android.widget.SearchView
 import androidx.core.content.ContextCompat
-
 import com.example.how_about_here.R
 import com.example.how_about_here.config.BaseFragment
-
 import com.example.how_about_here.databinding.FragmentSearchAccBinding
 import com.example.how_about_here.src.main.AccDetail.AccDetailActivity
 import com.example.how_about_here.src.main.hotel.HotelFragment
-import com.example.how_about_here.src.main.join.JoinSuccessActivity
+import com.example.how_about_here.src.main.searchAccResult.SearchAccResultFragment
 
 
 class SearchAccFragment :
@@ -21,6 +19,8 @@ class SearchAccFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
 
         binding.search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(p0: String?): Boolean {
@@ -31,11 +31,16 @@ class SearchAccFragment :
 //                    Toast.makeText(this@MainActivity, "No match found", Toast.LENGTH_SHORT).show()
 //                }
 
+                val intent = Intent(context, SearchAccResultFragment::class.java)
+                intent.putExtra("keyword", "강남")
+
+
                 parentFragmentManager.beginTransaction()
-                    .replace(R.id.main_frm, SearchAccResultFragment())
-                    .commitAllowingStateLoss()
+                        .replace(R.id.main_frm, SearchAccResultFragment())
+                        .commitAllowingStateLoss()
                 return false
             }
+
             override fun onQueryTextChange(p0: String?): Boolean {
                 //Start filtering the list as user start entering the characters
 

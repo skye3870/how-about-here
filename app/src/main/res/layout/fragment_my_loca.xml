@@ -173,7 +173,7 @@
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/hotel_seoul_md_pick_layout"
+                android:id="@+id/recommend_sort"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -206,7 +206,7 @@
                 android:layout_height="match_parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/hotel_seoul_md_pick_layout" />
+                app:layout_constraintTop_toBottomOf="@+id/recommend_sort" />
 
 
 
