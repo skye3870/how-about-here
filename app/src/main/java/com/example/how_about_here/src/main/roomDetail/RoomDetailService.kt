@@ -1,7 +1,6 @@
 package com.example.how_about_here.src.main.roomDetail
 
 import com.example.how_about_here.config.ApplicationClass
-import com.example.how_about_here.src.main.roomDetail.model.GetRoomDetailRequest
 import com.example.how_about_here.src.main.roomDetail.model.RoomDetailResponse
 
 
@@ -24,10 +23,10 @@ class RoomDetailService(val view: RoomDetailActivitytView) {
         })
     }*/
 
-    fun tryGetRoomDetail(getRoomDetailRequest: GetRoomDetailRequest) {
+    fun tryGetRoomDetail( id: Int, idx: Int) {
         val roomDetailRetrofitInterface =
             ApplicationClass.sRetrofit.create(RoomDetailRetrofitInterface::class.java)
-        roomDetailRetrofitInterface.getRoomDetail(getRoomDetailRequest)
+        roomDetailRetrofitInterface.getRoomDetail(id,idx)
             .enqueue(object : Callback<RoomDetailResponse> {
 
 

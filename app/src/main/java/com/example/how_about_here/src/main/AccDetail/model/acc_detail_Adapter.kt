@@ -10,7 +10,9 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.how_about_here.R
+import com.example.how_about_here.config.ApplicationClass
 import com.example.how_about_here.src.main.AccDetail.AccDetailActivity
+import com.example.how_about_here.src.main.AccDetail.modelReviews.Review
 import com.example.how_about_here.src.main.roomDetail.RoomDetailActivity
 
 
@@ -44,13 +46,17 @@ class AccDetailAdapter(private val RoomList: List<Room>) :RecyclerView.Adapter<A
         holder.extraInfo.text=RoomList.get(position).extraInfo
         holder.name.text=RoomList.get(position).roomName
 
-        //Log.d("aaaaaaaaaaaa",goodsList.get(position).img.toString())
+        Log.d("aaaaaaaaaaaa",RoomList.get(position).extraInfo.toString())
 
 
        holder.itemView.setOnClickListener {
 
            val intent = Intent(holder.itemView.context, RoomDetailActivity::class.java)
-           Log.d("ddddddddddddddddddddddd",RoomList.get(position).roomIdx.toString())
+           //Log.d("ddddddddddddddddddddddd",RoomList.get(position).roomIdx.toString())
+
+           //("id", id.toString())
+
+
            intent.putExtra("idx",RoomList.get(position).roomIdx.toString())
            startActivity(holder.itemView.context, intent, null)
        }
@@ -69,7 +75,7 @@ class AccDetailAdapter(private val RoomList: List<Room>) :RecyclerView.Adapter<A
 
         val name = itemView.findViewById<TextView>(R.id.room_name)
         val price = itemView.findViewById<TextView>(R.id.room_price)
-        val roomInfo =itemView.findViewById<TextView>(R.id.text_list)
+        val roomInfo =itemView.findViewById<TextView>(R.id.room_info)
         val extraInfo =itemView.findViewById<TextView>(R.id.extra_info)
 
     }
@@ -160,6 +166,138 @@ class AccCheckingformationListAdapter(private val CheckingformationList: List<St
         //val switch = itemView.findViewById<Switch>(R.id.switch_button)
 
         val text = itemView.findViewById<TextView>(R.id.text_list)
+    }
+
+}
+
+
+//기본정보
+class AccAccommodationformationListAdapter(private val AccommodationformationList: List<String>) :RecyclerView.Adapter<AccAccommodationformationListAdapter.CustomViewHolder>(){
+
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.acc_text_list_item, parent, false)//뷰를 붙여줌
+        return CustomViewHolder(view)
+                .apply {
+
+                }
+    }
+
+    override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {//계속실행
+        //holder.image.setImageResource.(goodsList.get(position).image)
+        /*Glide.with(this).load(result.image[0].image).into(binding.accImg)
+        holder.img.setImageResource(RoomList.get(position).img as Int)*/
+
+
+
+
+        holder.text.text=AccommodationformationList.get(position).toString()
+        //Log.d("aaaaaaaaaaaa",goodsList.get(position).img.toString())
+        /*holder.name.text=goodsList.get(position).name
+        holder.switch.isChecked=goodsList.get(position).switch.toString().toBoolean()*/
+
+    }
+    override fun getItemCount(): Int {
+        return AccommodationformationList.size
+    }
+
+    class CustomViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
+        //val switch = itemView.findViewById<Switch>(R.id.switch_button)
+
+        val text = itemView.findViewById<TextView>(R.id.text_list)
+    }
+
+}
+
+
+//환불규정
+class AccRefundInformationListAdapter(private val RefundInformationList: List<String>) :RecyclerView.Adapter<AccRefundInformationListAdapter.CustomViewHolder>(){
+
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.acc_text_list_item, parent, false)//뷰를 붙여줌
+        return CustomViewHolder(view)
+                .apply {
+
+                }
+    }
+
+    override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {//계속실행
+        //holder.image.setImageResource.(goodsList.get(position).image)
+        /*Glide.with(this).load(result.image[0].image).into(binding.accImg)
+        holder.img.setImageResource(RoomList.get(position).img as Int)*/
+
+
+
+
+        holder.text.text=RefundInformationList.get(position).toString()
+        //Log.d("aaaaaaaaaaaa",goodsList.get(position).img.toString())
+        /*holder.name.text=goodsList.get(position).name
+        holder.switch.isChecked=goodsList.get(position).switch.toString().toBoolean()*/
+
+    }
+    override fun getItemCount(): Int {
+        return RefundInformationList.size
+    }
+
+    class CustomViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
+        //val switch = itemView.findViewById<Switch>(R.id.switch_button)
+
+        val text = itemView.findViewById<TextView>(R.id.text_list)
+    }
+
+}
+
+
+//리뷰s
+class AccReviewListListAdapter(private val ReviewList: List<Review>) :RecyclerView.Adapter<AccReviewListListAdapter.CustomViewHolder>(){
+
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.acc_review_list_item, parent, false)//뷰를 붙여줌
+        return CustomViewHolder(view)
+                .apply {
+
+                }
+    }
+
+    override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {//계속실행
+        //holder.image.setImageResource.(goodsList.get(position).image)
+        Glide.with(holder.img).load(ReviewList.get(position).reviewImage[0]).into(holder.img)
+        //holder.img.setImageResource(RoomList.get(position).img as Int)
+        holder.nickName.text=ReviewList.get(position).nickName
+        holder.rating.rating=ReviewList.get(position).rating.toFloat()
+        holder.time.text=ReviewList.get(position).dATE
+        holder.roomName.text=ReviewList.get(position).roomName
+        holder.reviewText.text=ReviewList.get(position).reviewText
+
+
+
+
+        //holder.text.text=ReviewList.get(position).toString()
+        //Log.d("aaaaaaaaaaaa",goodsList.get(position).img.toString())
+        /*holder.name.text=goodsList.get(position).name
+        holder.switch.isChecked=goodsList.get(position).switch.toString().toBoolean()*/
+
+    }
+    override fun getItemCount(): Int {
+        return ReviewList.size
+    }
+
+    class CustomViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
+        //val switch = itemView.findViewById<Switch>(R.id.switch_button)
+        /*"reviewIdx": 1,
+        "nickName": "초란색",
+        "rating": 9,
+        "roomName": "스탠다드 트윈",
+        "reviewText": "친구들과 함꼐 첫 부산여행이었는데 탁월한 숙소 선택이었던 것 같습니다",
+        "DATE": "2021-03-19 08:47:15"*/
+        val rating=itemView.findViewById<RatingBar>(R.id.rating_star)
+        val time=itemView.findViewById<TextView>(R.id.text_time)
+        val roomName=itemView.findViewById<TextView>(R.id.text_roomName)
+        val nickName=itemView.findViewById<TextView>(R.id.text_nickName)
+        val reviewText = itemView.findViewById<TextView>(R.id.text_review)
+        val img = itemView.findViewById<ImageView>(R.id.review_img)
     }
 
 }

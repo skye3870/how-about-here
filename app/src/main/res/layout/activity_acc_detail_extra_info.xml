@@ -51,16 +51,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rv_noti" />
 
-    <!--<androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_info"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/activity_vertical_margin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_info" />-->
-
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -68,6 +59,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_info" />
+
 
     <TextView
         android:id="@+id/text_cancel"
@@ -81,16 +73,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rv_info" />
 
-    <!--<androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_cancel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/activity_vertical_margin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_cancel" />-->
-
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_cancel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -98,6 +81,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_cancel" />
+
 
 
 

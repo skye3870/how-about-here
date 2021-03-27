@@ -1,13 +1,10 @@
 package com.example.how_about_here.src.main.roomDetail
 
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import com.example.how_about_here.config.ApplicationClass
 import com.example.how_about_here.config.BaseActivity
 import com.example.how_about_here.databinding.ActivityRoomDetailBinding
-import com.example.how_about_here.src.main.AccDetail.model.*
-import com.example.how_about_here.src.main.roomDetail.model.GetRoomDetailRequest
 import com.example.how_about_here.src.main.roomDetail.model.RoomDetailResponse
 
 
@@ -16,17 +13,20 @@ class RoomDetailActivity: BaseActivity<ActivityRoomDetailBinding>(ActivityRoomDe
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val id = 1
+
+        val id = ApplicationClass.sSharedPreferences.getString("id","id").toString().toInt()
         val idx = intent.getStringExtra("idx").toString().toInt()
-        //showLoadingDialog(this)
-        Log.d("ddddddddddddddddddddddd",id.toString())
-        Log.d("ddddddddddddddddddddddd",idx.toString())
-        val getRequest = GetRoomDetailRequest(id=id,idx=idx)
-        RoomDetailService(this).tryGetRoomDetail(getRequest)
+
+
+        //val getRequest = GetRoomDetailRequest(id=id,idx=idx)
+        //RoomDetailService(this).tryGetRoomDetail(GetRoomDetailRequest(id=id,idx=idx))
+
+        RoomDetailService(this).tryGetRoomDetail(id=id,idx=idx)
+        showLoadingDialog(this)
     }
 
     override fun onSuccess(response: RoomDetailResponse) {
-
+        dismissLoadingDialog()
         if(response.message.contains("완료")) {
 
            /* val result = response.result

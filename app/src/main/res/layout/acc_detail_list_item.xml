@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/room_img"
+        android:id="@+id/room_img_cardview"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="@dimen/activity_vertical_margin"
@@ -24,8 +24,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView29" >
         <ImageView
+            android:id="@+id/room_img"
+            android:src="@drawable/acc_room_img"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:scaleType="centerCrop"
             />
 
 
@@ -38,8 +41,8 @@
         android:layout_marginStart="@dimen/activity_vertical_margin"
         android:text="슈페리어 더블"
         android:textSize="@dimen/home_text_20"
-        app:layout_constraintStart_toEndOf="@+id/room_img"
-        app:layout_constraintTop_toTopOf="@+id/room_img" />
+        app:layout_constraintStart_toEndOf="@+id/room_img_cardview"
+        app:layout_constraintTop_toTopOf="@+id/room_img_cardview" />
 
     <TextView
         android:id="@+id/room_price"
@@ -47,17 +50,16 @@
         android:layout_height="wrap_content"
         android:text="10000원"
         android:textSize="@dimen/home_text_20"
-        app:layout_constraintBottom_toBottomOf="@+id/room_img"
+        app:layout_constraintBottom_toBottomOf="@+id/room_img_cardview"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/text_list"
+        android:id="@+id/room_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/activity_vertical_margin"
         android:text="2인기준, 최대2인"
 
-        app:layout_constraintStart_toEndOf="@+id/room_img"
+        app:layout_constraintStart_toStartOf="@+id/room_name"
         app:layout_constraintTop_toBottomOf="@+id/room_name" />
 
     <TextView
@@ -72,7 +74,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/room_img" />
+        app:layout_constraintTop_toBottomOf="@+id/room_img_cardview" />
     <!--<androidx.recyclerview.widget.RecyclerView
         android:id="@+id/extra_info"
         android:layout_width="match_parent"

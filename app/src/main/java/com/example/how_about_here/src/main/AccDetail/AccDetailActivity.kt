@@ -1,7 +1,6 @@
 package com.example.how_about_here.src.main.AccDetail
 
 import android.os.Bundle
-import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.how_about_here.config.ApplicationClass
@@ -10,6 +9,8 @@ import com.example.how_about_here.databinding.ActivityAccDetailBinding
 import com.example.how_about_here.src.main.AccDetail.model.*
 import com.example.how_about_here.src.main.AccDetail.model.AccDetailAdapter
 import com.example.how_about_here.src.main.AccDetail.model.AccFacilityAdapter
+import com.example.how_about_here.src.main.AccDetail.modelReviews.AccReviewsResponse
+import com.example.how_about_here.src.main.AccDetail.modelReviews.Review
 
 
 class AccDetailActivity: BaseActivity<ActivityAccDetailBinding>(ActivityAccDetailBinding::inflate),AccDetailActivitytView {
@@ -17,30 +18,27 @@ class AccDetailActivity: BaseActivity<ActivityAccDetailBinding>(ActivityAccDetai
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val id = intent.getStringExtra("id").toString().toInt()
-        //showLoadingDialog(this)
-        //val getRequest = GetAccDetailRequest(id=id)
-
-
         val editor = ApplicationClass.sSharedPreferences.edit()
         editor.putString("id", id.toString())
         editor.apply()
         editor.commit()
+        showLoadingDialog(this)
 
+        //val getRequest = GetAccDetailRequest(id=id)
 
         AccDetailService(this).tryGetAccDetail(id)
+        AccDetailService(this).tryGetAccReviews(id)
     }
 
     override fun onSuccess(response: AccDetailResponse) {
-
-        if(response.message.contains("완료")) {
-            Log.d("1111111111111111111","3333")
+        dismissLoadingDialog()
+       // if (response.message.contains("완료")) {
             val result = response.result
-            Log.d("1111111111111111111", result.toString())
 
             //메인 사진
             Glide.with(this).load(result.image[0].image).into(binding.accImg)
 
-          //숙소정보
+            //숙소정보
             binding.accName.text = result.name.acmdName
             binding.accWhere.text = result.address.address
             binding.accStarScore.text = result.rating.avgRRating.toString()
@@ -59,38 +57,59 @@ class AccDetailActivity: BaseActivity<ActivityAccDetailBinding>(ActivityAccDetai
             binding.roomFacility.rvFacility.adapter = FacilityList?.let { AccFacilityAdapter(it) }
 
 
-           //룸 리스트
-           var RoomList: List<Room>? = result.room
-           binding.roomActivity.rvRoom.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-           binding.roomActivity.rvRoom.setHasFixedSize(true)
-           binding.roomActivity.rvRoom.adapter = RoomList?.let { AccDetailAdapter(it) }
+
+            //룸 리스트
+            var RoomList: List<Room>? = result.room
+            binding.roomActivity.rvRoom.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+            binding.roomActivity.rvRoom.setHasFixedSize(true)
+            binding.roomActivity.rvRoom.adapter = RoomList?.let { AccDetailAdapter(it) }
 
 
+            //공지사항
 
-           //공지사항
-            /*"Checkingformation": [
-            "-최대인원 초과시 입실 불가합니다",
-            "-체크인 시 보증금 요구할 수 있고,퇴실 시 전핵 환불됩니다"
-            ]*/
-            //var Checkingformation:List<String> = result.information
+            var CheckingformationList: List<String>? = result.information[0].checkingformation
+            binding.roomExtraInfo.rvNoti.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+            binding.roomExtraInfo.rvNoti.setHasFixedSize(true)
+            binding.roomExtraInfo.rvNoti.adapter = CheckingformationList?.let { AccCheckingformationListAdapter(it) }
 
-            //Log.d("ddddddddddddddddd",Checkingformation.toString())
-            /*binding.roomExtraInfo.rvInfo.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+            //기본정보
+
+            var AccommodationformationList: List<String>? = result.information[0].accommodationformation
+            binding.roomExtraInfo.rvInfo.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
             binding.roomExtraInfo.rvInfo.setHasFixedSize(true)
-            binding.roomExtraInfo.rvInfo.adapter = CheckingformationList?.let { AccCheckingformationListAdapter(it) }*/
-           //기본정보
-
-           binding.roomExtraInfo.rvInfo.text = result.information[0].accommodationformation.toString()
-           //환불규정
-           binding.roomExtraInfo.rvCancel.text =result.information[0].refundInformation.toString()
+            binding.roomExtraInfo.rvInfo.adapter = AccommodationformationList?.let { AccAccommodationformationListAdapter(it) }
 
 
-       }
+            //환불규정
+            var RefundInformationList: List<String>? = result.information[0].refundInformation
+            binding.roomExtraInfo.rvCancel.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+            binding.roomExtraInfo.rvCancel.setHasFixedSize(true)
+            binding.roomExtraInfo.rvCancel.adapter = RefundInformationList?.let { AccRefundInformationListAdapter(it) }
 
-   }
+
+       // }
+    }
+        override fun onSuccessReview(response: AccReviewsResponse) {
+
+            val result = response.result
+            //리뷰정보
+            binding.reviewLayout.starScore.text = result.reviewInfo[0].average.toString()
+            binding.reviewLayout.reviewCount.text=result.reviewInfo[0].counting.toString()
+
+            //리뷰s
+            var ReviewList: List<Review>? = result.review
+            
+            binding.reviewLayout.rvReview.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+            binding.reviewLayout.rvReview.setHasFixedSize(true)
+            binding.reviewLayout.rvReview.adapter = ReviewList?.let { AccReviewListListAdapter(it) }
+
+
+        }
+
+
 
    override fun onFailure(message: String) {
-       //dismissLoadingDialog()
+       dismissLoadingDialog()
        showCustomToast("오류 : $message")
    }
 }

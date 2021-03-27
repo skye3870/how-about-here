@@ -7,3 +7,4 @@ data class AccDetailResponse(
     val message: String,
     val result: Result
 )
+

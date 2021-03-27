@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-
+    android:paddingBottom="@dimen/home_text_20"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
 
@@ -14,7 +14,7 @@
         android:id="@+id/textView29"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/blackForText"
+        android:background="@color/browser_actions_bg_grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,7 +25,7 @@
         android:layout_height="60dp"
 
         android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:src="@color/redForText"
+        android:src="@drawable/user_img_origin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView29"
@@ -52,7 +52,7 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/text_review2"
+        android:id="@+id/text_nickName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -71,10 +71,10 @@
         android:rating="3"
 
         app:layout_constraintStart_toStartOf="@+id/cardView3"
-        app:layout_constraintTop_toBottomOf="@+id/text_review2" />
+        app:layout_constraintTop_toBottomOf="@+id/text_nickName" />
 
     <TextView
-        android:id="@+id/text_review3"
+        android:id="@+id/text_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -85,7 +85,7 @@
         app:layout_constraintTop_toTopOf="@+id/rating_star" />
 
     <TextView
-        android:id="@+id/text_review4"
+        android:id="@+id/text_roomName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -96,7 +96,7 @@
 
     <TextView
         android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:id="@+id/text_review5"
+        android:id="@+id/text_review"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:maxLines="5"
@@ -105,7 +105,7 @@
         android:text="친절하고 시설좋고 접근성 좋고 방크기 적당하고 친절하고 시설좋고 접근성 좋고 방크기 적당하고 친절하고 시설좋고 접근성 좋고 방크기 적당하고 친절하고 시설좋고 접근성 좋고 방크기 적당하고 친절하고 시설좋고 접근성 좋고 방크기 적당하고 친절하고 시설좋고 접근성 좋고 방크기 적당하고 친절하고 시설좋고 접근성 좋고 방크기 적당하고 친절하고 시설좋고 접근성 좋고 방크기 적당하고  "
 
         app:layout_constraintStart_toStartOf="@+id/cardView3"
-        app:layout_constraintTop_toBottomOf="@+id/text_review4" />
+        app:layout_constraintTop_toBottomOf="@+id/text_roomName" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView4"
@@ -114,15 +114,16 @@
         android:layout_marginTop="@dimen/activity_vertical_margin"
         app:cardCornerRadius="30dp"
         app:layout_constraintStart_toStartOf="@+id/cardView3"
-        app:layout_constraintTop_toBottomOf="@+id/text_review5">
+        app:layout_constraintTop_toBottomOf="@+id/text_review">
 
         <ImageView
+            android:id="@+id/review_img"
             android:layout_width="200dp"
             android:layout_height="150dp"
             android:scaleType="centerCrop"
             android:src="@drawable/detail_img"
             app:layout_constraintStart_toStartOf="@+id/cardView3"
-            app:layout_constraintTop_toBottomOf="@+id/text_review5" />
+            app:layout_constraintTop_toBottomOf="@+id/text_review" />
     </androidx.cardview.widget.CardView>
 
     <TextView
