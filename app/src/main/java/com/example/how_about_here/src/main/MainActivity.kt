@@ -21,7 +21,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
         supportFragmentManager.beginTransaction()
                 .replace(R.id.main_frm, HomeFragment())
                 .commitAllowingStateLoss()
-onStart()
+
         binding.mainBtmNav.setOnNavigationItemSelectedListener(//bottom_nav
 
             BottomNavigationView.OnNavigationItemSelectedListener { item ->

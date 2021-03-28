@@ -1,4 +1,4 @@
-package com.example.how_about_here.src.main.AccDetail.model
+package com.example.how_about_here.src.main.AccDetail.modelAccDetail
 
 import android.content.Intent
 import android.util.Log
@@ -10,8 +10,6 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.how_about_here.R
-import com.example.how_about_here.config.ApplicationClass
-import com.example.how_about_here.src.main.AccDetail.AccDetailActivity
 import com.example.how_about_here.src.main.AccDetail.modelReviews.Review
 import com.example.how_about_here.src.main.roomDetail.RoomDetailActivity
 

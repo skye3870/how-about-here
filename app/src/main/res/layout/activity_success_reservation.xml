@@ -10,24 +10,15 @@
         android:id="@+id/text_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="328dp"
-        android:text="회원가입이 완료되었습니다!!"
+        android:text="숙소예약이\n완료되었습니다!!"
+        android:textColor="@color/black"
+        android:textSize="@dimen/my_join_top"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/check"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textSize="@dimen/my_join_top"
-        android:textStyle="bold"
-        android:textColor="@color/black"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="짝짝짝짝짝x1000\n여기어때로 오신 것을 격하게 환영합니다!"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:textAlignment="center"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_result" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/check"

@@ -6,9 +6,9 @@ import com.bumptech.glide.Glide
 import com.example.how_about_here.config.ApplicationClass
 import com.example.how_about_here.config.BaseActivity
 import com.example.how_about_here.databinding.ActivityAccDetailBinding
-import com.example.how_about_here.src.main.AccDetail.model.*
-import com.example.how_about_here.src.main.AccDetail.model.AccDetailAdapter
-import com.example.how_about_here.src.main.AccDetail.model.AccFacilityAdapter
+import com.example.how_about_here.src.main.AccDetail.modelAccDetail.*
+import com.example.how_about_here.src.main.AccDetail.modelAccDetail.AccDetailAdapter
+import com.example.how_about_here.src.main.AccDetail.modelAccDetail.AccFacilityAdapter
 import com.example.how_about_here.src.main.AccDetail.modelReviews.AccReviewsResponse
 import com.example.how_about_here.src.main.AccDetail.modelReviews.Review
 

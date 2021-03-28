@@ -1,7 +1,11 @@
 package com.example.how_about_here.src.main.roomDetail
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import com.example.how_about_here.config.ApplicationClass
-import com.example.how_about_here.src.main.roomDetail.model.RoomDetailResponse
+import com.example.how_about_here.src.main.roomDetail.modelReservationResult.ReservationResultRequest
+import com.example.how_about_here.src.main.roomDetail.modelReservationResult.ReservationResultResponse
+import com.example.how_about_here.src.main.roomDetail.modelRoomDetail.RoomDetailResponse
 
 
 import retrofit2.Call
@@ -23,6 +27,25 @@ class RoomDetailService(val view: RoomDetailActivitytView) {
         })
     }*/
 
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun tryPostReservation(id: Int, idx: Int, check_in: String, check_out: String, reservationResultRequest: ReservationResultRequest) {
+        val reservationRetrofitInterface =
+                ApplicationClass.sRetrofit.create(RoomDetailRetrofitInterface::class.java)
+        reservationRetrofitInterface.postReservation(id,idx,check_in,check_out, reservationResultRequest)
+                .enqueue(object : Callback<ReservationResultResponse> {
+                    override fun onResponse(call: Call<ReservationResultResponse>,
+                                            response: Response<ReservationResultResponse>) {
+                        view.onSuccessResult(response.body() as ReservationResultResponse)
+                    }
+
+                    override fun onFailure(call: Call<ReservationResultResponse>, t: Throwable) {
+                        view.onFailure(t.message ?: "통신 오류")
+                    }
+
+
+                })
+    }
     fun tryGetRoomDetail( id: Int, idx: Int) {
         val roomDetailRetrofitInterface =
             ApplicationClass.sRetrofit.create(RoomDetailRetrofitInterface::class.java)
@@ -44,5 +67,6 @@ class RoomDetailService(val view: RoomDetailActivitytView) {
 
             })
     }
+
 
 }

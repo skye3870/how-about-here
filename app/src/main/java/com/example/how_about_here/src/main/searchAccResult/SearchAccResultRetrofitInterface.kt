@@ -1,8 +1,6 @@
 package com.example.how_about_here.src.main.searchAccResult
 
 
-import com.example.how_about_here.src.main.roomDetail.model.GetRoomDetailRequest
-import com.example.how_about_here.src.main.roomDetail.model.RoomDetailResponse
 import com.example.how_about_here.src.main.searchAccResult.model.SearchAccResultResponse
 import retrofit2.Call
 import retrofit2.http.*

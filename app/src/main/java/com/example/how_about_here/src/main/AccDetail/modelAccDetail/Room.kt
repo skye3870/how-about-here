@@ -1,7 +1,5 @@
-package com.example.how_about_here.src.main.AccDetail.model
+package com.example.how_about_here.src.main.AccDetail.modelAccDetail
 
-
-import com.google.gson.annotations.SerializedName
 
 data class Room(
 

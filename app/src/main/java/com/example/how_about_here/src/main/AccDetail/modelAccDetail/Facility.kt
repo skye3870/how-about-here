@@ -1,4 +1,4 @@
-package com.example.how_about_here.src.main.AccDetail.model
+package com.example.how_about_here.src.main.AccDetail.modelAccDetail
 
 
 data class Facility(
