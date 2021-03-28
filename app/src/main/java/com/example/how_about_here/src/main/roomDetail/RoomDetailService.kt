@@ -3,8 +3,8 @@ package com.example.how_about_here.src.main.roomDetail
 import android.os.Build
 import androidx.annotation.RequiresApi
 import com.example.how_about_here.config.ApplicationClass
-import com.example.how_about_here.src.main.roomDetail.modelReservationResult.ReservationResultRequest
-import com.example.how_about_here.src.main.roomDetail.modelReservationResult.ReservationResultResponse
+import com.example.how_about_here.src.main.resultReservation.modelReservationResult.ReservationResultRequest
+import com.example.how_about_here.src.main.resultReservation.modelReservationResult.ReservationResultResponse
 import com.example.how_about_here.src.main.roomDetail.modelRoomDetail.RoomDetailResponse
 
 
@@ -29,10 +29,11 @@ class RoomDetailService(val view: RoomDetailActivitytView) {
 
 
     @RequiresApi(Build.VERSION_CODES.O)
-    fun tryPostReservation(id: Int, idx: Int, check_in: String, check_out: String, reservationResultRequest: ReservationResultRequest) {
+    fun tryPostReservation(id: Int, idx: Int, check_in: String, check_out: String, reservationResultRequest: ReservationResultRequest)//, XACCESSTOKEN:String)
+    {
         val reservationRetrofitInterface =
                 ApplicationClass.sRetrofit.create(RoomDetailRetrofitInterface::class.java)
-        reservationRetrofitInterface.postReservation(id,idx,check_in,check_out, reservationResultRequest)
+        reservationRetrofitInterface.postReservation(id,idx,check_in,check_out, reservationResultRequest)//,XACCESSTOKEN)
                 .enqueue(object : Callback<ReservationResultResponse> {
                     override fun onResponse(call: Call<ReservationResultResponse>,
                                             response: Response<ReservationResultResponse>) {

@@ -9,6 +9,7 @@ import android.util.Log
 import android.util.Patterns
 import androidx.fragment.app.Fragment
 import com.example.how_about_here.config.ApplicationClass
+import com.example.how_about_here.config.ApplicationClass.Companion.X_ACCESS_TOKEN
 import com.example.how_about_here.databinding.ActivityLoginEmailBinding
 import com.example.how_about_here.config.BaseActivity
 import com.example.how_about_here.databinding.FragmentMyBinding
@@ -74,10 +75,11 @@ class LoginEmailActivity : BaseActivity<ActivityLoginEmailBinding>(ActivityLogin
 
         val editor =ApplicationClass.sSharedPreferences.edit()
         editor.putString("email",email)
-        editor.putString("jwt",jwt)
+        editor.putString(X_ACCESS_TOKEN,jwt)
+        X_ACCESS_TOKEN=jwt
         editor.apply()
         editor.commit()
-        ApplicationClass.X_ACCESS_TOKEN=jwt
+
 
         //binding.homeBtnTryPostHttpMethod.text = response.message
         response.message?.let { showCustomToast(it) }

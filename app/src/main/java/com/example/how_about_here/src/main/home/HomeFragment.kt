@@ -76,7 +76,7 @@ class HomeFragment :
 
     //페이지 변경하기
     private fun setPage(){
-        if(currentPosition==3) currentPosition=0
+        if(currentPosition==2) currentPosition=0
         binding.homeImageSlider.setCurrentItem(currentPosition, true)
         currentPosition+=1
     }
