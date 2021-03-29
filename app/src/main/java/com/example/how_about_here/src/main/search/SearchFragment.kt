@@ -27,5 +27,6 @@ class SearchFragment :
                         .replace(R.id.reserve_viewpadger, SearchActivityFragment())
                         .commitAllowingStateLoss()
             }
+
     }
 }

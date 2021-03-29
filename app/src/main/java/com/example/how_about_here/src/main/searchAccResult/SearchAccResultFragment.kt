@@ -18,9 +18,9 @@ class SearchAccResultFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-       // val keyword = Intent.getStringExtra("keyword").toString()
+      // val keyword = Intent.getStringExtra("keyword").toString()
         //
-    // SearchAccResultService(Context).tryGetSearchAccResult(keyword)
+    //SearchAccResultService(this).tryGetSearchAccResult(keyword)
 
 
     }

@@ -3,14 +3,15 @@ package com.example.how_about_here.src.main.searchAcc
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.view.KeyEvent
 import android.view.View
 import android.widget.SearchView
-import androidx.core.content.ContextCompat
+import androidx.fragment.app.FragmentManager
 import com.example.how_about_here.R
+import com.example.how_about_here.config.ApplicationClass
 import com.example.how_about_here.config.BaseFragment
 import com.example.how_about_here.databinding.FragmentSearchAccBinding
-import com.example.how_about_here.src.main.AccDetail.AccDetailActivity
-import com.example.how_about_here.src.main.hotel.HotelFragment
 import com.example.how_about_here.src.main.searchAccResult.SearchAccResultFragment
 
 
@@ -19,6 +20,11 @@ class SearchAccFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        parentFragmentManager.beginTransaction()
+                .replace(R.id.main_frm, SearchAccResultFragment())
+                .commitAllowingStateLoss()
+
+       /* super.onViewCreated(view, savedInstanceState)
 
 
 
@@ -32,7 +38,7 @@ class SearchAccFragment :
 //                }
 
                 val intent = Intent(context, SearchAccResultFragment::class.java)
-                intent.putExtra("keyword", "강남")
+                intent.putExtra("keyword", binding.search.toString())
 
 
                 parentFragmentManager.beginTransaction()
@@ -46,17 +52,7 @@ class SearchAccFragment :
 
                 return false
             }
-        })
-
-
-
-
-
-
-
-
-
-
+        })*/
 
 
 
