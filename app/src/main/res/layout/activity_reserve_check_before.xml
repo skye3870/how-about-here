@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+   <TextView
+       android:id="@+id/textView37"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:paddingLeft="@dimen/activity_vertical_margin"
+       android:text="←"
+       android:textSize="@dimen/home_top_icon_width_30"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+   <TextView
+       android:id="@+id/textView8"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:padding="@dimen/activity_vertical_margin"
+       android:text="숙소예약내역"
+       android:textColor="@color/black"
+       android:textSize="@dimen/home_top_icon_width_30"
+       android:textStyle="bold"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/textView37" />
+
+
+   <androidx.viewpager2.widget.ViewPager2
+       android:id="@+id/reserve_viewpager"
+       android:layout_width="match_parent"
+       android:layout_height="400dp"
+
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+   <LinearLayout
+       android:id="@+id/linearLayout2"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:weightSum="3"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/textView8">
+
+      <TextView
+          android:id="@+id/textView38"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:paddingTop="@dimen/activity_vertical_margin"
+          android:paddingBottom="@dimen/activity_vertical_margin"
+          android:text="이용전"
+          android:textAlignment="center"
+
+          android:textColor="@color/redForText"
+          app:layout_constraintEnd_toStartOf="@+id/textView44"
+          app:layout_constraintHorizontal_bias="0.5"
+           />
+
+      <TextView
+          android:id="@+id/textView44"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:paddingTop="@dimen/activity_vertical_margin"
+          android:paddingBottom="@dimen/activity_vertical_margin"
+          android:text="이용후"
+          android:textAlignment="center"
+          app:layout_constraintEnd_toStartOf="@+id/textView45"
+          app:layout_constraintHorizontal_bias="0.5"
+           />
+
+      <TextView
+          android:id="@+id/textView45"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+
+          android:layout_weight="1"
+          android:paddingTop="@dimen/activity_vertical_margin"
+          android:paddingBottom="@dimen/activity_vertical_margin"
+          android:text="취소됨"
+          android:textAlignment="center"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.5"
+           />
+   </LinearLayout>
+
+
+   <!--<androidx.viewpager2.widget.ViewPager2
+       android:layout_height="wrap_content"
+       android:layout_width="wrap_content"/>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

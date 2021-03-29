@@ -25,7 +25,7 @@ class ApplicationClass : Application() {
         lateinit var sSharedPreferences: SharedPreferences
 
         // JWT Token Header 키 값
-        var X_ACCESS_TOKEN = "X-ACCESS-TOKEN"
+        var X_ACCESS_TOKEN :String?= "X-ACCESS-TOKEN"
 
         // Retrofit 인스턴스, 앱 실행시 한번만 생성하여 사용합니다.
         lateinit var sRetrofit: Retrofit

@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="400dp"
+    android:layout_height="match_parent"
     app:cardElevation="10dp"
     app:cardCornerRadius="10dp"
     android:layout_margin="15dp"
@@ -90,9 +90,9 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
+                    android:id="@+id/img"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                     />
+                    android:layout_height="match_parent" />
 
             </androidx.cardview.widget.CardView>
 
@@ -110,13 +110,14 @@
                 android:layout_marginStart="15dp"/>
 
             <TextView
+                android:id="@+id/where"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
                 android:text="[선도역 부근] 더블베드"
-                app:layout_constraintTop_toBottomOf="@id/reservation_check_name"
-                app:layout_constraintStart_toEndOf="@id/reservation_check_img"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginStart="15dp"/>
+                app:layout_constraintStart_toEndOf="@id/reservation_check_img"
+                app:layout_constraintTop_toBottomOf="@id/reservation_check_name" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -288,7 +289,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="15dp"
+                android:padding="@dimen/activity_vertical_margin"
                 android:text="예약취소"
                 android:textColor="@color/redForText"
 

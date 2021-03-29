@@ -6,6 +6,7 @@
     android:layout_width="250dp"
     android:layout_height="wrap_content"
     app:cardCornerRadius="10dp"
+    android:layout_marginBottom="10dp"
     android:layout_marginStart="@dimen/activity_vertical_margin"
     >
 
@@ -30,7 +31,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/activity_vertical_margin"
+            android:layout_marginTop="8dp"
             android:text="[**특가]"
+            android:textColor="@color/black"
             android:textSize="@dimen/home_text_18"
             app:layout_constraintStart_toStartOf="@+id/img_hotel"
             app:layout_constraintTop_toBottomOf="@+id/img_hotel" />
@@ -63,18 +66,20 @@
             android:id="@+id/text_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="name"
             android:ems="7"
             android:maxLines="1"
+            android:text="name"
+            android:textColor="@color/black"
             android:textSize="@dimen/home_text_18"
             app:layout_constraintBottom_toBottomOf="@+id/text_special"
             app:layout_constraintStart_toEndOf="@+id/text_special"
-            app:layout_constraintTop_toBottomOf="@+id/img_hotel" />
+            app:layout_constraintTop_toTopOf="@+id/text_special" />
 
         <TextView
             android:id="@+id/text_star_rate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:text="별점"
             app:layout_constraintBottom_toBottomOf="@+id/img_star"
             app:layout_constraintStart_toEndOf="@+id/img_star"
@@ -108,11 +113,13 @@
 
         <ImageView
             android:id="@+id/img_star"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/star_icon"
             app:layout_constraintStart_toStartOf="@+id/text_special"
-            app:layout_constraintTop_toBottomOf="@+id/text_special"
-            app:srcCompat="@android:drawable/btn_star_big_on" />
+            app:layout_constraintTop_toBottomOf="@+id/text_special" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

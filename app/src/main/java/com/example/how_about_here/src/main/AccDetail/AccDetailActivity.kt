@@ -30,6 +30,10 @@ class AccDetailActivity: BaseActivity<ActivityAccDetailBinding>(ActivityAccDetai
         AccDetailService(this).tryGetAccReviews(id)
     }
 
+    override fun onStop() {
+        super.onStop()
+        finish()
+    }
     override fun onSuccess(response: AccDetailResponse) {
         dismissLoadingDialog()
        // if (response.message.contains("완료")) {

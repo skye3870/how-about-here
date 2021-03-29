@@ -53,7 +53,7 @@
                 android:layout_margin="@dimen/activity_vertical_margin"
                 android:text="@string/hotel_resort"
                 android:textSize="@dimen/home_text_18"
-                android:background="@color/colorPrimaryDark"
+                android:background="@drawable/text_background"
                 app:layout_constraintBottom_toBottomOf="@+id/textView_motel"
                 app:layout_constraintStart_toEndOf="@+id/textView_motel"
                 app:layout_constraintTop_toTopOf="@+id/textView_motel" />

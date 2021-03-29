@@ -71,12 +71,13 @@ class LoginEmailActivity : BaseActivity<ActivityLoginEmailBinding>(ActivityLogin
     override fun onGetUserLoginSuccess(response: UsersLoginResponse) {
         dismissLoadingDialog()
         //jwt
-        val jwt=response.result.jwt
 
+        val jwt=response.result.jwt
+        X_ACCESS_TOKEN=jwt
+        Log.e("로그인 이메일",jwt)
         val editor =ApplicationClass.sSharedPreferences.edit()
         editor.putString("email",email)
         editor.putString(X_ACCESS_TOKEN,jwt)
-        X_ACCESS_TOKEN=jwt
         editor.apply()
         editor.commit()
 

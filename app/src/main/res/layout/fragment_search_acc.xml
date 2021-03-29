@@ -17,20 +17,43 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:queryBackground="@android:color/transparent"
-        app:queryHint="지역 또는 숙소명 입력"
+        android:queryHint="지역 또는 숙소명 입력"
+        android:iconifiedByDefault="false"
         />
+
+    <Button
+        android:id="@+id/button_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:text="3.23 수 - 3.24 목"
+        android:textColor="@color/black"
+        android:textSize="13dp"
+        app:layout_constraintStart_toStartOf="@+id/search"
+        app:layout_constraintTop_toBottomOf="@+id/search" />
+
+    <Button
+        android:id="@+id/button_person"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="인원"
+        android:textColor="@color/black"
+        android:textSize="13dp"
+        app:layout_constraintStart_toEndOf="@+id/button_date"
+        app:layout_constraintTop_toTopOf="@+id/button_date" />
 
     <TextView
         android:id="@+id/top_fav_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/activity_vertical_margin"
-        android:layout_marginTop="16dp"
-        android:text="TOP 인기 검색어"
-        android:textSize="@dimen/center_menu_text"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+
         android:fontFamily="@font/how"
-        app:layout_constraintTop_toBottomOf="@+id/search"
-        tools:layout_editor_absoluteX="16dp" />
+        android:text="TOP 인기 검색어"
+        app:layout_constraintStart_toStartOf="@+id/search"
+        app:layout_constraintTop_toBottomOf="@+id/button_person" />
 
     <LinearLayout
         android:id="@+id/top_fav_content_num"
@@ -46,92 +69,96 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:paddingTop="@dimen/activity_vertical_margin">
 
             <TextView
                 android:id="@+id/textView15"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:textStyle="bold"
+                android:textStyle="bold|italic"
+                android:textSize="@dimen/home_text_18"
                 android:textColor="@color/black"
-                android:textSize="@dimen/center_menu_text"
+
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/first"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_margin="@dimen/activity_vertical_margin"
+                android:layout_marginStart="@dimen/activity_vertical_margin"
                 android:text="경주"
-                android:textStyle="bold"
+                android:textSize="@dimen/home_text_18"
                 android:textColor="@color/black"
-                android:textSize="@dimen/center_menu_text"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+
+                app:layout_constraintBottom_toBottomOf="@+id/textView15"
+                app:layout_constraintStart_toEndOf="@+id/textView15"
+                app:layout_constraintTop_toTopOf="@+id/textView15" />
         </androidx.constraintlayout.widget.ConstraintLayout>
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:paddingTop="@dimen/activity_vertical_margin">
 
             <TextView
                 android:id="@+id/textView17"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2"
-                android:textStyle="bold"
+                android:textStyle="bold|italic"
+                android:textSize="@dimen/home_text_18"
                 android:textColor="@color/black"
-
-                android:textSize="@dimen/center_menu_text"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/second"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_margin="@dimen/activity_vertical_margin"
+
+                android:layout_marginStart="@dimen/activity_vertical_margin"
                 android:text="제주"
-                android:textStyle="bold"
+                android:textSize="@dimen/home_text_18"
                 android:textColor="@color/black"
-                android:textSize="@dimen/center_menu_text"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+
+                app:layout_constraintBottom_toBottomOf="@+id/textView17"
+                app:layout_constraintStart_toEndOf="@+id/textView17"
+                app:layout_constraintTop_toTopOf="@+id/textView17" />
         </androidx.constraintlayout.widget.ConstraintLayout>
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:paddingTop="@dimen/activity_vertical_margin">
 
             <TextView
+                android:id="@+id/textView41"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="3"
-                android:textSize="@dimen/center_menu_text"
-                android:textStyle="bold"
                 android:textColor="@color/black"
+                android:textStyle="bold|italic"
+                android:textSize="@dimen/home_text_18"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/third"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_margin="@dimen/activity_vertical_margin"
+
+                android:layout_marginStart="@dimen/activity_vertical_margin"
                 android:text="강릉"
-                android:textSize="@dimen/center_menu_text"
-                android:textStyle="bold"
+                android:textSize="@dimen/home_text_18"
                 android:textColor="@color/black"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+
+                app:layout_constraintBottom_toBottomOf="@+id/textView41"
+                app:layout_constraintStart_toEndOf="@+id/textView41"
+                app:layout_constraintTop_toTopOf="@+id/textView41" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>

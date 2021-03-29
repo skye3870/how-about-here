@@ -1,6 +1,7 @@
 package com.example.how_about_here.src.main.home
 
 import android.content.Intent
+import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -48,6 +49,10 @@ class HomeHotelAdapter(private val HomeHotelArr: ArrayList<HomeHotel>) :Recycler
         holder.where.text=HomeHotelArr.get(position).where
         holder.price.text=HomeHotelArr.get(position).price.toString()
         holder.price_origin.text=HomeHotelArr.get(position).price_orgin.toString()
+
+        holder.price_origin.setPaintFlags(holder.price_origin.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG)
+
+
 
 
 

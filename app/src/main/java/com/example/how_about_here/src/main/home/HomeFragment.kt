@@ -4,9 +4,11 @@ package com.example.how_about_here.src.main.home
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.how_about_here.R
+import com.example.how_about_here.config.ApplicationClass
 import com.example.how_about_here.config.BaseFragment
 import com.example.how_about_here.databinding.FragmentHomeBinding
 import com.example.how_about_here.src.main.hotel.HotelFragment
@@ -25,6 +27,8 @@ class HomeFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
         binding.blackFragment.rvBlack.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.blackFragment.rvBlack.setHasFixedSize(true)
         binding.blackFragment.rvBlack.adapter = HomeBlackAdapter(HomeBlackArr)
@@ -56,13 +60,13 @@ class HomeFragment :
         }
 
         binding.motelFragment.textViewMotel.setOnClickListener {
-            binding.scrollView.smoothScrollTo(0, 500)
+            binding.scrollView.smoothScrollTo(0,2000)
         }
         binding.motelFragment.textViewHotelResort.setOnClickListener {
-            binding.scrollView.smoothScrollTo(0, 1000)
+            binding.scrollView.smoothScrollTo(0, 3600)
         }
         binding.motelFragment.textViewBlack.setOnClickListener {
-            binding.scrollView.smoothScrollTo(0, 1500)
+            binding.scrollView.smoothScrollTo(0, 5500)
         }
 
 
@@ -76,7 +80,7 @@ class HomeFragment :
 
     //페이지 변경하기
     private fun setPage(){
-        if(currentPosition==2) currentPosition=0
+        if(currentPosition==3) currentPosition=0
         binding.homeImageSlider.setCurrentItem(currentPosition, true)
         currentPosition+=1
     }
@@ -97,6 +101,7 @@ class HomeFragment :
             }
         }
     }
+
 
 
 

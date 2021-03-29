@@ -47,6 +47,7 @@
         <!--<activity android:name=".src.splash.SplashActivity"/>-->
         <activity android:name=".src.main.join.JoinSuccessActivity"/>
         <activity android:name=".src.main.resultReservation.ResultReservationActivity"/>
+        <activity android:name=".src.main.reserveCheck.ReserveCheckActivity"/>
         <activity android:name=".src.main.login.LoginEmailActivity"/>
         <meta-data android:name="com.kakao.sdk.AppKey"
             android:value="@string/kakao_app_key" />

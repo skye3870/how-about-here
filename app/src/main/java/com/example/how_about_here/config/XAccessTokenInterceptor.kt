@@ -14,7 +14,10 @@ class XAccessTokenInterceptor : Interceptor {
         val builder: Request.Builder = chain.request().newBuilder()
         val jwtToken: String? = sSharedPreferences.getString(X_ACCESS_TOKEN, null)
         if (jwtToken != null) {
-            builder.addHeader("X-ACCESS-TOKEN", jwtToken)
+            if(jwtToken != "X-ACCESS-TOKEN" ) {
+                builder.addHeader("X-ACCESS-TOKEN", jwtToken)
+            }
+
         }
         return chain.proceed(builder.build())
     }

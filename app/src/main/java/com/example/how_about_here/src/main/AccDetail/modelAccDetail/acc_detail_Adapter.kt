@@ -57,6 +57,7 @@ class AccDetailAdapter(private val RoomList: List<Room>) :RecyclerView.Adapter<A
 
            intent.putExtra("idx",RoomList.get(position).roomIdx.toString())
            startActivity(holder.itemView.context, intent, null)
+
        }
 
 

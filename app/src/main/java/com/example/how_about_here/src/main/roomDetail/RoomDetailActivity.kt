@@ -56,7 +56,7 @@ class RoomDetailActivity: BaseActivity<ActivityRoomDetailBinding>(ActivityRoomDe
                     ReservationResultRequest(reserveName = email,phoneNumber = "01000000000"))//,XACCESSTOKEN)
 
             showLoadingDialog(this)
-
+            finish()
 
             /*val intent = Intent(this, ResultReservationActivity::class.java)
             intent.putExtra("result",)
