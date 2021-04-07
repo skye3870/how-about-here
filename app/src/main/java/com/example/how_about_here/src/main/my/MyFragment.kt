@@ -27,8 +27,14 @@ class MyFragment :
         }
 
         binding.joinLogin.setOnClickListener() {
-            val intent = Intent(context, JoinLoginKakaoActivity::class.java)
-            startActivity(intent)
+            if(check_login==false){
+                val intent = Intent(context, JoinLoginKakaoActivity::class.java)
+                startActivity(intent)
+            }else{
+                val intent = Intent(context, JoinLoginKakaoActivity::class.java)
+                startActivity(intent)
+            }
+
         }
 
         binding.textMyReserve.setOnClickListener(){

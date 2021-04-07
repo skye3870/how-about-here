@@ -41,7 +41,7 @@
 
 
     <TextView
-        android:id="@+id/hotel_seoul_all_location"
+        android:id="@+id/location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
@@ -52,26 +52,26 @@
 
 
     <ImageView
-        android:id="@+id/hotel_seoul_all_rating_star_img"
+        android:id="@+id/rating_star_img"
         android:layout_width="10dp"
         android:layout_height="10dp"
         android:layout_centerVertical="true"
         android:layout_marginStart="@dimen/activity_vertical_margin"
-        android:layout_toEndOf="@id/hotel_seoul_all_location"
+        android:layout_toEndOf="@id/location"
         android:src="@drawable/star_icon"
         app:layout_constraintBottom_toBottomOf="@+id/text_refund"
         app:layout_constraintStart_toEndOf="@+id/text_refund"
         app:layout_constraintTop_toTopOf="@+id/text_refund" />
 
     <TextView
-        android:id="@+id/hotel_seoul_all_rating_txt"
+        android:id="@+id/rating_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_toEndOf="@id/hotel_seoul_all_rating_star_img"
+        android:layout_toEndOf="@id/rating_star_img"
         android:text="9.5"
         android:textColor="@color/browser_actions_bg_grey"
-        app:layout_constraintStart_toEndOf="@+id/hotel_seoul_all_rating_star_img"
+        app:layout_constraintStart_toEndOf="@+id/rating_star_img"
         app:layout_constraintTop_toTopOf="@+id/text_refund" />
 
     <TextView
@@ -79,11 +79,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_toEndOf="@id/hotel_seoul_all_rating_txt"
+        android:layout_toEndOf="@id/rating_txt"
         android:text="(777)"
         android:textColor="@color/browser_actions_bg_grey"
-        app:layout_constraintStart_toEndOf="@+id/hotel_seoul_all_rating_txt"
-        app:layout_constraintTop_toTopOf="@+id/hotel_seoul_all_rating_txt" />
+        app:layout_constraintStart_toEndOf="@+id/rating_txt"
+        app:layout_constraintTop_toTopOf="@+id/rating_txt" />
 
     <TextView
         android:id="@+id/text_refund"
@@ -95,21 +95,21 @@
         android:paddingEnd="8dp"
         android:text="체크인 하루 전 100% 환불 가능"
         android:textColor="@color/redForText"
-        app:layout_constraintStart_toEndOf="@+id/hotel_seoul_all_location"
-        app:layout_constraintTop_toTopOf="@+id/hotel_seoul_all_location" />
+        app:layout_constraintStart_toEndOf="@+id/location"
+        app:layout_constraintTop_toTopOf="@+id/location" />
 
     <TextView
         android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="10000원"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_refund"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginTop="5dp"/>
+        android:text="100,000원"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_refund" />
 
 
     <TextView

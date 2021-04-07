@@ -1,17 +1,13 @@
 package com.softsquared.template.kotlin.src.main.search.recyclerview
 
-import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.how_about_here.R
-import com.example.how_about_here.src.main.AccDetail.AccDetailActivity
 import com.example.how_about_here.src.main.searchAccResult.model.Result
 
 
@@ -19,13 +15,13 @@ class SearchAdapter(private val SearchList: List<Result>) : RecyclerView.Adapter
 
     class CustomViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
 
-        val img = itemView.findViewById<ImageView>(R.id.search_seoul_hotel_img) // 호텔 이미지
-        val name = itemView.findViewById<TextView>(R.id.search_seoul_hotel_name) // 호텔 이름
-        val surround = itemView.findViewById<TextView>(R.id.search_seoul_hotel_location) // 호텔 주변
-        val price = itemView.findViewById<TextView>(R.id.search_seoul_hotel_price) // 호텔 가격
-        val reviewCnt = itemView.findViewById<TextView>(R.id.search_seoul_hotel_review_num) // 리뷰 개수
-        val reviewAverage = itemView.findViewById<TextView>(R.id.search_seoul_hotel_rating) // 평점
-        val rating = itemView.findViewById<TextView>(R.id.search_seoul_hotel_class) // 클래스(5성급)
+        val img = itemView.findViewById<ImageView>(R.id.Acc_img) // 호텔 이미지
+        val name = itemView.findViewById<TextView>(R.id.Acc_name) // 호텔 이름
+        val surround = itemView.findViewById<TextView>(R.id.Acc_where) // 호텔 주변
+        val price = itemView.findViewById<TextView>(R.id.Acc_price) // 호텔 가격
+        val reviewCnt = itemView.findViewById<TextView>(R.id.review_amount) // 리뷰 개수
+        val reviewAverage = itemView.findViewById<TextView>(R.id.rating) // 평점
+        val rating = itemView.findViewById<TextView>(R.id.hotel_star) // 클래스(5성급)
 
     }
 
@@ -50,9 +46,9 @@ class SearchAdapter(private val SearchList: List<Result>) : RecyclerView.Adapter
 
         holder.itemView.setOnClickListener {
 
-            val intent = Intent(holder.itemView.context, AccDetailActivity::class.java)
+            /*val intent = Intent(holder.itemView.context, AccDetailActivity::class.java)
             ContextCompat.startActivity(holder.itemView.context, intent, null)
-
+*/
         }
     }
 

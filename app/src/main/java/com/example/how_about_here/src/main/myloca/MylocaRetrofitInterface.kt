@@ -1,4 +1,4 @@
-package com.example.how_about_here.src.main.searchAccResult
+package com.example.how_about_here.src.main.myloca
 
 
 import com.example.how_about_here.src.main.searchAccResult.model.SearchAccResultResponse
@@ -6,7 +6,7 @@ import retrofit2.Call
 import retrofit2.http.*
 
 
-interface SearchAccResultRetrofitInterface {
+interface MylocaRetrofitInterface {
     @GET("/search")//?keyword={keyword}
     fun getSearch(@Query ("keyword") keyword: String): Call<SearchAccResultResponse>
 

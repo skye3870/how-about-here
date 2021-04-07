@@ -14,17 +14,17 @@ class SearchFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         childFragmentManager.beginTransaction()
-                .replace(R.id.reserve_viewpadger, SearchAccFragment())
+                .replace(R.id.reserve_viewpager, SearchAccFragment())
                 .commitAllowingStateLoss()
 
             binding.imageButtonAcc.setOnClickListener(){
                 childFragmentManager.beginTransaction()
-                    .replace(R.id.reserve_viewpadger, SearchAccFragment())
+                    .replace(R.id.reserve_viewpager, SearchAccFragment())
                     .commitAllowingStateLoss()
             }
             binding.imageButtonActivity.setOnClickListener(){
                 childFragmentManager.beginTransaction()
-                        .replace(R.id.reserve_viewpadger, SearchActivityFragment())
+                        .replace(R.id.reserve_viewpager, SearchActivityFragment())
                         .commitAllowingStateLoss()
             }
 

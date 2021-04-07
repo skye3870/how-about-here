@@ -9,24 +9,27 @@
 
 
     <TextView
-        android:id="@+id/top_bar"
+        android:id="@+id/search_keyword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="@dimen/activity_vertical_margin"
+
+        android:layout_marginStart="8dp"
         android:text="서울"
         android:textColor="@color/black"
         android:textSize="@dimen/home_text_20"
-        app:layout_constraintStart_toEndOf="@+id/hotel_seoul_all_back_btn"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/img_search"
+        app:layout_constraintStart_toEndOf="@+id/img_search"
+        app:layout_constraintTop_toTopOf="@+id/img_search" />
 
     <ImageView
-        android:id="@+id/hotel_seoul_all_back_btn"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:id="@+id/img_search"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_marginStart="@dimen/activity_vertical_margin"
-        app:layout_constraintBottom_toBottomOf="@+id/top_bar"
+
+        android:layout_marginTop="@dimen/activity_vertical_margin"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/top_bar"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/main_btm_nav_item_search" />
 
     <ImageView
@@ -34,9 +37,10 @@
         android:layout_width="18dp"
         android:layout_height="18dp"
         android:layout_gravity="center_vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/top_bar"
-        app:layout_constraintStart_toEndOf="@+id/top_bar"
-        app:layout_constraintTop_toTopOf="@+id/top_bar"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/search_keyword"
+        app:layout_constraintStart_toEndOf="@+id/search_keyword"
+        app:layout_constraintTop_toTopOf="@+id/search_keyword"
         app:layout_constraintVertical_bias="0.39"
         app:srcCompat="@android:drawable/ic_delete" />
 
@@ -48,9 +52,9 @@
         android:layout_marginEnd="@dimen/activity_vertical_margin"
         android:text="지도 보기"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/top_bar"
+        app:layout_constraintBottom_toBottomOf="@+id/search_keyword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/top_bar" />
+        app:layout_constraintTop_toTopOf="@+id/search_keyword" />
 
 
         <ScrollView
@@ -62,7 +66,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/top_bar">
+            app:layout_constraintTop_toBottomOf="@+id/search_keyword">
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -113,8 +117,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/activity_vertical_margin"
-                            android:background="@color/colorPrimaryDark"
-                            android:text="@string/motel"
+
+                            android:text="전체"
                             android:textSize="@dimen/home_text_18"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -139,7 +143,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/activity_vertical_margin"
-                            android:text="@string/black"
+                            android:text="모텔"
                             android:textSize="@dimen/home_text_18"
                             app:layout_constraintBottom_toBottomOf="@+id/textView_motel"
                             app:layout_constraintStart_toEndOf="@+id/textView_hotel_resort"
@@ -181,6 +185,208 @@
                 </HorizontalScrollView>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/hotel_seoul_all_filter_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/hotel_seoul_all_chip_filter_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:text="필터"
+                        android:textColor="@color/black"
+
+                        android:textStyle="bold"
+                        app:chipBackgroundColor="@color/white"
+                        app:chipCornerRadius="5dp"
+                        app:chipEndPadding="5dp"
+
+                        app:chipIconSize="15dp"
+                        app:chipIconVisible="true"
+                        app:chipStartPadding="5dp"
+                        app:chipStrokeColor="@color/black"
+                        app:chipStrokeWidth="1dp"
+                        app:iconStartPadding="4dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <HorizontalScrollView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:fillViewport="true"
+                        android:scrollbars="none"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/hotel_seoul_all_chip_filter_btn"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp">
+
+                            <TextView
+                                android:id="@+id/hotel_seoul_all_filter_txt1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/activity_vertical_margin"
+                                android:text="선착순 할인"
+                                android:textSize="13dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/hotel_seoul_all_filter_txt2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/activity_vertical_margin"
+                                android:text="할인특가"
+                                android:textSize="13dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/hotel_seoul_all_filter_txt1"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/hotel_seoul_all_filter_txt3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/activity_vertical_margin"
+                                android:text="대실예약"
+                                android:textSize="13dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/hotel_seoul_all_filter_txt2"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/hotel_seoul_all_filter_txt4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/activity_vertical_margin"
+                                android:text="조식포함"
+                                android:textSize="13dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/hotel_seoul_all_filter_txt3"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/hotel_seoul_all_filter_txt5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/activity_vertical_margin"
+                                android:text="풀빌라"
+                                android:textSize="13dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/hotel_seoul_all_filter_txt4"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <com.google.android.material.chip.Chip
+                                android:layout_width="32dp"
+                                android:layout_height="35dp"
+                                android:layout_marginStart="@dimen/activity_vertical_margin"
+                                android:textSize="20dp"
+                                app:chipCornerRadius="18dp"
+
+                                app:chipIconSize="15dp"
+                                app:chipIconTint="#BCBCBC"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/hotel_seoul_all_filter_txt5"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </HorizontalScrollView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/divider3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#DAE8EF"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hotel_seoul_all_filter_layout" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/hotel_seoul_all_taste_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/hotel_seoul_all_filter_layout">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/hotel_seoul_all_chip_taste_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:text="취향"
+                        android:textColor="#025DA6"
+
+                        android:textStyle="bold"
+                        app:chipBackgroundColor="@color/white"
+                        app:chipCornerRadius="5dp"
+                        app:chipEndPadding="5dp"
+
+                        app:chipIconSize="15dp"
+                        app:chipIconVisible="true"
+                        app:chipStartPadding="5dp"
+                        app:chipStrokeColor="#025DA6"
+                        app:chipStrokeWidth="1dp"
+                        app:iconStartPadding="4dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/hotel_seoul_all_hot_water_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/activity_vertical_margin"
+                        android:text="#해돋이 명소"
+                        android:textColor="#025DA6"
+                        android:textSize="13dp"
+                        app:layout_constraintBottom_toTopOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/hotel_seoul_all_chip_taste_btn"
+                        app:layout_constraintTop_toBottomOf="parent" />
+
+                    <TextView
+                        android:id="@+id/hotel_seoul_all_photo_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/activity_vertical_margin"
+                        android:text="#바닷가"
+                        android:textColor="#025DA6"
+                        android:textSize="13dp"
+                        app:layout_constraintBottom_toTopOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/hotel_seoul_all_hot_water_txt"
+                        app:layout_constraintTop_toBottomOf="parent" />
+
+                    <TextView
+                        android:id="@+id/hotel_seoul_all_photo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/activity_vertical_margin"
+                        android:text="#산행코스"
+                        android:textColor="#025DA6"
+                        android:textSize="13dp"
+                        app:layout_constraintBottom_toTopOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/hotel_seoul_all_photo_txt"
+                        app:layout_constraintTop_toBottomOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/recommend_sort"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -189,7 +395,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView">
+                    app:layout_constraintTop_toBottomOf="@+id/hotel_seoul_all_taste_layout">
 
                     <TextView
                         android:id="@+id/text_recommend"
